@@ -1,0 +1,45 @@
+﻿using System;
+using Il2CppInterop.Common.Attributes;
+using Il2CppInterop.Runtime;
+using Il2CppInterop.Runtime.InteropTypes;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
+
+namespace Il2CppSystem.Collections.Generic
+{
+	// Token: 0x020004E9 RID: 1257
+	public class IReadOnlyCollection<T> : Il2CppObjectBase
+	{
+		// Token: 0x06004DA3 RID: 19875 RVA: 0x0016836C File Offset: 0x0016656C
+		// Note: this type is marked as 'beforefieldinit'.
+		static IReadOnlyCollection()
+		{
+			Il2CppClassPointerStore<IReadOnlyCollection<T>>.NativeClassPtr = IL2CPP.il2cpp_class_from_type(Type.internal_from_handle(IL2CPP.il2cpp_class_get_type(IL2CPP.GetIl2CppClass("mscorlib.dll", "System.Collections.Generic", "IReadOnlyCollection`1"))).MakeGenericType(new Il2CppReferenceArray<Type>(new Type[] { Type.internal_from_handle(IL2CPP.il2cpp_class_get_type(Il2CppClassPointerStore<T>.NativeClassPtr)) })).TypeHandle.value);
+			IReadOnlyCollection<T>.NativeMethodInfoPtr_get_Count_Public_Abstract_Virtual_New_get_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<IReadOnlyCollection<T>>.NativeClassPtr, 100674961);
+		}
+
+		// Token: 0x17001403 RID: 5123
+		// (get) Token: 0x06004DA4 RID: 19876 RVA: 0x001683E4 File Offset: 0x001665E4
+		public unsafe virtual int Count
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(IL2CPP.il2cpp_object_get_virtual_method(IL2CPP.Il2CppObjectBaseToPtr(this), IReadOnlyCollection<T>.NativeMethodInfoPtr_get_Count_Public_Abstract_Virtual_New_get_Int32_0), IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+		}
+
+		// Token: 0x06004DA5 RID: 19877 RVA: 0x0001C1A0 File Offset: 0x0001A3A0
+		public IReadOnlyCollection(IntPtr pointer)
+			: base(pointer)
+		{
+		}
+
+		// Token: 0x04003F7F RID: 16255
+		private static readonly IntPtr NativeMethodInfoPtr_get_Count_Public_Abstract_Virtual_New_get_Int32_0;
+	}
+}

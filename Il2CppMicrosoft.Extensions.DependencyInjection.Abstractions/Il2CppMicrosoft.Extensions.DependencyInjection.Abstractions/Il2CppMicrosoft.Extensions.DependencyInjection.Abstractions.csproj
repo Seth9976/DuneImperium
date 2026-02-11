@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C4646F4-8CF8-4183-B920-30BFC7408B70}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions</RootNamespace>
+    <AssemblyName>Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FxResources\Microsoft\Extensions\DependencyInjection\Abstractions\SR.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\Extensions\ServiceCollectionDescriptorExtensions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\FromKeyedServicesAttribute.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\IServiceCollection.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\IServiceProviderIsKeyedService.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\IServiceProviderIsService.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\IServiceScope.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\IServiceScopeFactory.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ISupportRequiredService.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\KeyedService.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceCollection.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceCollectionServiceExtensions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceDescriptor.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceKeyAttribute.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLifetime.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceProviderServiceExtensions.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\DynamicallyAccessedMembersAttribute.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\DynamicallyAccessedMemberTypes.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullablePublicOnlyAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\RefSafetyRulesAttribute.cs" />
+    <Compile Include="Il2CppSystem\SR.cs" />
+    <Compile Include="Il2CppSystem\ThrowHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

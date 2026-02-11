@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52E78D2F-8EBA-47BF-A739-07B8AC79330E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>core-canis</RootNamespace>
+    <AssemblyName>core-canis</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Attributes">
+      <HintPath>..\..\..\BepInEx\interop\Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="core-commands">
+      <HintPath>..\..\..\BepInEx\interop\core-commands.dll</HintPath>
+    </Reference>
+    <Reference Include="core-localization">
+      <HintPath>..\..\..\BepInEx\interop\core-localization.dll</HintPath>
+    </Reference>
+    <Reference Include="DwdJson">
+      <HintPath>..\..\..\BepInEx\interop\DwdJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Networking">
+      <HintPath>..\..\..\BepInEx\interop\Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Unity.Addressables">
+      <HintPath>..\..\..\BepInEx\interop\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>..\..\..\BepInEx\interop\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Utils">
+      <HintPath>..\..\..\BepInEx\interop\Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllArchetypesChecksumMatch.cs" />
+    <Compile Include="AnimationDelayEffect.cs" />
+    <Compile Include="ArrayHelper.cs" />
+    <Compile Include="AudioCategory.cs" />
+    <Compile Include="AudioController.cs" />
+    <Compile Include="AudioController_CurrentInspectorSelection.cs" />
+    <Compile Include="AudioFader.cs" />
+    <Compile Include="AudioItem.cs" />
+    <Compile Include="AudioObject.cs" />
+    <Compile Include="AudioPickSubItemMode.cs" />
+    <Compile Include="AudioSubItem.cs" />
+    <Compile Include="AudioSubItemType.cs" />
+    <Compile Include="BoundsUtil.cs" />
+    <Compile Include="BubbleEvent.cs" />
+    <Compile Include="CameraRaycastHit.cs" />
+    <Compile Include="Canis\utils\localization\LocalizedString.cs" />
+    <Compile Include="ClientVersion.cs" />
+    <Compile Include="Clipboard.cs" />
+    <Compile Include="ColorUtil.cs" />
+    <Compile Include="ConfigFile.cs" />
+    <Compile Include="CoreUtils.cs" />
+    <Compile Include="CursorDefinition.cs" />
+    <Compile Include="CursorManager.cs" />
+    <Compile Include="CursorRecord.cs" />
+    <Compile Include="DeckRetrievalFailed.cs" />
+    <Compile Include="dwd\core\account\AccountComponent.cs" />
+    <Compile Include="dwd\core\account\AccountExtensions.cs" />
+    <Compile Include="dwd\core\account\AccountIDComponent.cs" />
+    <Compile Include="dwd\core\account\AccountProvider.cs" />
+    <Compile Include="dwd\core\account\IAccountFactory.cs" />
+    <Compile Include="dwd\core\account\messages\incoming\AccountPropertiesUpdated.cs" />
+    <Compile Include="dwd\core\account\messages\incoming\AccountPropertyRemoved.cs" />
+    <Compile Include="dwd\core\account\messages\incoming\AccountPropertyRemoved2.cs" />
+    <Compile Include="dwd\core\account\messages\outgoing\SetAccountSettings.cs" />
+    <Compile Include="dwd\core\account\messages\RegistrationResponseError.cs" />
+    <Compile Include="dwd\core\account\registration\IRegistrationCommand.cs" />
+    <Compile Include="dwd\core\account\registration\RegisterNewPlatformAccount.cs" />
+    <Compile Include="dwd\core\account\registration\RegistrationRequest.cs" />
+    <Compile Include="dwd\core\account\SerializableAccount.cs" />
+    <Compile Include="dwd\core\alerts\Alert.cs" />
+    <Compile Include="dwd\core\alerts\AlertQueue.cs" />
+    <Compile Include="dwd\core\animation\AnimationSignal.cs" />
+    <Compile Include="dwd\core\animation\ToggleParameterBehaviour.cs" />
+    <Compile Include="dwd\core\animation\TriggeredEvents.cs" />
+    <Compile Include="dwd\core\animation\UpdateAnimatorOnEnable.cs" />
+    <Compile Include="dwd\core\archetypes\ArchetypeComponent.cs" />
+    <Compile Include="dwd\core\archetypes\SerializableArchetypeComponent.cs" />
+    <Compile Include="dwd\core\attributes\ClientAttributes.cs" />
+    <Compile Include="dwd\core\audio\AudioUtil.cs" />
+    <Compile Include="dwd\core\audio\commands\DefaultPlayAudioCommand.cs" />
+    <Compile Include="dwd\core\audio\commands\PlayAudioCommand.cs" />
+    <Compile Include="dwd\core\audio\components\AnimationPlaySound.cs" />
+    <Compile Include="dwd\core\audio\DefaultAudioUtilSource.cs" />
+    <Compile Include="dwd\core\audio\IAudioUtilSource.cs" />
+    <Compile Include="dwd\core\audio\PlayAudioLocation.cs" />
+    <Compile Include="dwd\core\await\AwaiterCommand.cs" />
+    <Compile Include="dwd\core\await\EnumeratorAwaitExtensions.cs" />
+    <Compile Include="dwd\core\await\SimpleUnitySafeAwaiter.2.cs" />
+    <Compile Include="dwd\core\await\SimpleUnitySafeAwaiter.cs" />
+    <Compile Include="dwd\core\await\SyncContextUtil.cs" />
+    <Compile Include="dwd\core\await\TaskCommand.cs" />
+    <Compile Include="dwd\core\await\TaskExtensions.cs" />
+    <Compile Include="dwd\core\bundlemanager\AssetBundleErrorCodes.cs" />
+    <Compile Include="dwd\core\bundles\Asset.cs" />
+    <Compile Include="dwd\core\bundles\AssetBundleDescriptorV3.cs" />
+    <Compile Include="dwd\core\bundles\AssetBundleManager.cs" />
+    <Compile Include="dwd\core\bundles\AssetBundleManifestV3.cs" />
+    <Compile Include="dwd\core\bundles\AssetBundleRequest.cs" />
+    <Compile Include="dwd\core\bundles\AssetManager.cs" />
+    <Compile Include="dwd\core\bundles\AssetRefCounter.cs" />
+    <Compile Include="dwd\core\bundles\AssetRequest.cs" />
+    <Compile Include="dwd\core\bundles\AssetRequestStates.cs" />
+    <Compile Include="dwd\core\bundles\BundleReference.cs" />
+    <Compile Include="dwd\core\bundles\BundleRequest.cs" />
+    <Compile Include="dwd\core\bundles\DownloadAssetBundleCommand.cs" />
+    <Compile Include="dwd\core\bundles\IAssetBundle.cs" />
+    <Compile Include="dwd\core\bundles\IAssetBundleConfig.cs" />
+    <Compile Include="dwd\core\bundles\IAssetBundleManager.cs" />
+    <Compile Include="dwd\core\bundles\IAssetManagerRequester.cs" />
+    <Compile Include="dwd\core\bundles\IAssetRequest.cs" />
+    <Compile Include="dwd\core\bundles\ListingPlatformVersioning.cs" />
+    <Compile Include="dwd\core\bundles\PrecachedPlatformVersioning.cs" />
+    <Compile Include="dwd\core\bundles\RequestPriority.cs" />
+    <Compile Include="dwd\core\camera\CameraUtil.cs" />
+    <Compile Include="dwd\core\camera\MonoScreenBorders.cs" />
+    <Compile Include="dwd\core\camera\ScreenBorders.cs" />
+    <Compile Include="dwd\core\cheats\AllCheatDefinitions.cs" />
+    <Compile Include="dwd\core\cheats\Cheats.cs" />
+    <Compile Include="dwd\core\client\ExitApplicationControl.cs" />
+    <Compile Include="dwd\core\client\ExitApplicationRequest.cs" />
+    <Compile Include="dwd\core\client\IApplicationQuitHandler.cs" />
+    <Compile Include="dwd\core\client\IBlockingApplicationQuitHandler.cs" />
+    <Compile Include="dwd\core\commands\FreeMemoryCommand.cs" />
+    <Compile Include="dwd\core\data\async\IAsyncData.2.cs" />
+    <Compile Include="dwd\core\data\async\IAsyncData.cs" />
+    <Compile Include="dwd\core\data\async\IAsyncDataWithInput.cs" />
+    <Compile Include="dwd\core\data\async\LoadAsyncData.cs" />
+    <Compile Include="dwd\core\data\composition\AnimationSignalData.cs" />
+    <Compile Include="dwd\core\data\composition\AttributeDataComponent.cs" />
+    <Compile Include="dwd\core\data\composition\AttributesData.cs" />
+    <Compile Include="dwd\core\data\composition\BasicDescription.cs" />
+    <Compile Include="dwd\core\data\composition\BasicName.cs" />
+    <Compile Include="dwd\core\data\composition\DataComponent.cs" />
+    <Compile Include="dwd\core\data\composition\DataComposition.cs" />
+    <Compile Include="dwd\core\data\composition\DescriptionLookup.cs" />
+    <Compile Include="dwd\core\data\composition\IDataComposition.cs" />
+    <Compile Include="dwd\core\data\composition\ImageLookup.cs" />
+    <Compile Include="dwd\core\data\composition\ListLookup.cs" />
+    <Compile Include="dwd\core\data\composition\NameLookup.cs" />
+    <Compile Include="dwd\core\data\composition\subscription\ISubscriber.cs" />
+    <Compile Include="dwd\core\data\composition\VersionedDataComponent.cs" />
+    <Compile Include="dwd\core\data\CoreCanisAttributes.cs" />
+    <Compile Include="dwd\core\data\FlavoredClassAttribute.cs" />
+    <Compile Include="dwd\core\data\FlavoredClassFactory.cs" />
+    <Compile Include="dwd\core\data\IDComponent.cs" />
+    <Compile Include="dwd\core\data\IHasProgress.cs" />
+    <Compile Include="dwd\core\data\IView.cs" />
+    <Compile Include="dwd\core\data\leaderboards\GetLeaderBoardRankings.cs" />
+    <Compile Include="dwd\core\data\leaderboards\GetUserRankingView.cs" />
+    <Compile Include="dwd\core\data\leaderboards\LeaderBoardQueryFailed.cs" />
+    <Compile Include="dwd\core\data\leaderboards\LeaderBoardUserRankings.cs" />
+    <Compile Include="dwd\core\data\NameData.cs" />
+    <Compile Include="dwd\core\data\providers\DataProvider.cs" />
+    <Compile Include="dwd\core\data\providers\MapProvider.cs" />
+    <Compile Include="dwd\core\data\readonlyWrappers\ReadOnlyHashSet.cs" />
+    <Compile Include="dwd\core\data\readonlyWrappers\ReadOnlyList.cs" />
+    <Compile Include="dwd\core\data\ReflectionTypeInitializer.cs" />
+    <Compile Include="dwd\core\data\ScrollPositionData.cs" />
+    <Compile Include="dwd\core\data\SelectedData.2.cs" />
+    <Compile Include="dwd\core\data\SelectedData.cs" />
+    <Compile Include="dwd\core\data\VersionedReference.cs" />
+    <Compile Include="dwd\core\data\Versions.cs" />
+    <Compile Include="dwd\core\device\DeviceUniqueIdentifier.cs" />
+    <Compile Include="dwd\core\diagnostics\DiagnosticsDisplay.cs" />
+    <Compile Include="dwd\core\diagnostics\FPSTracker.cs" />
+    <Compile Include="dwd\core\diagnostics\MemoryTracker.cs" />
+    <Compile Include="dwd\core\diagnostics\TextDiagnosticDisplay.cs" />
+    <Compile Include="dwd\core\direction\Direction.cs" />
+    <Compile Include="dwd\core\direction\Direction2.cs" />
+    <Compile Include="dwd\core\direction\Direction3.cs" />
+    <Compile Include="dwd\core\direction\DirectionUtil.cs" />
+    <Compile Include="dwd\core\endorsement\IEndorser.cs" />
+    <Compile Include="dwd\core\endorsement\IRequestHandler.cs" />
+    <Compile Include="dwd\core\endorsement\Request.cs" />
+    <Compile Include="dwd\core\endorsement\SubscribableEndorser.cs" />
+    <Compile Include="dwd\core\events\EventExtensions.cs" />
+    <Compile Include="dwd\core\eventTriggers\ArrowData.cs" />
+    <Compile Include="dwd\core\eventTriggers\ArrowID.cs" />
+    <Compile Include="dwd\core\eventTriggers\clientActions\HideArrow.cs" />
+    <Compile Include="dwd\core\eventTriggers\clientActions\ShowArrow.cs" />
+    <Compile Include="dwd\core\eventTriggers\clientActions\WaitForMouse.cs" />
+    <Compile Include="dwd\core\eventTriggers\ClientEventResponder.cs" />
+    <Compile Include="dwd\core\eventTriggers\clientEvents\AnyClientEvent.cs" />
+    <Compile Include="dwd\core\eventTriggers\clientEvents\NeverClientEvent.cs" />
+    <Compile Include="dwd\core\eventTriggers\clientEvents\OrClientEvent.cs" />
+    <Compile Include="dwd\core\eventTriggers\clientEvents\StateCheckEvent.cs" />
+    <Compile Include="dwd\core\eventTriggers\clientTriggers\ClientTrigger.cs" />
+    <Compile Include="dwd\core\eventTriggers\commands\InstallEventResponseCommand.cs" />
+    <Compile Include="dwd\core\eventTriggers\commands\UninstallEventResponseCommand.cs" />
+    <Compile Include="dwd\core\eventTriggers\conditional\ConditionalState.cs" />
+    <Compile Include="dwd\core\factory\Factory.cs" />
+    <Compile Include="dwd\core\fastFind\FastFindOneCache.cs" />
+    <Compile Include="dwd\core\fileio\DWDFileIO.cs" />
+    <Compile Include="dwd\core\IAccountSource.cs" />
+    <Compile Include="dwd\core\IEntitiesProvider.cs" />
+    <Compile Include="dwd\core\lib\canis\core_canis\data\composition\ArchetypeIDDataComponent.cs" />
+    <Compile Include="dwd\core\loader\AddressablesLoadSource.cs" />
+    <Compile Include="dwd\core\loader\AssetLoader.cs" />
+    <Compile Include="dwd\core\loader\AssetNameFormatter.cs" />
+    <Compile Include="dwd\core\loader\BuildSettingsSceneLoadSource.cs" />
+    <Compile Include="dwd\core\loader\caching\AssetCacheProvider.cs" />
+    <Compile Include="dwd\core\loader\caching\AssetReference.cs" />
+    <Compile Include="dwd\core\loader\caching\BaseReferenceTracker.cs" />
+    <Compile Include="dwd\core\loader\caching\CommandTracker.cs" />
+    <Compile Include="dwd\core\loader\caching\ComponentTracker.cs" />
+    <Compile Include="dwd\core\loader\caching\IAssetReference.2.cs" />
+    <Compile Include="dwd\core\loader\caching\IAssetReference.cs" />
+    <Compile Include="dwd\core\loader\caching\IDisposableAssetReference.cs" />
+    <Compile Include="dwd\core\loader\caching\IReferenceTracker.cs" />
+    <Compile Include="dwd\core\loader\caching\ISceneReference.cs" />
+    <Compile Include="dwd\core\loader\caching\ISpriteReference.cs" />
+    <Compile Include="dwd\core\loader\caching\ManualReferenceTracker.cs" />
+    <Compile Include="dwd\core\loader\caching\ObjectTracker.cs" />
+    <Compile Include="dwd\core\loader\caching\PrefabReference.cs" />
+    <Compile Include="dwd\core\loader\caching\SingleSpriteReference.cs" />
+    <Compile Include="dwd\core\loader\caching\SpriteAtlasReference.cs" />
+    <Compile Include="dwd\core\loader\caching\SpriteReference.cs" />
+    <Compile Include="dwd\core\loader\caching\WeakReferenceTracker.cs" />
+    <Compile Include="dwd\core\loader\IAsyncLoadAssetSource.cs" />
+    <Compile Include="dwd\core\loader\ISyncLoadAssetSource.cs" />
+    <Compile Include="dwd\core\loader\Loader.cs" />
+    <Compile Include="dwd\core\loader\LoaderMode.cs" />
+    <Compile Include="dwd\core\loader\LoaderStrategy.cs" />
+    <Compile Include="dwd\core\loader\loaders\AssetName.cs" />
+    <Compile Include="dwd\core\loader\loaders\AssetRequest.cs" />
+    <Compile Include="dwd\core\loader\loaders\AssetRequester.cs" />
+    <Compile Include="dwd\core\loader\loaders\BaseBundleLoader.cs" />
+    <Compile Include="dwd\core\loader\loaders\BundleLoader.cs" />
+    <Compile Include="dwd\core\loader\loaders\DefaultLoader.cs" />
+    <Compile Include="dwd\core\loader\loaders\PrefabLoader.cs" />
+    <Compile Include="dwd\core\loader\loaders\SingleSpriteBundleLoader.cs" />
+    <Compile Include="dwd\core\loader\loaders\SingleSpriteRequest.cs" />
+    <Compile Include="dwd\core\loader\loaders\SpriteAtlasLoader.cs" />
+    <Compile Include="dwd\core\loader\loaders\SpriteAtlasRequest.cs" />
+    <Compile Include="dwd\core\loader\loaders\SpriteBundleLoader.cs" />
+    <Compile Include="dwd\core\loader\loaders\SpriteRequest.cs" />
+    <Compile Include="dwd\core\loader\ResourcesLoadSource.cs" />
+    <Compile Include="dwd\core\loader\SceneLoadSource.cs" />
+    <Compile Include="dwd\core\logging\ClientErrorReporter.cs" />
+    <Compile Include="dwd\core\logging\IClientErrorHandler.cs" />
+    <Compile Include="dwd\core\logging\ILogger.cs" />
+    <Compile Include="dwd\core\logging\messages\AIInfoMessage.cs" />
+    <Compile Include="dwd\core\logging\UnityLogger.cs" />
+    <Compile Include="dwd\core\matchmaking\messages\incoming\MatchFound.cs" />
+    <Compile Include="dwd\core\matchmaking\messages\incoming\MatchQueueEntered.cs" />
+    <Compile Include="dwd\core\match\commands\ClientEventCommands.cs" />
+    <Compile Include="dwd\core\match\commands\ClientEventCommandsConstructorAttribute.cs" />
+    <Compile Include="dwd\core\match\commands\MessageCommandConstructorAttribute.cs" />
+    <Compile Include="dwd\core\match\commands\MessageCommands.cs" />
+    <Compile Include="dwd\core\match\commands\SequenceCommandConstructorAttribute.cs" />
+    <Compile Include="dwd\core\match\commands\SequenceCommands.cs" />
+    <Compile Include="dwd\core\match\data\EntitiesProvider.cs" />
+    <Compile Include="dwd\core\match\data\EntityObject.cs" />
+    <Compile Include="dwd\core\match\data\PlayerObject.cs" />
+    <Compile Include="dwd\core\match\data\PlayerPileObject.cs" />
+    <Compile Include="dwd\core\match\data\PlaymatObject.cs" />
+    <Compile Include="dwd\core\match\data\PlaymatPileObject.cs" />
+    <Compile Include="dwd\core\match\delorean\Delorean.cs" />
+    <Compile Include="dwd\core\match\delorean\DeloreanEnqueueCommand.cs" />
+    <Compile Include="dwd\core\match\delorean\IDeloreanExecutionQueue.cs" />
+    <Compile Include="dwd\core\match\Entities.cs" />
+    <Compile Include="dwd\core\match\EntityComponent.cs" />
+    <Compile Include="dwd\core\match\messages\GameEnded.cs" />
+    <Compile Include="dwd\core\match\messages\GameMessageQueue.cs" />
+    <Compile Include="dwd\core\match\messages\incoming\PlayerStillInGame.cs" />
+    <Compile Include="dwd\core\match\selection\ActionsNode.cs" />
+    <Compile Include="dwd\core\match\selection\ArchetypeCustomChoiceNode.cs" />
+    <Compile Include="dwd\core\match\selection\ArchetypeCustomChoiceTargetInfoNode.cs" />
+    <Compile Include="dwd\core\match\selection\choiceInterfaces\IDetailedCustomChoice.cs" />
+    <Compile Include="dwd\core\match\selection\CompositeTargetInfoListTargetInfoNode.cs" />
+    <Compile Include="dwd\core\match\selection\CustomChoiceInfoNode.cs" />
+    <Compile Include="dwd\core\match\selection\CustomChoiceNode.cs" />
+    <Compile Include="dwd\core\match\selection\CustomChoiceResultTargetInfoNode.cs" />
+    <Compile Include="dwd\core\match\selection\EntityListTargetNode.cs" />
+    <Compile Include="dwd\core\match\selection\IActionSelection.cs" />
+    <Compile Include="dwd\core\match\selection\IArchetypeCustomChoice.cs" />
+    <Compile Include="dwd\core\match\selection\ICustomChoice.cs" />
+    <Compile Include="dwd\core\match\selection\IDetailedRevealChoice.cs" />
+    <Compile Include="dwd\core\match\selection\IEntityListSelection.cs" />
+    <Compile Include="dwd\core\match\selection\IForced.cs" />
+    <Compile Include="dwd\core\match\selection\IHintedEntitySelection.cs" />
+    <Compile Include="dwd\core\match\selection\IIgnoreFirst.cs" />
+    <Compile Include="dwd\core\match\selection\IIntegerSelection.cs" />
+    <Compile Include="dwd\core\match\selection\IMulliganChoice.cs" />
+    <Compile Include="dwd\core\match\selection\IMultipleIntegerChoice.cs" />
+    <Compile Include="dwd\core\match\selection\IRevealChoice.cs" />
+    <Compile Include="dwd\core\match\selection\ISelectionNode.cs" />
+    <Compile Include="dwd\core\match\selection\ISelectionNodeFactory.cs" />
+    <Compile Include="dwd\core\match\selection\ISelectionRoot.cs" />
+    <Compile Include="dwd\core\match\selection\ISingleIntegerChoice.cs" />
+    <Compile Include="dwd\core\match\selection\KnapsackEntityListTargetNode.cs" />
+    <Compile Include="dwd\core\match\selection\messages\CustomChoiceWithTargetsRequired.cs" />
+    <Compile Include="dwd\core\match\selection\messages\incoming\SelectionWithTargetsAndActionsRequired.cs" />
+    <Compile Include="dwd\core\match\selection\messages\Outgoing.cs" />
+    <Compile Include="dwd\core\match\selection\messages\outgoing\CustomChoiceWithTargets.cs" />
+    <Compile Include="dwd\core\match\selection\messages\TargetPreferenceConversion.cs" />
+    <Compile Include="dwd\core\match\selection\MulliganChoiceNode.cs" />
+    <Compile Include="dwd\core\match\selection\MultipleSelectionWithTargetsNode.cs" />
+    <Compile Include="dwd\core\match\selection\MultipleTargetInformationNode.cs" />
+    <Compile Include="dwd\core\match\selection\RevealDetailedEntityListTargetInfoNode.cs" />
+    <Compile Include="dwd\core\match\selection\RevealEntityListTargetInfoNode.cs" />
+    <Compile Include="dwd\core\match\selection\RootSelection.cs" />
+    <Compile Include="dwd\core\match\selection\rootSelections\CustomChoiceWithTargetsNode.cs" />
+    <Compile Include="dwd\core\match\selection\rootSelections\IntChoiceRequiredNode.cs" />
+    <Compile Include="dwd\core\match\selection\Selection.cs" />
+    <Compile Include="dwd\core\match\selection\SelectionEndOffer.cs" />
+    <Compile Include="dwd\core\match\selection\SelectionNode.cs" />
+    <Compile Include="dwd\core\match\selection\SelectionNodeFactory.cs" />
+    <Compile Include="dwd\core\match\selection\SelectionWithTargetsAndActionsNode.cs" />
+    <Compile Include="dwd\core\match\selection\SelectionWithTargetsNode.cs" />
+    <Compile Include="dwd\core\match\selection\SimultaneousSelection.cs" />
+    <Compile Include="dwd\core\match\selection\TargetInfoNode.cs" />
+    <Compile Include="dwd\core\match\selection\XTargetNode.cs" />
+    <Compile Include="dwd\core\match\SolitaireID.cs" />
+    <Compile Include="dwd\core\networking\AverageIntFromSamples.cs" />
+    <Compile Include="dwd\core\networking\commands\DwdWebRequestCommand.cs" />
+    <Compile Include="dwd\core\networking\commands\HttpPostRequest.cs" />
+    <Compile Include="dwd\core\networking\commands\SubmitWWWPostingJSON.cs" />
+    <Compile Include="dwd\core\networking\downloadHandlers\DwdDownloadHandler.cs" />
+    <Compile Include="dwd\core\networking\downloadHandlers\DwdDownloadHandlerFile.cs" />
+    <Compile Include="dwd\core\networking\downloadHandlers\DwdDownloadHandlerMemory.cs" />
+    <Compile Include="dwd\core\notifications\INotificationsSource.cs" />
+    <Compile Include="dwd\core\notifications\messages\incoming\Notification.cs" />
+    <Compile Include="dwd\core\notifications\messages\incoming\NotificationsRequested.cs" />
+    <Compile Include="dwd\core\notifications\messages\outgoing\AcknowledgeNotification.cs" />
+    <Compile Include="dwd\core\notifications\messages\outgoing\GetNotifications.cs" />
+    <Compile Include="dwd\core\notifications\Notifications.cs" />
+    <Compile Include="dwd\core\notifications\NotificationTypes.cs" />
+    <Compile Include="dwd\core\pooling\Pool.cs" />
+    <Compile Include="dwd\core\pooling\PrefabPool.cs" />
+    <Compile Include="dwd\core\pooling\PrefabPoolGroup.cs" />
+    <Compile Include="dwd\core\prefabs\CustomFlavorProvider.cs" />
+    <Compile Include="dwd\core\prefabs\FlavorProvider.cs" />
+    <Compile Include="dwd\core\prefabs\IMetadataMatcher.cs" />
+    <Compile Include="dwd\core\prefabs\implementations\byflavor\PrefabByFlavorLoader.cs" />
+    <Compile Include="dwd\core\prefabs\implementations\byflavor\PrefabByFlavorLookup.cs" />
+    <Compile Include="dwd\core\prefabs\implementations\byflavor\PrefabByFlavorMetadata.cs" />
+    <Compile Include="dwd\core\prefabs\implementations\byflavor\PrefabFlavorContext.cs" />
+    <Compile Include="dwd\core\prefabs\implementations\byflavor\PrefabFlavorsMetaData.cs" />
+    <Compile Include="dwd\core\prefabs\IPrefabMetadata.cs" />
+    <Compile Include="dwd\core\prefabs\LookupUtil.cs" />
+    <Compile Include="dwd\core\prefabs\MozFlavorProvider.cs" />
+    <Compile Include="dwd\core\prefabs\PrefabLoader.cs" />
+    <Compile Include="dwd\core\prefabs\PrefabLookup.2.cs" />
+    <Compile Include="dwd\core\prefabs\PrefabLookup.3.cs" />
+    <Compile Include="dwd\core\prefabs\PrefabLookup.cs" />
+    <Compile Include="dwd\core\prefabs\PrefabLookupEntry.2.cs" />
+    <Compile Include="dwd\core\prefabs\PrefabLookupEntry.cs" />
+    <Compile Include="dwd\core\prefabs\prefabProvider\AlternatingPrefabProvider.cs" />
+    <Compile Include="dwd\core\prefabs\prefabProvider\PooledPrefabProvider.cs" />
+    <Compile Include="dwd\core\prefabs\prefabProvider\PooledSinglePrefabProvider.cs" />
+    <Compile Include="dwd\core\prefabs\prefabProvider\PrefabProvider.cs" />
+    <Compile Include="dwd\core\prefabs\prefabProvider\ProviderInstantiator.cs" />
+    <Compile Include="dwd\core\prefabs\prefabProvider\VersionedViewOfDataCompositions.cs" />
+    <Compile Include="dwd\core\rendererManagement\configData\VisibilityConfiguration.cs" />
+    <Compile Include="dwd\core\rendererManagement\IConfigurationFactory.cs" />
+    <Compile Include="dwd\core\rendererManagement\IRenderProvider.cs" />
+    <Compile Include="dwd\core\rendererManagement\IRenderRequester.cs" />
+    <Compile Include="dwd\core\rendererManagement\RendererManager.cs" />
+    <Compile Include="dwd\core\rendererManagement\RenderRequester.cs" />
+    <Compile Include="dwd\core\session\commands\SessionResponseResult.cs" />
+    <Compile Include="dwd\core\session\commands\WriteToSessionAndAwaitResponse.2.cs" />
+    <Compile Include="dwd\core\session\commands\WriteToSessionAndAwaitResponse.cs" />
+    <Compile Include="dwd\core\session\IAccountSessionWriter.cs" />
+    <Compile Include="dwd\core\session\ISessionWriter.cs" />
+    <Compile Include="dwd\core\session\SessionID.cs" />
+    <Compile Include="dwd\core\session\SessionProvider.cs" />
+    <Compile Include="dwd\core\settings\CalculatedSetting.cs" />
+    <Compile Include="dwd\core\settings\config\ConfigSetting.cs" />
+    <Compile Include="dwd\core\settings\config\definitions\BoolConfigDefinition.cs" />
+    <Compile Include="dwd\core\settings\config\definitions\ConfigDefinition.2.cs" />
+    <Compile Include="dwd\core\settings\config\definitions\ConfigDefinition.cs" />
+    <Compile Include="dwd\core\settings\config\definitions\IntConfigDefinition.cs" />
+    <Compile Include="dwd\core\settings\config\definitions\StringConfigDefinition.cs" />
+    <Compile Include="dwd\core\settings\config\IVersionedConfig.cs" />
+    <Compile Include="dwd\core\settings\config\VersionedConfig.cs" />
+    <Compile Include="dwd\core\settings\constant\ConstantSetting.cs" />
+    <Compile Include="dwd\core\settings\constant\ConstantSettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\EncryptionSettings.cs" />
+    <Compile Include="dwd\core\settings\IRevertableSetting.2.cs" />
+    <Compile Include="dwd\core\settings\IRevertableSetting.cs" />
+    <Compile Include="dwd\core\settings\ISaveSettingRequest.cs" />
+    <Compile Include="dwd\core\settings\ISessionWritableSetting.2.cs" />
+    <Compile Include="dwd\core\settings\ISessionWritableSetting.cs" />
+    <Compile Include="dwd\core\settings\ISetting.2.cs" />
+    <Compile Include="dwd\core\settings\ISetting.cs" />
+    <Compile Include="dwd\core\settings\ISettingDefinition.2.cs" />
+    <Compile Include="dwd\core\settings\ISettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\IWritableSetting.2.cs" />
+    <Compile Include="dwd\core\settings\IWritableSetting.cs" />
+    <Compile Include="dwd\core\settings\IWritableSettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\platform\AccountSettingNamespace.cs" />
+    <Compile Include="dwd\core\settings\platform\definitions\EnumPlatformSettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\platform\definitions\IPlatformSettingStorage.cs" />
+    <Compile Include="dwd\core\settings\platform\definitions\JsonPlatformSettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\platform\definitions\ListPlatformSettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\platform\definitions\PlatformSettingDefinition.2.cs" />
+    <Compile Include="dwd\core\settings\platform\definitions\PlatformSettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\platform\definitions\PlatformSettingStorageNamespacing.cs" />
+    <Compile Include="dwd\core\settings\platform\ISettingNamespace.cs" />
+    <Compile Include="dwd\core\settings\platform\PlatformSetting.2.cs" />
+    <Compile Include="dwd\core\settings\platform\PlatformSetting.cs" />
+    <Compile Include="dwd\core\settings\platform\SaveNoop.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\AccountPrefFormatter.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\AccountPrefSetting.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\BoolOnDevicePlatformSettingStorage.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\BoolPrefDefinition.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\EncryptedStringPrefDefinition.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\EnumPrefDefinition.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\FloatPrefDefinition.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\IntPrefDefinition.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\ListPrefDefinition.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\PrefDefinition.2.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\PrefDefinition.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\definitions\StringPrefDefinition.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\EncryptedSetting.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\FloatOnDevicePlatformSettingStorage.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\IAccountPrefFormatter.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\IntOnDevicePlatformSettingStorage.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\OnDevicePlatformSettingStorage.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\PrefSetting.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\PrefStorage.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\SaveRequest.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\SimpleSettings.cs" />
+    <Compile Include="dwd\core\settings\playerPrefs\StringOnDevicePlatformSettingStorage.cs" />
+    <Compile Include="dwd\core\settings\RuntimeSetting.cs" />
+    <Compile Include="dwd\core\settings\scriptableConfig\PlatformIDScriptableConfig.cs" />
+    <Compile Include="dwd\core\settings\scriptableConfig\PlatformIDScriptableConfigDefinition.cs" />
+    <Compile Include="dwd\core\settings\scriptableConfig\ScriptableConfigDefinition.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\definitions\BoolServerSettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\definitions\ServerSettingDefinition.2.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\definitions\ServerSettingDefinition.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\IServerSettingQuerySource.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\IUniqueKeyRegistry.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\save\DeleteOne.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\save\SaveAccountSettings.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\save\SaveNoop.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\save\SaveOne.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\save\SaveRequest.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\ServerSetting.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\ServerSettingsData.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\ServerSettingStorage.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\ServerSettingTranslator.cs" />
+    <Compile Include="dwd\core\settings\serverSettings\storage\WargServerSettingStorage.cs" />
+    <Compile Include="dwd\core\settings\SettingCache.cs" />
+    <Compile Include="dwd\core\SortingLayerExposed.cs" />
+    <Compile Include="dwd\core\ui\CursorStackManager.cs" />
+    <Compile Include="dwd\core\ui\UGUIUtil.cs" />
+    <Compile Include="dwd\core\Unity\DWD\DWDApplication.cs" />
+    <Compile Include="dwd\core\Unity\DWD\DWDPlayerPrefs.cs" />
+    <Compile Include="dwd\core\Unity\DWD\DWDSystemInfo.cs" />
+    <Compile Include="dwd\core\util\BoolUnityEvents.cs" />
+    <Compile Include="dwd\core\util\DuplicateLogFileOnQuit.cs" />
+    <Compile Include="dwd\core\util\EnumFlagsAttribute.cs" />
+    <Compile Include="dwd\core\util\ErrorLogCounter.cs" />
+    <Compile Include="dwd\core\util\IDebugLogOpenControl.cs" />
+    <Compile Include="dwd\core\util\instantiation\InstantiateUtil.cs" />
+    <Compile Include="dwd\core\util\instantiation\ITriggeredInstantiator.cs" />
+    <Compile Include="dwd\core\util\LimitedCurve.cs" />
+    <Compile Include="dwd\core\util\LogAutoOpen.cs" />
+    <Compile Include="dwd\core\util\LogDispatcher.cs" />
+    <Compile Include="dwd\core\util\LogProcessor.cs" />
+    <Compile Include="dwd\core\util\MouseButton.cs" />
+    <Compile Include="dwd\core\util\MouseButtonComparer.cs" />
+    <Compile Include="dwd\core\util\RefCounted.cs" />
+    <Compile Include="dwd\core\util\RequireInterfaceAttribute.cs" />
+    <Compile Include="dwd\core\util\ResourceUtil.cs" />
+    <Compile Include="dwd\core\util\SerializedInterface.cs" />
+    <Compile Include="dwd\core\util\SetColorEvent.cs" />
+    <Compile Include="dwd\core\util\ThreadUtil.cs" />
+    <Compile Include="dwd\core\util\UTF8TextReader.cs" />
+    <Compile Include="dwd\core\util\WWWUtil.cs" />
+    <Compile Include="dwd\core\video\settings\ScreenPrefsDefinition.cs" />
+    <Compile Include="dwd\core\video\settings\ScreenResolutionPrefDefinition.cs" />
+    <Compile Include="dwd\core\video\settings\ScreenSettings.cs" />
+    <Compile Include="dwd\core\wargServer\WargSession.cs" />
+    <Compile Include="dwd\core\wargServer\WargTime.cs" />
+    <Compile Include="dwd\core\wargServer\WargTimeConverter.cs" />
+    <Compile Include="dwd\core\_3rdParty\AudioToolkit\AudioToolkit\IResolver.cs" />
+    <Compile Include="EnumResolution.cs" />
+    <Compile Include="EventDispatcher.cs" />
+    <Compile Include="EventHandlers.cs" />
+    <Compile Include="EventListeners.cs" />
+    <Compile Include="GameEffectMessage.cs" />
+    <Compile Include="GameLogMessage.cs" />
+    <Compile Include="GameManagers.cs" />
+    <Compile Include="GameObjectUtil.cs" />
+    <Compile Include="GizmosUtil.cs" />
+    <Compile Include="GlobalTransform.cs" />
+    <Compile Include="HashSet_Flash.cs" />
+    <Compile Include="IConfigReadable.cs" />
+    <Compile Include="IGameManager.cs" />
+    <Compile Include="IGameObject.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="IMousethroughArea.cs" />
+    <Compile Include="IMousethroughCamera.cs" />
+    <Compile Include="IOverrideMouseManager.cs" />
+    <Compile Include="IRegisteredComponent.cs" />
+    <Compile Include="IScreenChangeSettingListener.cs" />
+    <Compile Include="IScreenResizeHandler.cs" />
+    <Compile Include="ISingletonMonoBehaviour.cs" />
+    <Compile Include="IVersionedList.cs" />
+    <Compile Include="IVersionedMap.cs" />
+    <Compile Include="LeaderBoardEntry.cs" />
+    <Compile Include="LeaderBoardRankings.cs" />
+    <Compile Include="lib\match\IHasEntityComponent.cs" />
+    <Compile Include="LocalTransform.cs" />
+    <Compile Include="Logging\DeviceOutputLogProvider.cs" />
+    <Compile Include="MatchState.cs" />
+    <Compile Include="match\prediction\IPrediction.cs" />
+    <Compile Include="match\prediction\PrescienceAuthority.cs" />
+    <Compile Include="MemoryWatchdog.cs" />
+    <Compile Include="MessageBundleMessage.cs" />
+    <Compile Include="MessageDeserializationException.cs" />
+    <Compile Include="MessageUtil.cs" />
+    <Compile Include="MonoBounds.cs" />
+    <Compile Include="MonoPInvokeCallbackAttribute.cs" />
+    <Compile Include="MulliganChoiceRequired.cs" />
+    <Compile Include="ObjectPoolController.cs" />
+    <Compile Include="Paths.cs" />
+    <Compile Include="PersistOnLoad.cs" />
+    <Compile Include="PoolableObject.cs" />
+    <Compile Include="PoolableReference.cs" />
+    <Compile Include="PrefsManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QualityUtil.cs" />
+    <Compile Include="QuaternionUtil.cs" />
+    <Compile Include="RaycastQueryData.cs" />
+    <Compile Include="RayUtil.cs" />
+    <Compile Include="ReadOnlyDictionary.cs" />
+    <Compile Include="ReadOnlyVersionedList.cs" />
+    <Compile Include="ReadOnlyVersionedMap.cs" />
+    <Compile Include="RegisteredComponent.cs" />
+    <Compile Include="RegisteredComponentController.cs" />
+    <Compile Include="ScreenRect.cs" />
+    <Compile Include="ScreenResolution.cs" />
+    <Compile Include="ScreenResolutionUtil.cs" />
+    <Compile Include="SelectableAction.cs" />
+    <Compile Include="SetResolutionCommand.cs" />
+    <Compile Include="SingletonMonoBehaviour.cs" />
+    <Compile Include="Subscriber.2.cs" />
+    <Compile Include="Subscriber.cs" />
+    <Compile Include="SubscriptionProvider.cs" />
+    <Compile Include="SyncBundledAssetProvider.cs" />
+    <Compile Include="SyncBundleProvider.cs" />
+    <Compile Include="TriggeredInstantiator.cs" />
+    <Compile Include="UnitySingleton.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="Unity\IO\Compression\BlockType.cs" />
+    <Compile Include="Unity\IO\Compression\CompressionMode.cs" />
+    <Compile Include="Unity\IO\Compression\CopyEncoder.cs" />
+    <Compile Include="Unity\IO\Compression\Crc32Helper.cs" />
+    <Compile Include="Unity\IO\Compression\DeflateInput.cs" />
+    <Compile Include="Unity\IO\Compression\DeflaterManaged.cs" />
+    <Compile Include="Unity\IO\Compression\DeflateStream.cs" />
+    <Compile Include="Unity\IO\Compression\DeflateStreamAsyncResult.cs" />
+    <Compile Include="Unity\IO\Compression\FastEncoder.cs" />
+    <Compile Include="Unity\IO\Compression\FastEncoderStatics.cs" />
+    <Compile Include="Unity\IO\Compression\FastEncoderWindow.cs" />
+    <Compile Include="Unity\IO\Compression\GZipConstants.cs" />
+    <Compile Include="Unity\IO\Compression\GZipDecoder.cs" />
+    <Compile Include="Unity\IO\Compression\GZipFormatter.cs" />
+    <Compile Include="Unity\IO\Compression\GZipStream.cs" />
+    <Compile Include="Unity\IO\Compression\HuffmanTree.cs" />
+    <Compile Include="Unity\IO\Compression\IDeflater.cs" />
+    <Compile Include="Unity\IO\Compression\IFileFormatReader.cs" />
+    <Compile Include="Unity\IO\Compression\IFileFormatWriter.cs" />
+    <Compile Include="Unity\IO\Compression\Inflater.cs" />
+    <Compile Include="Unity\IO\Compression\InflaterState.cs" />
+    <Compile Include="Unity\IO\Compression\InputBuffer.cs" />
+    <Compile Include="Unity\IO\Compression\InvalidDataException.cs" />
+    <Compile Include="Unity\IO\Compression\Match.cs" />
+    <Compile Include="Unity\IO\Compression\OutputBuffer.cs" />
+    <Compile Include="Unity\IO\Compression\OutputWindow.cs" />
+    <Compile Include="Unity\IO\Compression\SR.cs" />
+    <Compile Include="VectorUtil.cs" />
+    <Compile Include="VersionedList.cs" />
+    <Compile Include="VersionedMap.cs" />
+    <Compile Include="VersionedProperty.cs" />
+    <Compile Include="VersionedSubscriber.cs" />
+    <Compile Include="VersionedView.cs" />
+    <Compile Include="WeakDelegate.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

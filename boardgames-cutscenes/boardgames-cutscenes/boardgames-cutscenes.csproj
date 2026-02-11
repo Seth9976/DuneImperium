@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DB06DD4-1898-4F61-A744-377203A92F51}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lotus</RootNamespace>
+    <AssemblyName>boardgames-cutscenes</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="boardgames">
+      <HintPath>..\..\..\BepInEx\interop\boardgames.dll</HintPath>
+    </Reference>
+    <Reference Include="Canis">
+      <HintPath>..\..\..\BepInEx\interop\Canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-canis">
+      <HintPath>..\..\..\BepInEx\interop\core-canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-commands">
+      <HintPath>..\..\..\BepInEx\interop\core-commands.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="voodoo">
+      <HintPath>..\..\..\BepInEx\interop\voodoo.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CutScene.cs" />
+    <Compile Include="CutSceneAction.cs" />
+    <Compile Include="CutSceneCameraAction.cs" />
+    <Compile Include="CutSceneCameraDrag.cs" />
+    <Compile Include="CutSceneCommand.cs" />
+    <Compile Include="CutsceneContext.cs" />
+    <Compile Include="CutSceneEmitSignal.cs" />
+    <Compile Include="CutSceneExecuteSerial.cs" />
+    <Compile Include="CutSceneLoadCameraAction.cs" />
+    <Compile Include="CutSceneManager.cs" />
+    <Compile Include="CutScenePlayAnimation.cs" />
+    <Compile Include="CutScenePlayCutscene.cs" />
+    <Compile Include="CutScenePlayFX.cs" />
+    <Compile Include="CutSceneSaveCameraAction.cs" />
+    <Compile Include="CutSceneSession.cs" />
+    <Compile Include="CutSceneSetHighlight.cs" />
+    <Compile Include="CutSceneWaitForSignal.cs" />
+    <Compile Include="EmitSignalWhenVisible.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScenarioAction.cs" />
+    <Compile Include="ScenarioActionGroup.cs" />
+    <Compile Include="ScenarioCutScene.cs" />
+    <Compile Include="ScenarioRunOnePerEvent.cs" />
+    <Compile Include="ScenarioTurn.cs" />
+    <Compile Include="ScenarioWhen.cs" />
+    <Compile Include="ScenarioWhenOnce.cs" />
+    <Compile Include="ShowCutSceneCommand.cs" />
+    <Compile Include="ShowCutSceneOnClick.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

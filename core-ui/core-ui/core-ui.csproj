@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8BDC2FB-3791-4732-A2B3-63D443B9D842}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>core-ui</RootNamespace>
+    <AssemblyName>core-ui</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="core-canis">
+      <HintPath>..\..\..\BepInEx\interop\core-canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-commands">
+      <HintPath>..\..\..\BepInEx\interop\core-commands.dll</HintPath>
+    </Reference>
+    <Reference Include="core-input">
+      <HintPath>..\..\..\BepInEx\interop\core-input.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="core\ui\SubmitOnEnter.cs" />
+    <Compile Include="core\ui\TMPResetCaret.cs" />
+    <Compile Include="core\ui\TMPSubmitOnEnter.cs" />
+    <Compile Include="dwd\core\input\ui\selectable\SelectInHierarchy.cs" />
+    <Compile Include="dwd\core\ui\circuitBehaviours\DataCompositionEvents.cs" />
+    <Compile Include="dwd\core\ui\EmptyImage.cs" />
+    <Compile Include="dwd\core\ui\EventsOnAwake.cs" />
+    <Compile Include="dwd\core\ui\EventsOnDestroy.cs" />
+    <Compile Include="dwd\core\ui\EventsOnDisable.cs" />
+    <Compile Include="dwd\core\ui\EventsOnEnable.cs" />
+    <Compile Include="dwd\core\ui\EventsOnStart.cs" />
+    <Compile Include="dwd\core\ui\LifecycleEvents.cs" />
+    <Compile Include="dwd\core\ui\ugui\collections\EventsForCanPageDisplay.cs" />
+    <Compile Include="dwd\core\ui\ugui\collections\IPaginatedDisplay.cs" />
+    <Compile Include="dwd\core\ui\ugui\commands\FadeCanvasGroup.cs" />
+    <Compile Include="dwd\core\ui\ugui\RectTransformBounds.cs" />
+    <Compile Include="dwd\core\ui\ugui\RectTransformBoxColliderSync.cs" />
+    <Compile Include="dwd\core\ui\ugui\TabNavigation.cs" />
+    <Compile Include="dwd\core\widgets\input\EventOnButtonPress.cs" />
+    <Compile Include="dwd\core\widgets\input\EventOnGlobalButtonPress.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="lib\canis\menus\ui\CustomToggleGroup.cs" />
+    <Compile Include="lib\src\ui\RectTransformTextResize.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\ui\RecycleCanvasGroupNonInteractable.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

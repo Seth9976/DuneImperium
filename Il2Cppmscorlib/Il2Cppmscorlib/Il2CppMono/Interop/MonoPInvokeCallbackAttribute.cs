@@ -1,0 +1,45 @@
+﻿using System;
+using Il2CppInterop.Common.Attributes;
+using Il2CppInterop.Runtime;
+using Il2CppSystem;
+
+namespace Il2CppMono.Interop
+{
+	// Token: 0x0200001E RID: 30
+	public sealed class MonoPInvokeCallbackAttribute : Attribute
+	{
+		// Token: 0x060000E4 RID: 228 RVA: 0x0000258B File Offset: 0x0000078B
+		// Note: this type is marked as 'beforefieldinit'.
+		static MonoPInvokeCallbackAttribute()
+		{
+			Il2CppClassPointerStore<MonoPInvokeCallbackAttribute>.NativeClassPtr = IL2CPP.GetIl2CppClass("mscorlib.dll", "Mono.Interop", "MonoPInvokeCallbackAttribute");
+			IL2CPP.il2cpp_runtime_class_init(Il2CppClassPointerStore<MonoPInvokeCallbackAttribute>.NativeClassPtr);
+			MonoPInvokeCallbackAttribute.NativeMethodInfoPtr__ctor_Public_Void_Type_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<MonoPInvokeCallbackAttribute>.NativeClassPtr, 100663484);
+		}
+
+		// Token: 0x060000E5 RID: 229 RVA: 0x00028DD4 File Offset: 0x00026FD4
+		[CallerCount(220)]
+		[CachedScanResults(RefRangeStart = 1, RefRangeEnd = 221, XrefRangeStart = 1, XrefRangeEnd = 221, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe MonoPInvokeCallbackAttribute(Type t)
+			: this(IL2CPP.il2cpp_object_new(Il2CppClassPointerStore<MonoPInvokeCallbackAttribute>.NativeClassPtr))
+		{
+			checked
+			{
+				IntPtr* ptr = stackalloc IntPtr[unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr)];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(t);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(MonoPInvokeCallbackAttribute.NativeMethodInfoPtr__ctor_Public_Void_Type_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x060000E6 RID: 230 RVA: 0x000025C4 File Offset: 0x000007C4
+		public MonoPInvokeCallbackAttribute(IntPtr pointer)
+			: base(pointer)
+		{
+		}
+
+		// Token: 0x040000AB RID: 171
+		private static readonly IntPtr NativeMethodInfoPtr__ctor_Public_Void_Type_0;
+	}
+}

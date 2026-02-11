@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4710FBE0-31D7-4779-8FCE-CAF134DE8E1C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Google.Apis</RootNamespace>
+    <AssemblyName>Google.Apis</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\..\..\BepInEx\interop\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Net.Http">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Download\DownloadStatus.cs" />
+    <Compile Include="Download\IDownloadProgress.cs" />
+    <Compile Include="Download\IMediaDownloader.cs" />
+    <Compile Include="Download\MediaDownloader.cs" />
+    <Compile Include="ETagAction.cs" />
+    <Compile Include="Media\MediaApiErrorHandling.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\BatchRequest.cs" />
+    <Compile Include="Requests\ClientServiceRequest.2.cs" />
+    <Compile Include="Requests\ClientServiceRequest.cs" />
+    <Compile Include="Requests\HttpRequestMessageExtenstions.cs" />
+    <Compile Include="Requests\IClientServiceRequest.2.cs" />
+    <Compile Include="Requests\IClientServiceRequest.cs" />
+    <Compile Include="Requests\IDirectResponseSchema.cs" />
+    <Compile Include="Requests\PageStreamer.cs" />
+    <Compile Include="Requests\VersionHeaderBuilder.cs" />
+    <Compile Include="Services\BaseClientService.cs" />
+    <Compile Include="Services\IClientService.cs" />
+    <Compile Include="Upload\IUploadProgress.cs" />
+    <Compile Include="Upload\IUploadSessionData.cs" />
+    <Compile Include="Upload\ResumableUpload.2.cs" />
+    <Compile Include="Upload\ResumableUpload.3.cs" />
+    <Compile Include="Upload\ResumableUpload.cs" />
+    <Compile Include="Upload\ResumableUploadOptions.cs" />
+    <Compile Include="Upload\UploadStatus.cs" />
+    <Compile Include="Util\Store\FileDataStore.cs" />
+    <Compile Include="Util\Store\NullDataStore.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A9BE86D-3A5E-42F8-8930-D51CEAF716CE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utils</RootNamespace>
+    <AssemblyName>Utils</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="attributes\PreserveAttribute.cs" />
+    <Compile Include="attributes\ReflectionSerializerAttribute.cs" />
+    <Compile Include="Cached.cs" />
+    <Compile Include="Canis\utils\ids\AbilityID.cs" />
+    <Compile Include="Canis\utils\ids\AccountID.cs" />
+    <Compile Include="Canis\utils\ids\ActionUndoID.cs" />
+    <Compile Include="Canis\utils\ids\ArchetypeID.cs" />
+    <Compile Include="Canis\utils\ids\ClientEventResponseID.cs" />
+    <Compile Include="Canis\utils\ids\EntityID.cs" />
+    <Compile Include="Canis\utils\ids\EntryID.cs" />
+    <Compile Include="Canis\utils\ids\EventID.cs" />
+    <Compile Include="Canis\utils\ids\GameID.cs" />
+    <Compile Include="Canis\utils\ids\NotificationID.cs" />
+    <Compile Include="Canis\utils\ids\PopupID.cs" />
+    <Compile Include="Canis\utils\ids\RoundID.cs" />
+    <Compile Include="Canis\utils\ids\SequenceID.cs" />
+    <Compile Include="Canis\utils\ids\TimerID.cs" />
+    <Compile Include="Canis\utils\ids\TypedID.cs" />
+    <Compile Include="Canis\utils\ids\WrappedID.cs" />
+    <Compile Include="Canis\utils\IVersionedModel.cs" />
+    <Compile Include="Canis\utils\IVersionedSet.cs" />
+    <Compile Include="Canis\utils\localization\ILocalizer.cs" />
+    <Compile Include="Canis\utils\localization\IVersionedLocalizer.cs" />
+    <Compile Include="Canis\utils\localization\L.cs" />
+    <Compile Include="Canis\utils\localization\LocalizableText.cs" />
+    <Compile Include="Canis\utils\localization\LocalizableTextVariables.cs" />
+    <Compile Include="Canis\utils\localization\LocalizationLookup.cs" />
+    <Compile Include="Canis\utils\localization\TextVariables.cs" />
+    <Compile Include="Canis\utils\ReadOnlyVersionedSet.cs" />
+    <Compile Include="Canis\utils\VersionedModel.cs" />
+    <Compile Include="Canis\utils\VersionedSet.cs" />
+    <Compile Include="commands\ComparisonUtil.cs" />
+    <Compile Include="DictionaryUtil.cs" />
+    <Compile Include="dwd\core\CoreErrors.cs" />
+    <Compile Include="dwd\core\ErrorInfo.cs" />
+    <Compile Include="dwd\core\errorInfo\ErrorLogger.cs" />
+    <Compile Include="dwd\core\errorInfo\IHandleErrorInfo.cs" />
+    <Compile Include="dwd\core\match\MatchErrors.cs" />
+    <Compile Include="dwd\core\Model\VersionedValue.cs" />
+    <Compile Include="dwd\core\platform\authentication\PlatformToken.cs" />
+    <Compile Include="dwd\core\platform\data\PlatformAttributes.cs" />
+    <Compile Include="dwd\core\platform\providers\IUserEntry.cs" />
+    <Compile Include="enums\Either.cs" />
+    <Compile Include="enums\EnumData.cs" />
+    <Compile Include="EnumUtil.cs" />
+    <Compile Include="GroupingUtil.cs" />
+    <Compile Include="HTTPUtils.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\MemberNotNullAttribute.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\MemberNotNullWhenAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\IsExternalInit.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="KeyValuePairUtil.cs" />
+    <Compile Include="lib\canis\Utils\TransformUtil.cs" />
+    <Compile Include="ListUtil.cs" />
+    <Compile Include="MathUtils.cs" />
+    <Compile Include="NullableUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadOnlyCollection.cs" />
+    <Compile Include="ScopedStack.cs" />
+    <Compile Include="ScopedStackElement.cs" />
+    <Compile Include="StringUtil.cs" />
+    <Compile Include="TaskUtil.cs" />
+    <Compile Include="TypeUtil.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="UnixTimeUtil.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

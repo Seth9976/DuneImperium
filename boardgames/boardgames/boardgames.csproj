@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9273592B-535B-4419-A8E5-ADDF91429D78}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>boardgames</RootNamespace>
+    <AssemblyName>boardgames</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="analytics">
+      <HintPath>..\..\..\BepInEx\interop\analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Attributes">
+      <HintPath>..\..\..\BepInEx\interop\Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Canis">
+      <HintPath>..\..\..\BepInEx\interop\Canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-canis">
+      <HintPath>..\..\..\BepInEx\interop\core-canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-commands">
+      <HintPath>..\..\..\BepInEx\interop\core-commands.dll</HintPath>
+    </Reference>
+    <Reference Include="core-input">
+      <HintPath>..\..\..\BepInEx\interop\core-input.dll</HintPath>
+    </Reference>
+    <Reference Include="core-localization">
+      <HintPath>..\..\..\BepInEx\interop\core-localization.dll</HintPath>
+    </Reference>
+    <Reference Include="core-prompter">
+      <HintPath>..\..\..\BepInEx\interop\core-prompter.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\..\BepInEx\interop\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DwdJson">
+      <HintPath>..\..\..\BepInEx\interop\DwdJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>..\..\..\BepInEx\interop\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="LobbyChat">
+      <HintPath>..\..\..\BepInEx\interop\LobbyChat.dll</HintPath>
+    </Reference>
+    <Reference Include="Networking">
+      <HintPath>..\..\..\BepInEx\interop\Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="offlineChallenges">
+      <HintPath>..\..\..\BepInEx\interop\offlineChallenges.dll</HintPath>
+    </Reference>
+    <Reference Include="platform">
+      <HintPath>..\..\..\BepInEx\interop\platform.dll</HintPath>
+    </Reference>
+    <Reference Include="platformCore">
+      <HintPath>..\..\..\BepInEx\interop\platformCore.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Unity.Addressables">
+      <HintPath>..\..\..\BepInEx\interop\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Utils">
+      <HintPath>..\..\..\BepInEx\interop\Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="voodoo">
+      <HintPath>..\..\..\BepInEx\interop\voodoo.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSocket">
+      <HintPath>..\..\..\BepInEx\interop\WebSocket.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account\AccountExtensions.cs" />
+    <Compile Include="account\CanisUserDataProvider.cs" />
+    <Compile Include="account\IAuthAccountCommand.cs" />
+    <Compile Include="account\ICheckPrivilegesCommand.cs" />
+    <Compile Include="account\ILinkAccountCommand.cs" />
+    <Compile Include="account\IOpenUserDetails.cs" />
+    <Compile Include="account\IUserDataProvider.cs" />
+    <Compile Include="account\NamespaceUserDataProvider.cs" />
+    <Compile Include="account\Permissions.cs" />
+    <Compile Include="account\UserDataNamespace.cs" />
+    <Compile Include="ActivateModuleOnControllerEnabledPref.cs" />
+    <Compile Include="analytics\ClientAnalyticsMessage.cs" />
+    <Compile Include="analytics\ErrorAnalyticsLogger.cs" />
+    <Compile Include="analytics\messages\AnalyticsErrorReport.cs" />
+    <Compile Include="analytics\messages\AnalyticsStartObserving.cs" />
+    <Compile Include="analytics\messages\AnalyticsStopObserving.cs" />
+    <Compile Include="AnimationParameter.cs" />
+    <Compile Include="AnimParamDependencies.cs" />
+    <Compile Include="attributes\ArchetypesAttributeContainerViewInitializer.cs" />
+    <Compile Include="attributes\AttributeAnimatorView.cs" />
+    <Compile Include="attributes\AttributeImageDisplaySubscriber.cs" />
+    <Compile Include="attributes\AttributeImageDisplayView.cs" />
+    <Compile Include="attributes\AttributeSubscriber.cs" />
+    <Compile Include="attributes\AttributeTextDisplaySubscriber.cs" />
+    <Compile Include="attributes\AttributeTextDisplayView.cs" />
+    <Compile Include="attributes\AttributeView.cs" />
+    <Compile Include="attributes\EntityViewProvideDataFromAttributeView.cs" />
+    <Compile Include="attributes\EventsForBoolAttributeSubscriber.cs" />
+    <Compile Include="attributes\EventsForBoolAttributeView.cs" />
+    <Compile Include="attributes\EventsForIntAttributeView.cs" />
+    <Compile Include="attributes\EventsForIntListAttributeContainsView.cs" />
+    <Compile Include="attributes\EventsForNullAttributeSubscriber.cs" />
+    <Compile Include="attributes\EventsForNullAttributeView.cs" />
+    <Compile Include="attributes\picker\AttributeKeyMatcher.cs" />
+    <Compile Include="attributes\picker\AttributeKeyPickerAttribute.cs" />
+    <Compile Include="attributes\picker\AttributeKeyPickerOverrideAttribute.cs" />
+    <Compile Include="attributes\picker\IAttributeKeyPicker.cs" />
+    <Compile Include="attributes\picker\IntKeysDictionaryAttributeKeyPickerOverrideAttribute.cs" />
+    <Compile Include="attributes\picker\IntListAttributeKeyPickerOverrideAttribute.cs" />
+    <Compile Include="attributes\picker\IntOrEnumAttributeKeyPickerOverrideAttribute.cs" />
+    <Compile Include="attributes\picker\IntOrEnumAttributeValuePickerAttribute.cs" />
+    <Compile Include="attributes\providers\CollectedAttributesProvider.cs" />
+    <Compile Include="attributes\providers\CombineBoolAttributesProvider.cs" />
+    <Compile Include="attributes\providers\EntityViewNumChildrenAttributeProvider.cs" />
+    <Compile Include="attributes\providers\GenericAttributesProvider.cs" />
+    <Compile Include="attributes\providers\IntDictionaryKeysAttributeProvider.cs" />
+    <Compile Include="attributes\providers\LocalPlayerAttributesProvider.cs" />
+    <Compile Include="attributes\providers\MutableAttributesProvider.cs" />
+    <Compile Include="attributes\providers\PlaymatAttributesProvider.cs" />
+    <Compile Include="attributes\providers\TransformIntAttributeProvider.cs" />
+    <Compile Include="AudioPreferencesModel.cs" />
+    <Compile Include="AudioType.cs" />
+    <Compile Include="BasicTimerInterface.cs" />
+    <Compile Include="BoardgamesTextInputValidator.cs" />
+    <Compile Include="camera\BaseCameraManager.cs" />
+    <Compile Include="Canis\boardgames\CanisMatch.cs" />
+    <Compile Include="Canis\boardgames\CanisOnlineMatch.cs" />
+    <Compile Include="challenges\ChallengeAchievements.cs" />
+    <Compile Include="challenges\ISetAchievementProgress.cs" />
+    <Compile Include="ChangeScene.cs" />
+    <Compile Include="CheckDefaultGraphicsBootSettings.cs" />
+    <Compile Include="CleanupInstall.cs" />
+    <Compile Include="data\commands\DeleteLocalDataCommand.cs" />
+    <Compile Include="data\commands\LoadDataCommand.cs" />
+    <Compile Include="data\commands\LoadLocalDataCommand.cs" />
+    <Compile Include="data\commands\SaveLocalDataCommand.cs" />
+    <Compile Include="data\DailyChallengeRulesData.cs" />
+    <Compile Include="data\FederationData.cs" />
+    <Compile Include="data\FriendsInviteData.cs" />
+    <Compile Include="data\FriendsListData.cs" />
+    <Compile Include="data\FriendStatusData.cs" />
+    <Compile Include="data\IDeleteDataCommand.cs" />
+    <Compile Include="data\ILoadDataCommand.cs" />
+    <Compile Include="data\ISaveDataCommand.cs" />
+    <Compile Include="data\LeaderboardScoreData.cs" />
+    <Compile Include="data\LeaderboardsData.cs" />
+    <Compile Include="data\SaveDataCommandUtils.cs" />
+    <Compile Include="data\SaveDataLoad.cs" />
+    <Compile Include="dbgclient\matchHistory\OfflineMessage.cs" />
+    <Compile Include="dbgclient\matchHistory\OfflineMessageManager.cs" />
+    <Compile Include="dbg\WatchForScreenSettingsChange.cs" />
+    <Compile Include="Delay.cs" />
+    <Compile Include="dwd\canis\dbg_client\DWDAccountAuth.cs" />
+    <Compile Include="dwd\canis\PlayerTimerData.cs" />
+    <Compile Include="dwd\core\cheats\SuggestCheatsForInput.cs" />
+    <Compile Include="dwd\core\input\compositeModule\InputModuleTypeNotifier.cs" />
+    <Compile Include="dwd\core\logging\messages\AIDetailLoggingMessage.cs" />
+    <Compile Include="dwd\core\match\delorean\ISelectionCommandParser.cs" />
+    <Compile Include="dwd\core\match\delorean\ISelectionModel.cs" />
+    <Compile Include="dwd\core\match\delorean\ISequenceBlockage.cs" />
+    <Compile Include="dwd\core\match\delorean\SelectionQueue.cs" />
+    <Compile Include="dwd\core\match\delorean\SequenceQueue.cs" />
+    <Compile Include="dwd\core\match\selection\SelectionOffer.cs" />
+    <Compile Include="dwd\core\ui\ISelectableValidator.cs" />
+    <Compile Include="dwd\core\ui\ugui\inputfield\Utf16BmpValidator.cs" />
+    <Compile Include="effects\DespawnFXUnitCommand.cs" />
+    <Compile Include="effects\FXUnitCommand.cs" />
+    <Compile Include="effects\PlayFXCommand.cs" />
+    <Compile Include="ExitApplicationEndorser.cs" />
+    <Compile Include="ExitApplicationRequest.cs" />
+    <Compile Include="FriendChatProvider.cs" />
+    <Compile Include="FriendChatView.cs" />
+    <Compile Include="GameConfigurationConstraints.cs" />
+    <Compile Include="GameEffectMessageCommand.cs" />
+    <Compile Include="GameLogMessageCommand.cs" />
+    <Compile Include="game\src\cheats\CheatArchetypeTranslator.cs" />
+    <Compile Include="game\src\cheats\RunCheatFromInputFieldText.cs" />
+    <Compile Include="HintIgnoreRotation.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="initialization\InitializationCommandAttribute.cs" />
+    <Compile Include="initialization\InitializationCommands.cs" />
+    <Compile Include="initialization\InitializeThenLoadScene.cs" />
+    <Compile Include="initialization\PlatformInitializationCommandAttribute.cs" />
+    <Compile Include="IShowKeyboardCommand.cs" />
+    <Compile Include="IUnlinkAccountCommand.cs" />
+    <Compile Include="lib\boardgames\src\analytics\messages\AnalyticsIAPClaimed.cs" />
+    <Compile Include="lib\boardgames\src\broadcast\IPrecacheAssetProvider.cs" />
+    <Compile Include="lib\boardgames\src\localization\InputTypeLocalizationSubstitutor.cs" />
+    <Compile Include="lib\canis\boardgames\src\analytics\messages\AnalyticsOwnedProducts.cs" />
+    <Compile Include="lib\canis\boardgames\src\analytics\messages\AnalyticsSettingChanged.cs" />
+    <Compile Include="lib\canis\boardgames\src\match\ArchetypeProvider.cs" />
+    <Compile Include="lib\canis\boardgames\src\match\sequences\GeneralEventAndSaveSequence.cs" />
+    <Compile Include="lib\canis\boardgames\src\match\sequences\GeneralEventSequence.cs" />
+    <Compile Include="lib\canis\boardgames\src\notifications\FriendInvitationResponder.cs" />
+    <Compile Include="lib\canis\boardgames\src\notifications\PlatformDataResponder.cs" />
+    <Compile Include="lib\canis\boardgames\src\tutorials\triggers\EnterSelectionNodeClientTrigger.cs" />
+    <Compile Include="lib\canis\boardgames\src\tutorials\triggers\EnterSelectionWithPromptClientTrigger.cs" />
+    <Compile Include="lib\canis\boardgames\src\tutorials\triggers\GenericStringClientTrigger.cs" />
+    <Compile Include="lib\canis\boardgames\src\ui\MoveToTopOfLayoutWhenInteractable.cs" />
+    <Compile Include="lib\canis\boardgames\src\util\AutoDetectShaderQuality.cs" />
+    <Compile Include="LoadSceneOnAwake.cs" />
+    <Compile Include="localization\LocalizedImage.cs" />
+    <Compile Include="localization\TMPPlatformLocalizer.cs" />
+    <Compile Include="LocalPlayerEntityView.cs" />
+    <Compile Include="login\commands\RegisterForAPNSPushNotificationsCommand.cs" />
+    <Compile Include="login\commands\RegisterForSteamPushNotificationsCommand.cs" />
+    <Compile Include="LotusAudioController.cs" />
+    <Compile Include="lotus\AddMatchingBoxCollider.cs" />
+    <Compile Include="lotus\ArchetypeAttribute.cs" />
+    <Compile Include="lotus\CameraUpdateManager.cs" />
+    <Compile Include="lotus\ChatMessageCommandParser.cs" />
+    <Compile Include="lotus\ChatMessageThrottler.cs" />
+    <Compile Include="lotus\ChatMessageView.cs" />
+    <Compile Include="lotus\ChatProvider.cs" />
+    <Compile Include="lotus\ChatUtil.cs" />
+    <Compile Include="lotus\ChatView.cs" />
+    <Compile Include="lotus\ClientChatMessage.cs" />
+    <Compile Include="lotus\data\account\LotusAccountProvider.cs" />
+    <Compile Include="lotus\DebugLifeCycle.cs" />
+    <Compile Include="lotus\DestroyOnStartup.cs" />
+    <Compile Include="lotus\EmoteSelectionPrompter.cs" />
+    <Compile Include="lotus\EmoteSelectPrompt.cs" />
+    <Compile Include="lotus\EmoteSelectPromptBehaviour.cs" />
+    <Compile Include="lotus\EmoteUtil.cs" />
+    <Compile Include="lotus\enums\MatchType.cs" />
+    <Compile Include="lotus\EnvironmentCameraManager.cs" />
+    <Compile Include="lotus\EnvironmentCameraPosition.cs" />
+    <Compile Include="lotus\EnvironmentDraggable.cs" />
+    <Compile Include="lotus\FXEmoteChatMessageCommandVisualizer.cs" />
+    <Compile Include="lotus\FXFollow.cs" />
+    <Compile Include="lotus\FXUnitWithLabel.cs" />
+    <Compile Include="lotus\GameChatProvider.cs" />
+    <Compile Include="lotus\GameMetaData.cs" />
+    <Compile Include="lotus\IChatMessageCommandVisualizer.cs" />
+    <Compile Include="lotus\IChatMessageFilter.cs" />
+    <Compile Include="lotus\IChatMessageThrottler.cs" />
+    <Compile Include="lotus\InitLocalization.cs" />
+    <Compile Include="lotus\ISimpleEntityConfigurator.cs" />
+    <Compile Include="lotus\IZenDragHandler.cs" />
+    <Compile Include="lotus\IZenHoverHandler.cs" />
+    <Compile Include="lotus\IZenInputHandler.cs" />
+    <Compile Include="lotus\IZenScrollHandler.cs" />
+    <Compile Include="lotus\LobbyChatProvider.cs" />
+    <Compile Include="lotus\matchMaking\PlayQueue.cs" />
+    <Compile Include="lotus\match\delorean\DeloreanRules.cs" />
+    <Compile Include="lotus\match\messages\Outgoing.cs" />
+    <Compile Include="lotus\match\messages\outgoing\RequestAILogging.cs" />
+    <Compile Include="lotus\match\selectionUnblocking\GameMessageQueueBase.cs" />
+    <Compile Include="lotus\match\selection\MatchHint.cs" />
+    <Compile Include="lotus\MeshMatcher.cs" />
+    <Compile Include="lotus\PlayerEmoteChatMessageFilter.cs" />
+    <Compile Include="lotus\PlayFXUnitCommand.cs" />
+    <Compile Include="lotus\RegisterFxAsHighlights.cs" />
+    <Compile Include="lotus\RegisterViewAsHighlight.cs" />
+    <Compile Include="lotus\RemoveOnPlatform.cs" />
+    <Compile Include="lotus\RunParallelSequence.cs" />
+    <Compile Include="lotus\SaveMetaDataProvider.cs" />
+    <Compile Include="lotus\scenes\IPreviousSceneState.cs" />
+    <Compile Include="lotus\scenes\PreviousSceneState.cs" />
+    <Compile Include="lotus\SelectEmoteEvent.cs" />
+    <Compile Include="lotus\selection\CurrentEventSystemSelection.cs" />
+    <Compile Include="lotus\SetPrompt.cs" />
+    <Compile Include="lotus\SingleLineTextHack.cs" />
+    <Compile Include="lotus\src\cheats\LogAutoOpenWithConfig.cs" />
+    <Compile Include="lotus\src\data\async\LoadAsyncDataWithLogging.cs" />
+    <Compile Include="lotus\src\match\commands\messageCommands\AIDetailLoggingCommand.cs" />
+    <Compile Include="lotus\src\match\commands\messageCommands\AIInfoMessageCommand.cs" />
+    <Compile Include="lotus\src\match\commands\messageCommands\ServerLoggingMessageCommand.cs" />
+    <Compile Include="lotus\src\match\IPauseCommandQueue.cs" />
+    <Compile Include="lotus\src\match\UI\arrows\UGUIArrow.cs" />
+    <Compile Include="lotus\src\match\UI\arrows\UGUIArrowTester.cs" />
+    <Compile Include="lotus\src\scenes\LogoutEndorser.cs" />
+    <Compile Include="lotus\src\scenes\LogoutRequest.cs" />
+    <Compile Include="lotus\src\ui\AutoFocus.cs" />
+    <Compile Include="lotus\src\ui\commands\AnimateCanvasGroupAlpha.cs" />
+    <Compile Include="lotus\src\ui\commands\GetGameResultsDataCommand.cs" />
+    <Compile Include="lotus\src\ui\commands\GetGameResultsDataCommandV2.cs" />
+    <Compile Include="lotus\src\ui\FadableCanvasGroup.cs" />
+    <Compile Include="lotus\src\util\GLClearImmediate.cs" />
+    <Compile Include="lotus\TargetedCameraPosition.cs" />
+    <Compile Include="lotus\ui\EventsForMouseDownOnCollider.cs" />
+    <Compile Include="lotus\ui\EventsForMouseDragOnCollider.cs" />
+    <Compile Include="lotus\ui\EventsForMouseEnterOnCollider.cs" />
+    <Compile Include="lotus\ui\EventsForMouseExitOnCollider.cs" />
+    <Compile Include="lotus\ui\EventsForMouseOnCollider.cs" />
+    <Compile Include="lotus\ui\EventsForMouseUpOnCollider.cs" />
+    <Compile Include="lotus\UserGeneratedStringProcessor.cs" />
+    <Compile Include="lotus\util\HierarchyInfoRenderer.cs" />
+    <Compile Include="lotus\util\HierarchyItemRenderer.cs" />
+    <Compile Include="MatchHistoryBridge.cs" />
+    <Compile Include="matchMaking\commands\CanInviteUser.cs" />
+    <Compile Include="matchMaking\commands\ICanInviteUser.cs" />
+    <Compile Include="match\behaviours\DBGMatchHub.cs" />
+    <Compile Include="match\CanisNetworkState.cs" />
+    <Compile Include="match\commands\PlayDeeplinkCanisMatch.cs" />
+    <Compile Include="match\commands\RestoreAccountOnReturnToScene.cs" />
+    <Compile Include="match\data\GameOptionsData.cs" />
+    <Compile Include="match\EventDeserialization.cs" />
+    <Compile Include="match\monobehaviours\EnableOnLiveGames.cs" />
+    <Compile Include="match\ReconnectBehaviour.cs" />
+    <Compile Include="match\selection\CanisSelectionNodeFactory.cs" />
+    <Compile Include="match\selection\SelectionRegistrar.cs" />
+    <Compile Include="menus\AutoUpdateCheck.cs" />
+    <Compile Include="menus\behaviours\LoginButtonLocalizer.cs" />
+    <Compile Include="menus\ConfirmOrCancelDialog.cs" />
+    <Compile Include="menus\data\ErrorResponse.cs" />
+    <Compile Include="menus\FireEventOnKeyPress.cs" />
+    <Compile Include="menus\GameLobbyChatProvider.cs" />
+    <Compile Include="menus\LoadingBlackout.cs" />
+    <Compile Include="menus\PromptForUpdateCheck.cs" />
+    <Compile Include="menus\prompts\PermissionConfirmationDialogFinder.cs" />
+    <Compile Include="menu\data\DialogRendererViewModel.cs" />
+    <Compile Include="moz\MozOnChildren.cs" />
+    <Compile Include="NoopTimelineMatchData.cs" />
+    <Compile Include="notifications\PushNotificationResponder.cs" />
+    <Compile Include="notifications\socket\DeleteNotification.cs" />
+    <Compile Include="notifications\socket\NotificationDeleted.cs" />
+    <Compile Include="notifications\socket\NotificationsConnect.cs" />
+    <Compile Include="notifications\socket\NotificationsUserRegistered.cs" />
+    <Compile Include="notifications\socket\SocketNotificationsProvider.cs" />
+    <Compile Include="OpenURL.cs" />
+    <Compile Include="PlayAudioSound.cs" />
+    <Compile Include="PlayAudioSoundWithDelay.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RayCastTester.cs" />
+    <Compile Include="SafeAreaManager.cs" />
+    <Compile Include="SafeAreaTransform.cs" />
+    <Compile Include="SceneChangeEndorser.cs" />
+    <Compile Include="SceneChangeModel.cs" />
+    <Compile Include="SceneChangeRequest.cs" />
+    <Compile Include="SceneNames.cs" />
+    <Compile Include="ScreenLogger.cs" />
+    <Compile Include="SequenceEffect.cs" />
+    <Compile Include="ServerVersion.cs" />
+    <Compile Include="SetObjectActive.cs" />
+    <Compile Include="SetObjectActiveCommand.cs" />
+    <Compile Include="ShowHighlightMessage.cs" />
+    <Compile Include="ShowHighlightMessageCommand.cs" />
+    <Compile Include="src\broadcast\motd\BroadcastContentProvider.cs" />
+    <Compile Include="src\broadcast\motd\TextBundle.cs" />
+    <Compile Include="src\menus\ButtonSaveIcon.cs" />
+    <Compile Include="src\ui\OpenURLButton.cs" />
+    <Compile Include="steam\Steam.cs" />
+    <Compile Include="tc\ClickAndDragInputHandler.cs" />
+    <Compile Include="tc\selection\EntityGroupingTargetNode.cs" />
+    <Compile Include="TimerParser.cs" />
+    <Compile Include="TMPro\Examples\WarpText.cs" />
+    <Compile Include="tutorials\ITutorialPrompter.cs" />
+    <Compile Include="ui\commands\IGetGameResultsDataCommand.cs" />
+    <Compile Include="ui\DirtySelectableValidator.cs" />
+    <Compile Include="ui\DisconnectWarningDisplay.cs" />
+    <Compile Include="ui\EventsForEvenSiblingIndex.cs" />
+    <Compile Include="ui\EventsForHasChildren.cs" />
+    <Compile Include="ui\IDirtyValidator.cs" />
+    <Compile Include="ui\IObfuscatedDataProvider.cs" />
+    <Compile Include="ui\OnlineStatusIndicator.cs" />
+    <Compile Include="ui\OnlineStatusListener.cs" />
+    <Compile Include="ui\PileCountObserver.cs" />
+    <Compile Include="ui\PlayerOnlineStatusMonitor.cs" />
+    <Compile Include="ui\ToggleGroupRotator.cs" />
+    <Compile Include="ui\ZipperLayout.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="utils\AccountsPrefDefinition.cs" />
+    <Compile Include="utils\AccountUtils.cs" />
+    <Compile Include="utils\AutoDetectQuality.cs" />
+    <Compile Include="utils\DBGConstants.cs" />
+    <Compile Include="utils\DBGLocConstants.cs" />
+    <Compile Include="utils\SanitizedTextUtils.cs" />
+    <Compile Include="util\DisableOnDemoBuild.cs" />
+    <Compile Include="util\ErrorPromptUtil.cs" />
+    <Compile Include="util\ScrollRectUtil.cs" />
+    <Compile Include="VersionNumberText.cs" />
+    <Compile Include="zen\analytics\AnalyticsManager.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsApplicationEnd.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsApplicationStart.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsChallengeComplete.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsFriendUpdate.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsMOTDTile.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsOfflineGameResults.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsOfflineGameStarted.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsPerformance.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsPeriodicPerformance.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsSceneChangePerformance.cs" />
+    <Compile Include="zen\analytics\messages\AnalyticsSceneChangeStart.cs" />
+    <Compile Include="zen\analytics\messages\AveragedPerformanceMetric.cs" />
+    <Compile Include="zen\analytics\messages\MemoryWarningAnalyticsEvent.cs" />
+    <Compile Include="zen\analytics\messages\PerformanceMetrics.cs" />
+    <Compile Include="zen\analytics\OfflineMessage.cs" />
+    <Compile Include="zen\analytics\StandardAnalyticsMessage.cs" />
+    <Compile Include="zen\input\SetSelectedOnEnable.cs" />
+    <Compile Include="zen\match\IPauseCommandQueue.cs" />
+    <Compile Include="zen\match\MatchCommandQueue.cs" />
+    <Compile Include="zen\match\selection\SelectionFactory.cs" />
+    <Compile Include="zen\match\SimpleGameMessageQueue.cs" />
+    <Compile Include="zen\match\VoodooSequenceCommands.cs" />
+    <Compile Include="zen\src\challenges\Challenges.cs" />
+    <Compile Include="zen\src\challenges\ChallengeUtil.cs" />
+    <Compile Include="zen\src\challenges\definitions\ComplexChallenge.cs" />
+    <Compile Include="zen\src\challenges\definitions\GeneralChallenge.cs" />
+    <Compile Include="zen\src\challenges\definitions\WinAGame.cs" />
+    <Compile Include="zen\src\challenges\definitions\WinCampaignGame.cs" />
+    <Compile Include="zen\src\challenges\definitions\WinWithXOrMorePoints.cs" />
+    <Compile Include="zen\src\challenges\events\GameFinished.cs" />
+    <Compile Include="zen\src\challenges\events\GeneralEvent.cs" />
+    <Compile Include="zen\src\challenges\events\TurnEnded.cs" />
+    <Compile Include="zen\src\cheats\KabbageSkipper.cs" />
+    <Compile Include="zen\src\matchMaking\commands\GetReconnectableGames.cs" />
+    <Compile Include="zen\src\match\commands\DisplayTimerCommand.cs" />
+    <Compile Include="zen\src\match\commands\DontAnimate.cs" />
+    <Compile Include="zen\src\match\commands\HideTimerCommand.cs" />
+    <Compile Include="zen\src\match\commands\IdleResignFromGameCommand.cs" />
+    <Compile Include="zen\src\match\monobehaviours\AnimateBool.cs" />
+    <Compile Include="zen\src\match\monobehaviours\AnimateTimer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\AnimSetOnInputModuleType.cs" />
+    <Compile Include="zen\src\match\monobehaviours\HighlightRenderer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\ITimerInterface.cs" />
+    <Compile Include="zen\src\match\monobehaviours\MecanimPileEmptyRenderer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\NextGameProvider.cs" />
+    <Compile Include="zen\src\match\monobehaviours\OnDemandAnimateTimer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\PileCountRenderer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\PileEmptyRenderer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\PlayerTimerController.cs" />
+    <Compile Include="zen\src\match\monobehaviours\renderers\ChallengeCompletedSubscriber.cs" />
+    <Compile Include="zen\src\match\monobehaviours\renderers\ChildColliderDisabler.cs" />
+    <Compile Include="zen\src\match\monobehaviours\renderers\NameRenderer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\renderers\TimeScaleCheatRenderer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\SetObjectActiveController.cs" />
+    <Compile Include="zen\src\match\monobehaviours\SetObjectActiveRenderer.cs" />
+    <Compile Include="zen\src\match\monobehaviours\ToggleColor.cs" />
+    <Compile Include="zen\src\match\monobehaviours\ToggleIsOnAnimatorParameter.cs" />
+    <Compile Include="zen\src\match\sequences\GenericSequence.cs" />
+    <Compile Include="zen\src\match\sequences\lotusCommands\PassToPlayerSequence.cs" />
+    <Compile Include="zen\src\match\sequences\NoopSequence.cs" />
+    <Compile Include="zen\src\match\sequences\VoodooSequence.cs" />
+    <Compile Include="zen\src\match\sequences\zenCommands\ParseAndRunParallelCommand.cs" />
+    <Compile Include="zen\src\match\sequences\zenCommands\ParseAndRunSequenceCommand.cs" />
+    <Compile Include="zen\src\match\sequences\zenCommands\SequenceBuilder.cs" />
+    <Compile Include="zen\src\menus\ClickShield.cs" />
+    <Compile Include="zen\src\menus\commands\ChangePasswordCommand.cs" />
+    <Compile Include="zen\src\menus\commands\ResetPasswordCommand.cs" />
+    <Compile Include="zen\src\menus\ConfirmDialog.cs" />
+    <Compile Include="zen\src\menus\ConnectivityIcon.cs" />
+    <Compile Include="zen\src\menus\DecoratorExtensions.cs" />
+    <Compile Include="zen\src\menus\DefaultDialogRenderer.cs" />
+    <Compile Include="zen\src\menus\DialogRenderer.cs" />
+    <Compile Include="zen\src\menus\DialogRendererStack.cs" />
+    <Compile Include="zen\src\menus\DiskAccessIcon.cs" />
+    <Compile Include="zen\src\menus\ErrorDialog.cs" />
+    <Compile Include="zen\src\menus\friendList\ScrollRectElementSnap.cs" />
+    <Compile Include="zen\src\menus\IInterstitial.cs" />
+    <Compile Include="zen\src\menus\InteractableColor.cs" />
+    <Compile Include="zen\src\menus\OkDialog.cs" />
+    <Compile Include="zen\src\menus\ZenContinueAutoScrollOnSelect.cs" />
+    <Compile Include="zen\src\preferences\DefaultConfigValues.cs" />
+    <Compile Include="zen\src\preferences\MultiConfig.cs" />
+    <Compile Include="zen\src\preferences\Prefs.cs" />
+    <Compile Include="zen\src\ui\ConfigureMultiTouch.cs" />
+    <Compile Include="zen\src\ui\misc\ServerVersionNumberText.cs" />
+    <Compile Include="zen\src\zen\match\renderer\AspectRatioAnimator.cs" />
+    <Compile Include="zen\src\zen\match\renderer\RandomAnimatorSpeed.cs" />
+    <Compile Include="zen\src\zen\match\renderer\SetAnimatorBool.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

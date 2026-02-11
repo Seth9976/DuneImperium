@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7A1762A-DE60-4893-B131-2D698A33BBE2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>core_platformdependent</RootNamespace>
+    <AssemblyName>core-platformdependent</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="core-canis">
+      <HintPath>..\..\..\BepInEx\interop\core-canis.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="core\src\platform\OnDemandPlatformPrefab.cs" />
+    <Compile Include="dwd\core\PlatformDependentToggle.cs" />
+    <Compile Include="dwd\core\platformdependent\IPlatformUtil.cs" />
+    <Compile Include="dwd\core\platformdependent\OSFlavorProvider.cs" />
+    <Compile Include="dwd\core\platformdependent\OverrideAnimatorControllerForPlatform.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentAdjuster.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentAdjustment.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentAnimator.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentEvents.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentGridLayoutAdjuster.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentGridLayoutAdjustment.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentInstantiator.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentLayoutAdjuster.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentLayoutAdjustment.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentLayoutElementAdjuster.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentLayoutElementAdjustment.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentPrefab.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentRectTransformAdjuster.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentRectTransformAdjustment.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentRectTransformInstantiator.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentRectTransformPrefab.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentTextAdjuster.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentTextAdjustment.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentTMPAdjuster.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentTMPAdjustment.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentTransformAdjuster.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentTransformAdjustment.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformDependentTransformInstantiator.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformEventsOnAwake.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformEventsOnStart.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformFlavorProvider.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformPropertyAttribute.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformUtil.cs" />
+    <Compile Include="dwd\core\platformdependent\PlatformUtilAttribute.cs" />
+    <Compile Include="dwd\core\platformdependent\RemoveByPlatform.cs" />
+    <Compile Include="dwd\core\platformdependent\ToggleByPlatforms.cs" />
+    <Compile Include="dwd\core\platformdependent\ZenPlatformUtil.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\ToggleMultipleByPlatforms.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

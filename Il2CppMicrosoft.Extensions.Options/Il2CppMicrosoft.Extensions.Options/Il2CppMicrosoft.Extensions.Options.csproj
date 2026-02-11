@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD871FFA-DF38-44E0-9231-C42CD0EB42F8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Il2CppMicrosoft.Extensions.Options</RootNamespace>
+    <AssemblyName>Il2CppMicrosoft.Extensions.Options</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMicrosoft.Extensions.Primitives">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppMicrosoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\OptionsServiceCollectionExtensions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\ConfigureOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IConfigureNamedOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IConfigureOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IOptionsChangeTokenSource.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IOptionsFactory.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IOptionsMonitor.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IOptionsMonitorCache.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IOptionsSnapshot.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IPostConfigureOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\IValidateOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\Options.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\OptionsCache.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\OptionsFactory.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\OptionsManager.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\OptionsMonitor.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\OptionsMonitorExtensions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\OptionsValidationException.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\UnnamedOptionsManager.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Options\ValidateOptionsResult.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\DynamicallyAccessedMembersAttribute.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\DynamicallyAccessedMemberTypes.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\MemberNotNullWhenAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullablePublicOnlyAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\RefSafetyRulesAttribute.cs" />
+    <Compile Include="Il2CppSystem\ThrowHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

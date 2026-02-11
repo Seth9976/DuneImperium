@@ -1,0 +1,9 @@
+﻿using System;
+
+namespace Unity.Properties
+{
+	// Token: 0x0200004E RID: 78
+	public interface IListPropertyBagVisitor
+	{
+	}
+}

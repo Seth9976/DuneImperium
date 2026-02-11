@@ -1,0 +1,814 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8991319-CD56-4BBE-9788-E81A9737EDB0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>worm_client</RootNamespace>
+    <AssemblyName>worm-client</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Attributes">
+      <HintPath>..\..\..\BepInEx\interop\Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="boardgames">
+      <HintPath>..\..\..\BepInEx\interop\boardgames.dll</HintPath>
+    </Reference>
+    <Reference Include="boardgames-ranked">
+      <HintPath>..\..\..\BepInEx\interop\boardgames-ranked.dll</HintPath>
+    </Reference>
+    <Reference Include="Canis">
+      <HintPath>..\..\..\BepInEx\interop\Canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-actionlog">
+      <HintPath>..\..\..\BepInEx\interop\core-actionlog.dll</HintPath>
+    </Reference>
+    <Reference Include="core-animation">
+      <HintPath>..\..\..\BepInEx\interop\core-animation.dll</HintPath>
+    </Reference>
+    <Reference Include="core-canis">
+      <HintPath>..\..\..\BepInEx\interop\core-canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-commands">
+      <HintPath>..\..\..\BepInEx\interop\core-commands.dll</HintPath>
+    </Reference>
+    <Reference Include="core-input">
+      <HintPath>..\..\..\BepInEx\interop\core-input.dll</HintPath>
+    </Reference>
+    <Reference Include="core-localization">
+      <HintPath>..\..\..\BepInEx\interop\core-localization.dll</HintPath>
+    </Reference>
+    <Reference Include="core-platformdependent">
+      <HintPath>..\..\..\BepInEx\interop\core-platformdependent.dll</HintPath>
+    </Reference>
+    <Reference Include="core-prompter">
+      <HintPath>..\..\..\BepInEx\interop\core-prompter.dll</HintPath>
+    </Reference>
+    <Reference Include="dbg-client">
+      <HintPath>..\..\..\BepInEx\interop\dbg-client.dll</HintPath>
+    </Reference>
+    <Reference Include="DwdJson">
+      <HintPath>..\..\..\BepInEx\interop\DwdJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="InAppPurchasing">
+      <HintPath>..\..\..\BepInEx\interop\InAppPurchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Networking">
+      <HintPath>..\..\..\BepInEx\interop\Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="offlineChallenges">
+      <HintPath>..\..\..\BepInEx\interop\offlineChallenges.dll</HintPath>
+    </Reference>
+    <Reference Include="platform">
+      <HintPath>..\..\..\BepInEx\interop\platform.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Utils">
+      <HintPath>..\..\..\BepInEx\interop\Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="voodoo">
+      <HintPath>..\..\..\BepInEx\interop\voodoo.dll</HintPath>
+    </Reference>
+    <Reference Include="worm-canis">
+      <HintPath>..\..\..\BepInEx\interop\worm-canis.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="boardgames\match\tutorial\WormPrescienceMozCallToAction.cs" />
+    <Compile Include="boardgames\validators\PlayerSlotEditableValidator.cs" />
+    <Compile Include="FactionInfluencePreviewSetter.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="lib\canis\dbg_client\camera\SetupKabbageCanvas.cs" />
+    <Compile Include="lib\src\match\components\DisableWhenNoGrandchildren.cs" />
+    <Compile Include="lib\src\match\components\WormRevealPreviewTooltipSource.cs" />
+    <Compile Include="lib\worm_client\src\match\components\WormLocalPlayAreaHelper.cs" />
+    <Compile Include="match\components\WormAgentSlotSelectionHandler.cs" />
+    <Compile Include="menus\friends\PlatformFriendProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpaceGameobjectHolder.cs" />
+    <Compile Include="TheVoiceTooltipProvider.cs" />
+    <Compile Include="UnityEngine\UI\AutoExpandGridLayoutGroup.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="WormAgentPlacementSpaceAnimationHintSubscriber.cs" />
+    <Compile Include="WormAlwaysClearUndoRenderer.cs" />
+    <Compile Include="WormBoardInitializer.cs" />
+    <Compile Include="WormCardMoz.cs" />
+    <Compile Include="WormClientVersion.cs" />
+    <Compile Include="WormConfigureGameColorsPromptBehaviour.cs" />
+    <Compile Include="WormConfigureGamePromptBehaviour.cs" />
+    <Compile Include="WormConflictRevealedPrompt.cs" />
+    <Compile Include="WormContextExtensions.cs" />
+    <Compile Include="WormDeployedHighlighter.cs" />
+    <Compile Include="WormDiscardFTTTrigger.cs" />
+    <Compile Include="WormDiscardPilesButtonManager.cs" />
+    <Compile Include="WormEventsForAgentColorSubscriber.cs" />
+    <Compile Include="WormFactionTooltipSource.cs" />
+    <Compile Include="WormGameResignedCommand.cs" />
+    <Compile Include="WormGoalsMoz.cs" />
+    <Compile Include="WormHandManager.cs" />
+    <Compile Include="WormHideImperiumRowScript.cs" />
+    <Compile Include="WormHighlightControlSpaceRenderer.cs" />
+    <Compile Include="WormNotifications.cs" />
+    <Compile Include="WormOpponentTurnDefferedSelectionCommand.cs" />
+    <Compile Include="WormPlaymatChatView.cs" />
+    <Compile Include="WormRivalsSerializedMatchComponent.cs" />
+    <Compile Include="WormSellMelangePrompt.cs" />
+    <Compile Include="WormShowImperiumRow.cs" />
+    <Compile Include="WormShowTiebreakerData.cs" />
+    <Compile Include="WormSpaceBlockedData.cs" />
+    <Compile Include="WormSwordsmasterData.cs" />
+    <Compile Include="WormSwordsmasterSlotEnableRenderer.cs" />
+    <Compile Include="WormTagBasedFTTTrigger.cs" />
+    <Compile Include="WormTechOrNegotiatorCommand.cs" />
+    <Compile Include="WormTechRowManager.cs" />
+    <Compile Include="WormTechRowView.cs" />
+    <Compile Include="WormTroopNumberSelector.cs" />
+    <Compile Include="WormTroopsSelectionCommand.cs" />
+    <Compile Include="WormTutorialFTTFlow.cs" />
+    <Compile Include="worm\canis\WormProductUtils.cs" />
+    <Compile Include="worm\ChooseBoardSpaceSelectionCommand.cs" />
+    <Compile Include="worm\client\achievements\WormAchievements.cs" />
+    <Compile Include="worm\client\iap\IAPProductDataProvider.cs" />
+    <Compile Include="worm\client\iap\WormIAPStoreBehaviour.cs" />
+    <Compile Include="worm\client\match\render\AnimatedPileAnimations.cs" />
+    <Compile Include="worm\client\match\render\AnimatedPileRefresher.cs" />
+    <Compile Include="worm\client\match\render\IAnimatedPileAnimations.cs" />
+    <Compile Include="worm\client\match\render\layout\DistinctArchetypeLayout.cs" />
+    <Compile Include="worm\client\match\render\layout\HideSelectedEntitiesSorter.cs" />
+    <Compile Include="worm\client\match\render\layout\ReverseChildIndexSorter.cs" />
+    <Compile Include="worm\client\match\render\layout\StackedArchetypeLayout.cs" />
+    <Compile Include="worm\client\match\render\layout\TabbedPaginatedLayout.cs" />
+    <Compile Include="worm\client\match\render\WormMatchMessageConsumer.cs" />
+    <Compile Include="worm\client\match\render\WormViewManager.cs" />
+    <Compile Include="worm\client\match\render\WormVoodooAttachToUnit.cs" />
+    <Compile Include="worm\client\match\render\WormVoodooGroupCommand.cs" />
+    <Compile Include="worm\client\match\render\WormVoodooGroupedSequence.cs" />
+    <Compile Include="worm\client\match\render\WormVoodooSequenceCommands.cs" />
+    <Compile Include="worm\client\match\WormCanisOfflineMatch.cs" />
+    <Compile Include="worm\client\match\WormClientEventResponder.cs" />
+    <Compile Include="worm\client\utils\WormCursors.cs" />
+    <Compile Include="worm\client\utils\WormPlatformUtil.cs" />
+    <Compile Include="worm\client\utils\WormPrefs.cs" />
+    <Compile Include="worm\components\WormEventLeaderboardButton.cs" />
+    <Compile Include="worm\components\WormEventsProvider.cs" />
+    <Compile Include="worm\components\WormEventsSessionProvider.cs" />
+    <Compile Include="worm\components\WormSelectColorToggles.cs" />
+    <Compile Include="worm\components\WormWaitingForPlayersColorPicker.cs" />
+    <Compile Include="worm\dataProviders\WormDailyChallengeProvider.cs" />
+    <Compile Include="worm\FoldspaceTooltipSource.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\AcquireTleilaxuCardCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\ChooseAcquireTleilaxuLocationSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\ChooseDraftCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\ChooseSpecimensCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\LoseUnitsCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\UsurpGraftCardCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormAcquireCardCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormAcquireTechCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormAgentToSpaceSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormAgentTurnSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormArchetypeCustomChoiceCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormArchetypeCustomChoicePromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormArchetypeCustomChoiceSelectionPromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormBypassProtocolSpaceportPromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormChooseDeployedTroopsSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormChooseMultiplePromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormChooseOnePromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormCombatSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormCustomChoicePromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormCustomConfirmOrDenyPromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormDiscardIntrigueCardCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormEntityListSelectionPromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormGraftCardCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormKeepCardSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormKeepIntrigueCardSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormOpponentTroopsSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormOtherMemoryCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormPlayerTurnSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormPoisonSnooperSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormResearchSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormRetreatSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormRevealTurnSelectionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectAgentCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectCardPromptDragTargetCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectConnectionsFactionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectDiscardCardCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectFactionCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectionPromptCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectLeaderCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectMasterstrokeFactionsCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectOpponentCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSelectTrashCardCommand.cs" />
+    <Compile Include="worm\match\commands\selectionCommands\WormSellMelangeCommand.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormAgentAbilitySequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormConflictResolutionSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormControlledSpaceTroopSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormDiscardCardsSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormEndGameIntrigueSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormEndGameIntrigueSpiceSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormEndGameIntrigueVPSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormFreighterRecallSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormGainInfluenceSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormHagalConversionVPSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormHagalRefillDeckSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormHagalTurnSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormIntrigueDiscardSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormIntrigueRefillDeckSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormLastRoundSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormLeaderAbilitySequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormPassSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormPlayCardNoGraftSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormPlayCardSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormPlayCardTrashSelfSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormPlayerTurnSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormPlayGraftedCardsSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormPlayIntrigueSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormResearchTrackSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormRevealAbilitySequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormRevealCardsSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormRevealConflictSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormShippingTrackSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormSignetAbilitySequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormStingerSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormTechTileAbilitySequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormTleilaxuTrackBaseSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormTleilaxuTrackNoRewardsSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormTleilaxuTrackSequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormUndoAbilitySequence.cs" />
+    <Compile Include="worm\match\commands\sequenceCommands\WormUndoPlayCardSequence.cs" />
+    <Compile Include="worm\match\commands\WormGameResultsCommand.cs" />
+    <Compile Include="worm\match\commands\WormInitializeEventsCommand.cs" />
+    <Compile Include="worm\match\commands\WormJoinEventFlow.cs" />
+    <Compile Include="worm\match\commands\WormQueueForEventFlow.cs" />
+    <Compile Include="worm\match\commands\WormResignEventFlow.cs" />
+    <Compile Include="worm\match\commands\WormRunEventsFlow.cs" />
+    <Compile Include="worm\match\commands\WormRunOnlinePlayFlow.cs" />
+    <Compile Include="worm\match\commands\WormRunPostMatchFlow.cs" />
+    <Compile Include="worm\match\commands\WormRunSkirmishRulesFlow.cs" />
+    <Compile Include="worm\match\commands\WormRunUIScaleFlow.cs" />
+    <Compile Include="worm\match\commands\WormShowEarnedSkirmishBadgeFlow.cs" />
+    <Compile Include="worm\match\commands\WormShowEventByIDFlow.cs" />
+    <Compile Include="worm\match\commands\WormShowEventFlow.cs" />
+    <Compile Include="worm\match\commands\WormShowEventLeaderboardFlow.cs" />
+    <Compile Include="worm\match\commands\WormShowImperiumRowFlow.cs" />
+    <Compile Include="worm\match\commands\WormShowTechRowFlow.cs" />
+    <Compile Include="worm\match\components\AbilityChoiceConfirmation.cs" />
+    <Compile Include="worm\match\components\AbilityMissingFallbackError.cs" />
+    <Compile Include="worm\match\components\ActivateWithSpecificRuleModifier.cs" />
+    <Compile Include="worm\match\components\ActiveAgentAreaAnimator.cs" />
+    <Compile Include="worm\match\components\AllianceTokenTooltipSource.cs" />
+    <Compile Include="worm\match\components\AvailableTechButtonNavigation.cs" />
+    <Compile Include="worm\match\components\BaronPlayerInfoView.cs" />
+    <Compile Include="worm\match\components\BoardSpaceInitializer.cs" />
+    <Compile Include="worm\match\components\CombinedTooltipSource.cs" />
+    <Compile Include="worm\match\components\EventsForUsurpImperiumRow.cs" />
+    <Compile Include="worm\match\components\GainSwordsAbilityChoiceConfirmation.cs" />
+    <Compile Include="worm\match\components\HidePreviewRowsForPrompt.cs" />
+    <Compile Include="worm\match\components\HoldableButton.cs" />
+    <Compile Include="worm\match\components\LocalPlayerSumIntAttributes.cs" />
+    <Compile Include="worm\match\components\LogAnalyticsSceneChangeStart.cs" />
+    <Compile Include="worm\match\components\NameLookupTooltipSource.cs" />
+    <Compile Include="worm\match\components\PlayerIndexSlottedLayout.cs" />
+    <Compile Include="worm\match\components\PlayerLeaderDataProvider.cs" />
+    <Compile Include="worm\match\components\PlaymatTogglePassthrough.cs" />
+    <Compile Include="worm\match\components\PlaySoundOnPlayerStinger.cs" />
+    <Compile Include="worm\match\components\PreviewRowsVisibility.cs" />
+    <Compile Include="worm\match\components\RemoveViewOnDestroy.cs" />
+    <Compile Include="worm\match\components\SelectableEntity.cs" />
+    <Compile Include="worm\match\components\SelectFirstChildOnce.cs" />
+    <Compile Include="worm\match\components\SelectionResponderButtons.cs" />
+    <Compile Include="worm\match\components\SelectWhenAllowed.cs" />
+    <Compile Include="worm\match\components\ShowGraftEffectValidator.cs" />
+    <Compile Include="worm\match\components\StayOnToggle.cs" />
+    <Compile Include="worm\match\components\stingers\IStingerInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormSequenceStinger.cs" />
+    <Compile Include="worm\match\components\stingers\WormSequenceStingerManager.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerArchetypeIDInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerContainerInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerEntityIDInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerHagalConversionInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerLeaderAbilityInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerLeaderInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerMultiCardInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerRevealPreviewInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerSpaceDataInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormStingerUndoAcquireInitializer.cs" />
+    <Compile Include="worm\match\components\stingers\WormUndoableSequenceStinger.cs" />
+    <Compile Include="worm\match\components\TechButtonsToggle.cs" />
+    <Compile Include="worm\match\components\TessiaPlayerInfoView.cs" />
+    <Compile Include="worm\match\components\TimedInputBlocker.cs" />
+    <Compile Include="worm\match\components\UndoButton.cs" />
+    <Compile Include="worm\match\components\WorldSpaceLayoutGroup.cs" />
+    <Compile Include="worm\match\components\WormAbilityButton.cs" />
+    <Compile Include="worm\match\components\WormAbilityButtonHinter.cs" />
+    <Compile Include="worm\match\components\WormAbilityChoiceButton.cs" />
+    <Compile Include="worm\match\components\WormActionLog.cs" />
+    <Compile Include="worm\match\components\WormActionLogCardMoz.cs" />
+    <Compile Include="worm\match\components\WormActionLogCardTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormActionLogEntry.cs" />
+    <Compile Include="worm\match\components\WormActionLogRevealDisplay.cs" />
+    <Compile Include="worm\match\components\WormAdvanceSelectionButton.cs" />
+    <Compile Include="worm\match\components\WormAnimationEnabledToggle.cs" />
+    <Compile Include="worm\match\components\WormAnimationSpeedToggle.cs" />
+    <Compile Include="worm\match\components\WormArchetypeCardMoz.cs" />
+    <Compile Include="worm\match\components\WormAssociatedCardMoz.cs" />
+    <Compile Include="worm\match\components\WormBlockingAnimationsByName.cs" />
+    <Compile Include="worm\match\components\WormCardAnimatedPileAnimations.cs" />
+    <Compile Include="worm\match\components\WormCardDropEffects.cs" />
+    <Compile Include="worm\match\components\WormCardSubmitHandler.cs" />
+    <Compile Include="worm\match\components\WormChatStinger.cs" />
+    <Compile Include="worm\match\components\WormColorMozProvider.cs" />
+    <Compile Include="worm\match\components\WormComplexityTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormConflictSequenceAnimator.cs" />
+    <Compile Include="worm\match\components\WormConflictSequenceDirector.cs" />
+    <Compile Include="worm\match\components\WormConflictThirdPlaceDisabler.cs" />
+    <Compile Include="worm\match\components\WormContextualGamepadSelectionHandler.cs" />
+    <Compile Include="worm\match\components\WormControlTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormCustomChoices.cs" />
+    <Compile Include="worm\match\components\WormCycleImperiumAndTechBinding.cs" />
+    <Compile Include="worm\match\components\WormDeckCardMoz.cs" />
+    <Compile Include="worm\match\components\WormDeployAbilityButton.cs" />
+    <Compile Include="worm\match\components\WormDisableGameObjectInTutorial.cs" />
+    <Compile Include="worm\match\components\WormDiscardFTTLoader.cs" />
+    <Compile Include="worm\match\components\WormDraggableCard.cs" />
+    <Compile Include="worm\match\components\WormDraggableIntrigueCard.cs" />
+    <Compile Include="worm\match\components\WormDragTargetAnimation.cs" />
+    <Compile Include="worm\match\components\WormEnableInSpecificSkirmish.cs" />
+    <Compile Include="worm\match\components\WormEndAgentTurnButtonHinter.cs" />
+    <Compile Include="worm\match\components\WormEndRevealTurnButtonHinter.cs" />
+    <Compile Include="worm\match\components\WormEntityMoz.cs" />
+    <Compile Include="worm\match\components\WormEventOnThreshold.cs" />
+    <Compile Include="worm\match\components\WormEventsForChatReceived.cs" />
+    <Compile Include="worm\match\components\WormEventsForEvenSiblingIndex.cs" />
+    <Compile Include="worm\match\components\WormEventsForRegisteredParentName.cs" />
+    <Compile Include="worm\match\components\WormForceActivateInput.cs" />
+    <Compile Include="worm\match\components\WormFremenBondFTTLoader.cs" />
+    <Compile Include="worm\match\components\WormFremenBondFTTTrigger.cs" />
+    <Compile Include="worm\match\components\WormGarrisonDreadnoughtTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormGarrisonTroopTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormHasActiveChildrenValidator.cs" />
+    <Compile Include="worm\match\components\WormHeighlinerSpiceCostRenderer.cs" />
+    <Compile Include="worm\match\components\WormHelenaReserveDarkener.cs" />
+    <Compile Include="worm\match\components\WormHideImperiumRowForAnimation.cs" />
+    <Compile Include="worm\match\components\WormImperiumRowEventPassthrough.cs" />
+    <Compile Include="worm\match\components\WormIntrigueActiveAreaPileView.cs" />
+    <Compile Include="worm\match\components\WormIntrigueCardHinter.cs" />
+    <Compile Include="worm\match\components\WormIntrigueCardPlayHandler.cs" />
+    <Compile Include="worm\match\components\WormLeaderSelectionPrompter.cs" />
+    <Compile Include="worm\match\components\WormLeaderSelectPlayersDisplay.cs" />
+    <Compile Include="worm\match\components\WormLeaderSelectTypeTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormLineDragCursorDisplay.cs" />
+    <Compile Include="worm\match\components\WormLocationDependantMoz.cs" />
+    <Compile Include="worm\match\components\WormMakerSpaceTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormMentatCostRenderer.cs" />
+    <Compile Include="worm\match\components\WormMenuButtons.cs" />
+    <Compile Include="worm\match\components\WormPlayerInfoButton.cs" />
+    <Compile Include="worm\match\components\WormPlayerPileMoz.cs" />
+    <Compile Include="worm\match\components\WormPositionStackedLayoutCount.cs" />
+    <Compile Include="worm\match\components\WormPromptConfirmationOnSelection.cs" />
+    <Compile Include="worm\match\components\WormRetreatConfirmButton.cs" />
+    <Compile Include="worm\match\components\WormRevealButtonHinter.cs" />
+    <Compile Include="worm\match\components\WormRevealCardsAnimationHandler.cs" />
+    <Compile Include="worm\match\components\WormRulesSubPromptButton.cs" />
+    <Compile Include="worm\match\components\WormSelectionActiveDragTarget.cs" />
+    <Compile Include="worm\match\components\WormSettingsSubPromptButton.cs" />
+    <Compile Include="worm\match\components\WormShowChallengeRulesPanel.cs" />
+    <Compile Include="worm\match\components\WormShowEpicModeRulesPanel.cs" />
+    <Compile Include="worm\match\components\WormShowEventRulesPanel.cs" />
+    <Compile Include="worm\match\components\WormShowGoTo11RulesPanel.cs" />
+    <Compile Include="worm\match\components\WormShowRulesPanel.cs" />
+    <Compile Include="worm\match\components\WormShowSkirmishRulesPanel.cs" />
+    <Compile Include="worm\match\components\WormSolariCostTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormSpaceGamepadDisabler.cs" />
+    <Compile Include="worm\match\components\WormSubscriptionProviderPassthrough.cs" />
+    <Compile Include="worm\match\components\WormTechRowEventPassthrough.cs" />
+    <Compile Include="worm\match\components\WormTleilaxBoardEventPassthrough.cs" />
+    <Compile Include="worm\match\components\WormUndoTooltipSource.cs" />
+    <Compile Include="worm\match\components\WormVPCategoryDisplay.cs" />
+    <Compile Include="worm\match\components\WormVPSourceDisplay.cs" />
+    <Compile Include="worm\match\components\WormWillClearUndoCursorDisabler.cs" />
+    <Compile Include="worm\match\components\WormWillClearUndoCursorHandler.cs" />
+    <Compile Include="worm\match\components\WormWillClearUndoDragTargetHinter.cs" />
+    <Compile Include="worm\match\components\WormWillClearUndoHinter.cs" />
+    <Compile Include="worm\match\components\WormWillClearUndoPointerHandler.cs" />
+    <Compile Include="worm\match\components\WormWillClearUndoRevealHandler.cs" />
+    <Compile Include="worm\match\dataRenderers\CanAccessSetValidator.cs" />
+    <Compile Include="worm\match\dataRenderers\EventsForEnabledSets.cs" />
+    <Compile Include="worm\match\dataRenderers\HideVictoryPointsRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\IConditionalIconRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\OwnedChildCountRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormAcquiredThisTurnRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormAcquireEffectRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormAgentRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormAtlasImageObserver.cs" />
+    <Compile Include="worm\match\dataRenderers\WormAvailableAbilitiesRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormAvailableTechRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormBlankSlateConditionalIconRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormBonusSpiceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormBrutalityAbilityRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormBrutalityStingerRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormCanSetColorSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormCanVisitSpaceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormCardWidthRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormCarefulObservationRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormCarefulObservationStingerRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormChallengeNameRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormChallengeProgressRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormColorAnimatorRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormColorPipSubscriberRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormColorRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormCombatSpaceDataRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormComplexityRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormConditionalIconRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormConflictAllPlayersRewardsRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormConflictInfoRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormConflictPlayerRewardRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormConflictTiedNamesRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormCreateUnitViewFromEntityIDRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormDeployedStrengthRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormDeployedTroopsRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormDisabledRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormDisabledSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEntityChildrenColorDisplaySubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEntityColorDisplaySubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForColorRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForColorSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForFactionRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForHagalRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForLeaderArchetypeRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForLeaderArchetypeSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForLeaderAssignment.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForRoundPhase.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsForSet.cs" />
+    <Compile Include="worm\match\dataRenderers\WormEventsOnChildCountUpdateRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormFactionAllianceTokenSpriteRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormFactionAnimationSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormFactionImageRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormFactionSelectionImageRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormFactionToColorRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormFactionTrackRewardRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormFirstPlayerRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGainInfluenceAbilityRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsGarrisonTroopsRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsLeaderArchetypeImageRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsLeaderNameRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsPlayerNameRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsRankRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsScoreRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsSolariRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsSpiceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGameResultsWaterRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormGraphicColorSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHagalRulesSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHagalSwordmasterCountdownPipRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHagalSwordmasterCountdownRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHallOfOratoryRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHandCountTooltipSourceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHasDreadnoughtRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHelenaReserveViewRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHiddenElementRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHideForHagalRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormHighCouncilRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormImageColorRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormImperiumAgentToSpaceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormInfiltrateAgentRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormIntrigueCardPlayableRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormLastTurnRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormLeaderAbilityRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormLeaderAvatarImageRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormLongReachConditionalIconRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormMasterstrokeStingerRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormMentatAvailableRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormMentatSlotRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormOneStepAheadRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormParentHasAttributeRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayedSpaceDataRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayedSpaceNameSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayerHasRevealedRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayerInfoSignetRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayerLeaderSelectedRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayerPassedRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayerSpacesVisitedRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayerTurnOrderRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPlayerTurnTypesRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPossiblePersuasionRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPrescienceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormPromptSourceImageRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormProvideLeaderConflictPlayerRewardRewardRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormProvidePlayerConflictRewardRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormReferencedArchetypeNamesRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormReservePileCountRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormResourcesRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormRestrictedOrdnanceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSelectLeaderHeaderRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormShiftingAllegiancesStingerRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormShippingTrackTroopsRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormShowOfStrengthConditionalIconRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSignetDescriptionRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSkirmishScoreRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSnooperTokenRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSpaceBlockedVoiceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSpiceCostRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSpriteColorRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSpriteColorSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormStingerChosenArchetypeRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormSubscriberImageAtlasRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormTechStackCountRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormTechTileFlippedRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormTechUsableRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormTiebreakersSubscriber.cs" />
+    <Compile Include="worm\match\dataRenderers\WormTopLevelNameRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormTransformChildCountRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormTutorialDescriptionRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormUnusableRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormVariableAgentDestinationRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormVariableCostRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormVariablePersuasionCostRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormVariableSolariCostRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormVersionedChildCountRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormVictoryPointSourcesRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormVictoryPointsRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormWillClearUndoCustomChoiceRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormWillClearUndoRenderer.cs" />
+    <Compile Include="worm\match\dataRenderers\WormWillClearUndoSelectionRenderer.cs" />
+    <Compile Include="worm\match\data\WormAbilityPrefabLookupData.cs" />
+    <Compile Include="worm\match\data\WormBonusPersuasionData.cs" />
+    <Compile Include="worm\match\data\WormBonusSpiceData.cs" />
+    <Compile Include="worm\match\data\WormCanSetColorData.cs" />
+    <Compile Include="worm\match\data\WormCardPrefabLookupData.cs" />
+    <Compile Include="worm\match\data\WormChallengeProgressData.cs" />
+    <Compile Include="worm\match\data\WormChosenEntityData.cs" />
+    <Compile Include="worm\match\data\WormColorData.cs" />
+    <Compile Include="worm\match\data\WormCombatSpaceData.cs" />
+    <Compile Include="worm\match\data\WormComplexityData.cs" />
+    <Compile Include="worm\match\data\WormConflictAllPlayersRewardsData.cs" />
+    <Compile Include="worm\match\data\WormConflictPlayerRewardData.cs" />
+    <Compile Include="worm\match\data\WormConflictPlayerStateData.cs" />
+    <Compile Include="worm\match\data\WormCostData.cs" />
+    <Compile Include="worm\match\data\WormDisabledData.cs" />
+    <Compile Include="worm\match\data\WormFactionData.cs" />
+    <Compile Include="worm\match\data\WormFactionInfluenceData.cs" />
+    <Compile Include="worm\match\data\WormFirstPlayerData.cs" />
+    <Compile Include="worm\match\data\WormGameResultsPlayerData.cs" />
+    <Compile Include="worm\match\data\WormHasRevealedData.cs" />
+    <Compile Include="worm\match\data\WormHouseData.cs" />
+    <Compile Include="worm\match\data\WormInfluenceDeltaData.cs" />
+    <Compile Include="worm\match\data\WormLastRoundData.cs" />
+    <Compile Include="worm\match\data\WormLeaderData.cs" />
+    <Compile Include="worm\match\data\WormLeaderHeaderData.cs" />
+    <Compile Include="worm\match\data\WormMentatControllerData.cs" />
+    <Compile Include="worm\match\data\WormPersuasionCostData.cs" />
+    <Compile Include="worm\match\data\WormPersuasionData.cs" />
+    <Compile Include="worm\match\data\WormPlayedSpaceData.cs" />
+    <Compile Include="worm\match\data\WormPlayerInfoViewType.cs" />
+    <Compile Include="worm\match\data\WormPlayerInfoViewTypeData.cs" />
+    <Compile Include="worm\match\data\WormPlayerSpacesVisitedData.cs" />
+    <Compile Include="worm\match\data\WormPlayerTurnTypesData.cs" />
+    <Compile Include="worm\match\data\WormResourcesData.cs" />
+    <Compile Include="worm\match\data\WormRestrictedOrdnanceData.cs" />
+    <Compile Include="worm\match\data\WormRoundPhaseData.cs" />
+    <Compile Include="worm\match\data\WormSkirmishRulesData.cs" />
+    <Compile Include="worm\match\data\WormSolariCostData.cs" />
+    <Compile Include="worm\match\data\WormSpiceCostData.cs" />
+    <Compile Include="worm\match\data\WormStrengthData.cs" />
+    <Compile Include="worm\match\data\WormTargetWillClearUndoData.cs" />
+    <Compile Include="worm\match\data\WormTechTileFlippedData.cs" />
+    <Compile Include="worm\match\data\WormTroopLookupData.cs" />
+    <Compile Include="worm\match\data\WormVictoryPointsData.cs" />
+    <Compile Include="worm\match\Interfaces\IAdvanceableSelectionCommand.cs" />
+    <Compile Include="worm\match\Interfaces\IContainsSelectableAbilities.cs" />
+    <Compile Include="worm\match\Interfaces\IPlaymatToggleView.cs" />
+    <Compile Include="worm\match\prompts\behaviours\ChooseSpecimensPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\LoseUnitsPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\UsurpGraftCardPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormAcquireTechPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormArchetypeCustomChoicePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormChallengesSelectPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormChooseOpponentTroopsPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormConfigureHagalSoloGamePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormConflictResultsPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormConflictRevealedPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormContinueGamePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormCustomChoicePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormCustomConfirmOrDenyPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormDiscardCardsPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormDiscardIntriguePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormDragTargetSelectionPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormEarnedSkirmishBadgePromptBehavior.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormEventJoinPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormEventLeaderboardPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormEventLobbyPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormEventQueuePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormEventsSelectPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormFinishTutorialPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormGameResultsPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormImperiumRowPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormImperiumRowRevealPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormKeepIntriguePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormLandingPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormLeaderSelectionDisplayPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormLocalPlayModePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormOnlinePlayPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormOtherMemoryPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormPlayerInformationPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormSelectEntityPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormSelectLeaderPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormSellMelangePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormShiftingAllegiancesPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormSkirmishModePromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormSkirmishScorePromptBehavior.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormSourceHeaderPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormTleilaxPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormTrashCardsPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormVictoryPointSourcesPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormWaitingForPlayersMatchSettingsPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\behaviours\WormWaitingForPlayersPromptBehaviour.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormConflictResultsPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormEarnedSkirmishBadgePrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormEventJoinPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormEventLeaderboardPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormEventLobbyPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormEventMoreInfoPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormEventQueuePrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormEventsSelectPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormImperiumSelectEntityPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormOnlinePlayModePrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormPlayerInformationPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormSelectEntityPrompt.cs" />
+    <Compile Include="worm\match\prompts\prompts\WormVictoryPointSourcesPrompt.cs" />
+    <Compile Include="worm\match\prompts\WormPromptFlavors.cs" />
+    <Compile Include="worm\match\views\WormCardView.cs" />
+    <Compile Include="worm\match\views\WormChoosePlayerView.cs" />
+    <Compile Include="worm\match\views\WormConflictAreaEntityView.cs" />
+    <Compile Include="worm\match\views\WormFactionTrackEntityView.cs" />
+    <Compile Include="worm\match\views\WormFactionTrackUIView.cs" />
+    <Compile Include="worm\match\views\WormImperiumRowPlayAreaEntityView.cs" />
+    <Compile Include="worm\match\views\WormNegotiatorAreaEntityView.cs" />
+    <Compile Include="worm\match\views\WormSpaceContainerView.cs" />
+    <Compile Include="worm\match\views\WormStingerFactionView.cs" />
+    <Compile Include="worm\match\views\WormUndoNodeViewInitStrategy.cs" />
+    <Compile Include="worm\match\voodoo\WormPlaymatAnimatorSpeedController.cs" />
+    <Compile Include="worm\menus\commands\WormDailyChallengePostMatchFlow.cs" />
+    <Compile Include="worm\menus\components\GameplayVariantDropdown.cs" />
+    <Compile Include="worm\menus\components\GameplayVariantDropdownItem.cs" />
+    <Compile Include="worm\menus\components\GameplayVariantValueTooltipSource.cs" />
+    <Compile Include="worm\menus\components\LanguageURLPair.cs" />
+    <Compile Include="worm\menus\components\PullLocKeyFromOtherLocalizer.cs" />
+    <Compile Include="worm\menus\components\RankedExpansionLocalizationSubstitutor.cs" />
+    <Compile Include="worm\menus\components\RankedSetsAttributeProvider.cs" />
+    <Compile Include="worm\menus\components\RequiredExpansionLocalizationSubstitutor.cs" />
+    <Compile Include="worm\menus\components\UnityEventForSet.cs" />
+    <Compile Include="worm\menus\components\WormPerLangageURLObject.cs" />
+    <Compile Include="worm\menus\components\WormRankedBackButton.cs" />
+    <Compile Include="worm\menus\components\WormRankedPlayProvider.cs" />
+    <Compile Include="worm\menus\components\WormRankedPlayQueueButton.cs" />
+    <Compile Include="worm\menus\components\WormSetEvents.cs" />
+    <Compile Include="worm\menus\dataRenderers\GoTo11Renderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormActiveGamePlayersDataProvider.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormChallengeProgressStatusRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEpicModeRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventBackgroundImageSubscriber.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventButtonHeaderRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventButtonStyleRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventGamesPlayedRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventJoinButtonRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventLeaderboardEntrySubscriber.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventPlayButtonRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventPointsRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventRunsRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventShortDescriptionSubscriber.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventsNewTagRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormEventsRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormExpansionsRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormHagalModeRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormMatchHistoryDataRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormMinRepRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormPlayerEntryColorSubscriber.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormPlayerSlotTypeRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormRankedFormatRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormReputationRenderer.cs" />
+    <Compile Include="worm\menus\dataRenderers\WormSkirmishRulesRenderer.cs" />
+    <Compile Include="worm\networking\GetLeaderboard.cs" />
+    <Compile Include="worm\networking\LeaveQueueForAsyncMatch.cs" />
+    <Compile Include="worm\networking\ListActiveEvents.cs" />
+    <Compile Include="worm\networking\QueueForAsyncMatch.cs" />
+    <Compile Include="worm\networking\RegisterEventUser.cs" />
+    <Compile Include="worm\networking\RegisterForActiveEvent.cs" />
+    <Compile Include="worm\networking\ResignEvent.cs" />
+    <Compile Include="worm\networking\responses\ActiveEvents.cs" />
+    <Compile Include="worm\networking\responses\EventDefinition.cs" />
+    <Compile Include="worm\networking\responses\EventDescriptionData.cs" />
+    <Compile Include="worm\networking\responses\EventEntry.cs" />
+    <Compile Include="worm\networking\responses\EventEntryData.cs" />
+    <Compile Include="worm\networking\responses\EventEntryEnded.cs" />
+    <Compile Include="worm\networking\responses\EventEntryLeaderboardEntry.cs" />
+    <Compile Include="worm\networking\responses\EventEntryMatchHistory.cs" />
+    <Compile Include="worm\networking\responses\EventError.cs" />
+    <Compile Include="worm\networking\responses\EventJoined.cs" />
+    <Compile Include="worm\networking\responses\EventLeaderboard.cs" />
+    <Compile Include="worm\networking\responses\EventLeaderboardEntry.cs" />
+    <Compile Include="worm\networking\responses\EventQueueJoined.cs" />
+    <Compile Include="worm\networking\responses\EventQueueLeft.cs" />
+    <Compile Include="worm\networking\responses\EventRoundData.cs" />
+    <Compile Include="worm\networking\responses\EventRoundQueueData.cs" />
+    <Compile Include="worm\networking\responses\EventTimingData.cs" />
+    <Compile Include="worm\networking\responses\EventUserRegistered.cs" />
+    <Compile Include="worm\networking\responses\EventVisible.cs" />
+    <Compile Include="worm\PlayerDictAttributeStringRenderer.cs" />
+    <Compile Include="worm\TopEntityPileView.cs" />
+    <Compile Include="worm\utils\WormCardHangersLoader.cs" />
+    <Compile Include="worm\utils\WormDefaultConfigValues.cs" />
+    <Compile Include="worm\utils\WormEntityExtensions.cs" />
+    <Compile Include="worm\WormAcquireCardRecliamedForcesSequence.cs" />
+    <Compile Include="worm\WormAgentSupplyContainerView.cs" />
+    <Compile Include="worm\WormAllFactionTracksEntityView.cs" />
+    <Compile Include="worm\WormArchetypeProvider.cs" />
+    <Compile Include="worm\WormBoardEntityView.cs" />
+    <Compile Include="worm\WormBoxView.cs" />
+    <Compile Include="worm\WormDreadnoughtTooltipSource.cs" />
+    <Compile Include="worm\WormEntities.cs" />
+    <Compile Include="worm\WormEventData.cs" />
+    <Compile Include="worm\WormEventLeaderboardData.cs" />
+    <Compile Include="worm\WormEventLeaderboardEntryData.cs" />
+    <Compile Include="worm\WormEventWaitTimeData.cs" />
+    <Compile Include="worm\WormGameInit.cs" />
+    <Compile Include="worm\WormIXSpacesRenderer.cs" />
+    <Compile Include="worm\WormKabbageSpeedController.cs" />
+    <Compile Include="worm\WormLoadPlaymatManager.cs" />
+    <Compile Include="worm\WormLobbyGameProvider.cs" />
+    <Compile Include="worm\WormLocConstants.cs" />
+    <Compile Include="worm\WormMatchHub.cs" />
+    <Compile Include="worm\WormMatchStatsBehaviour.cs" />
+    <Compile Include="worm\WormModalScopes.cs" />
+    <Compile Include="worm\WormObserverImperiumRowActivator.cs" />
+    <Compile Include="worm\WormOfflineMatches.cs" />
+    <Compile Include="worm\WormOfflineMatchesManager.cs" />
+    <Compile Include="worm\WormPendingGameData.cs" />
+    <Compile Include="worm\WormPlayerInfoView.cs" />
+    <Compile Include="worm\WormPlayerTechView.cs" />
+    <Compile Include="worm\WormPlayerUILoader.cs" />
+    <Compile Include="worm\WormReputationTooltipSource.cs" />
+    <Compile Include="worm\WormResearchTrackEntityView.cs" />
+    <Compile Include="worm\WormShowTleilaxRowFlow.cs" />
+    <Compile Include="worm\WormStingerArchetypeIDContainerInitializer.cs" />
+    <Compile Include="worm\WormTechTrayTooltipSource.cs" />
+    <Compile Include="worm\WormTutorialEffects.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

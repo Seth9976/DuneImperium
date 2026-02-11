@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C4BA729-5A9F-4544-B6C0-AA2745738651}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Il2CppMicrosoft.Extensions.Logging</RootNamespace>
+    <AssemblyName>Il2CppMicrosoft.Extensions.Logging</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2CppMicrosoft.Extensions.DependencyInjection">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppMicrosoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMicrosoft.Extensions.Logging.Abstractions">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppMicrosoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMicrosoft.Extensions.Options">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppMicrosoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FxResources\Microsoft\Extensions\Logging\SR.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\LoggingServiceCollectionExtensions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\ActivityTrackingOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\DefaultLoggerLevelConfigureOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\Logger.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggerFactory.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggerFactoryOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggerFactoryScopeProvider.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggerFilterOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggerFilterRule.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggerInformation.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggerRuleSelector.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggingBuilder.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\LoggingBuilderExtensions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\MessageLogger.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\ProviderAliasUtilities.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\ScopeLogger.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Logging\StaticFilterOptionsMonitor.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\MemberNotNullAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullablePublicOnlyAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\RefSafetyRulesAttribute.cs" />
+    <Compile Include="Il2CppSystem\SR.cs" />
+    <Compile Include="Il2CppSystem\ThrowHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7315B79-6FFD-48FE-87F0-56FFEAB7E81E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Google.Apis.Auth</RootNamespace>
+    <AssemblyName>Google.Apis.Auth</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Apis">
+      <HintPath>..\..\..\BepInEx\interop\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\..\..\BepInEx\interop\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Net.Http">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\BepInEx\interop\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GoogleJsonWebSignature.cs" />
+    <Compile Include="InvalidJwtException.cs" />
+    <Compile Include="JsonWebSignature.cs" />
+    <Compile Include="JsonWebToken.cs" />
+    <Compile Include="OAuth2\AccessTokenWithHeaders.cs" />
+    <Compile Include="OAuth2\AuthorizationCodeInstalledApp.cs" />
+    <Compile Include="OAuth2\BearerToken.cs" />
+    <Compile Include="OAuth2\ClientSecrets.cs" />
+    <Compile Include="OAuth2\ComputeCredential.cs" />
+    <Compile Include="OAuth2\DefaultCredentialProvider.cs" />
+    <Compile Include="OAuth2\Flows\AuthorizationCodeFlow.cs" />
+    <Compile Include="OAuth2\Flows\GoogleAuthorizationCodeFlow.cs" />
+    <Compile Include="OAuth2\Flows\IAuthorizationCodeFlow.cs" />
+    <Compile Include="OAuth2\GoogleAuthConsts.cs" />
+    <Compile Include="OAuth2\GoogleClientSecrets.cs" />
+    <Compile Include="OAuth2\GoogleCredential.cs" />
+    <Compile Include="OAuth2\GoogleWebAuthorizationBroker.cs" />
+    <Compile Include="OAuth2\IAccessMethod.cs" />
+    <Compile Include="OAuth2\IAuthorizationCodeInstalledApp.cs" />
+    <Compile Include="OAuth2\ICodeReceiver.cs" />
+    <Compile Include="OAuth2\ICredential.cs" />
+    <Compile Include="OAuth2\ITokenAccess.cs" />
+    <Compile Include="OAuth2\ITokenAccessWithHeaders.cs" />
+    <Compile Include="OAuth2\JsonCredentialParameters.cs" />
+    <Compile Include="OAuth2\LocalServerCodeReceiver.cs" />
+    <Compile Include="OAuth2\Pkcs8.cs" />
+    <Compile Include="OAuth2\PromptCodeReceiver.cs" />
+    <Compile Include="OAuth2\RequestExtensions.cs" />
+    <Compile Include="OAuth2\Requests\AuthorizationCodeRequestUrl.cs" />
+    <Compile Include="OAuth2\Requests\AuthorizationCodeTokenRequest.cs" />
+    <Compile Include="OAuth2\Requests\AuthorizationRequestUrl.cs" />
+    <Compile Include="OAuth2\Requests\GoogleAssertionTokenRequest.cs" />
+    <Compile Include="OAuth2\Requests\GoogleAuthorizationCodeRequestUrl.cs" />
+    <Compile Include="OAuth2\Requests\GoogleRevokeTokenRequest.cs" />
+    <Compile Include="OAuth2\Requests\RefreshTokenRequest.cs" />
+    <Compile Include="OAuth2\Requests\TokenRequest.cs" />
+    <Compile Include="OAuth2\Requests\TokenRequestExtenstions.cs" />
+    <Compile Include="OAuth2\Responses\AuthorizationCodeResponseUrl.cs" />
+    <Compile Include="OAuth2\Responses\TokenErrorResponse.cs" />
+    <Compile Include="OAuth2\Responses\TokenResponse.cs" />
+    <Compile Include="OAuth2\Responses\TokenResponseException.cs" />
+    <Compile Include="OAuth2\ServiceAccountCredential.cs" />
+    <Compile Include="OAuth2\ServiceCredential.cs" />
+    <Compile Include="OAuth2\TokenRefreshManager.cs" />
+    <Compile Include="OAuth2\UserCredential.cs" />
+    <Compile Include="OAuth2\Web\AuthorizationCodeWebApp.cs" />
+    <Compile Include="OAuth2\Web\AuthWebUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="__f__AnonymousType0.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

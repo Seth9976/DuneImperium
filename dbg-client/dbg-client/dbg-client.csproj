@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75A1F19D-37EC-4A1C-9C34-9533AC726D15}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dbg_client</RootNamespace>
+    <AssemblyName>dbg-client</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Attributes">
+      <HintPath>..\..\..\BepInEx\interop\Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="audio">
+      <HintPath>..\..\..\BepInEx\interop\audio.dll</HintPath>
+    </Reference>
+    <Reference Include="boardgames">
+      <HintPath>..\..\..\BepInEx\interop\boardgames.dll</HintPath>
+    </Reference>
+    <Reference Include="Canis">
+      <HintPath>..\..\..\BepInEx\interop\Canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-animation">
+      <HintPath>..\..\..\BepInEx\interop\core-animation.dll</HintPath>
+    </Reference>
+    <Reference Include="core-canis">
+      <HintPath>..\..\..\BepInEx\interop\core-canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-commands">
+      <HintPath>..\..\..\BepInEx\interop\core-commands.dll</HintPath>
+    </Reference>
+    <Reference Include="core-input">
+      <HintPath>..\..\..\BepInEx\interop\core-input.dll</HintPath>
+    </Reference>
+    <Reference Include="core-localization">
+      <HintPath>..\..\..\BepInEx\interop\core-localization.dll</HintPath>
+    </Reference>
+    <Reference Include="core-prompter">
+      <HintPath>..\..\..\BepInEx\interop\core-prompter.dll</HintPath>
+    </Reference>
+    <Reference Include="direbytes">
+      <HintPath>..\..\..\BepInEx\interop\direbytes.dll</HintPath>
+    </Reference>
+    <Reference Include="DwdJson">
+      <HintPath>..\..\..\BepInEx\interop\DwdJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="InAppPurchasing">
+      <HintPath>..\..\..\BepInEx\interop\InAppPurchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Networking">
+      <HintPath>..\..\..\BepInEx\interop\Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="offlineChallenges">
+      <HintPath>..\..\..\BepInEx\interop\offlineChallenges.dll</HintPath>
+    </Reference>
+    <Reference Include="platform">
+      <HintPath>..\..\..\BepInEx\interop\platform.dll</HintPath>
+    </Reference>
+    <Reference Include="platformCore">
+      <HintPath>..\..\..\BepInEx\interop\platformCore.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>..\..\..\BepInEx\interop\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UniversalDeepLinking">
+      <HintPath>..\..\..\BepInEx\interop\UniversalDeepLinking.dll</HintPath>
+    </Reference>
+    <Reference Include="Utils">
+      <HintPath>..\..\..\BepInEx\interop\Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="voodoo">
+      <HintPath>..\..\..\BepInEx\interop\voodoo.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSocket">
+      <HintPath>..\..\..\BepInEx\interop\WebSocket.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="boardgames\animation\AnimateFogSettings.cs" />
+    <Compile Include="boardgames\animation\AnimateSkyboxSettings.cs" />
+    <Compile Include="boardgames\animation\AnimationSpeedController.cs" />
+    <Compile Include="boardgames\animation\AnimationSpeedSlider.cs" />
+    <Compile Include="boardgames\animation\AnimatorConsistentTimeScale.cs" />
+    <Compile Include="boardgames\animation\DetachChildParticles.cs" />
+    <Compile Include="boardgames\animation\LiveUpdateAnimationSpeedController.cs" />
+    <Compile Include="boardgames\attributes\AttributeTooltipSource.cs" />
+    <Compile Include="boardgames\behaviours\DirebytesButtonBehaviour.cs" />
+    <Compile Include="boardgames\behaviours\FriendsListButtonBehaviour.cs" />
+    <Compile Include="boardgames\behaviours\LeaderboardButtonBehaviour.cs" />
+    <Compile Include="boardgames\behaviours\LeaderboardHelpButtonBehaviour.cs" />
+    <Compile Include="boardgames\behaviours\LoadPlaymatManager.cs" />
+    <Compile Include="boardgames\behaviours\NextGameButton.cs" />
+    <Compile Include="boardgames\behaviours\PlayDailyChallengeMatchEvent.cs" />
+    <Compile Include="boardgames\behaviours\ReloadDailyChallengeEvent.cs" />
+    <Compile Include="boardgames\behaviours\RequestDailyChallengeData.cs" />
+    <Compile Include="boardgames\behaviours\RulesLinkBehaviour.cs" />
+    <Compile Include="boardgames\behaviours\RunDailyChallengeEvent.cs" />
+    <Compile Include="boardgames\behaviours\RunLocalPlayFlowEvent.cs" />
+    <Compile Include="boardgames\behaviours\SettingsVolumeSlider.cs" />
+    <Compile Include="boardgames\behaviours\ShowDailyChallengeLeaderboardEvent.cs" />
+    <Compile Include="boardgames\behaviours\ShowDailyChallengeRulesEvent.cs" />
+    <Compile Include="boardgames\behaviours\SkipToResultsButtonBehavior.cs" />
+    <Compile Include="boardgames\behaviours\SplashBehaviour.cs" />
+    <Compile Include="boardgames\behaviours\ToggleGameplayWarnings.cs" />
+    <Compile Include="boardgames\behaviours\ToggleReducedTooltips.cs" />
+    <Compile Include="boardgames\behaviours\URLObjectBehaviour.cs" />
+    <Compile Include="boardgames\camera\CameraControlProvider.cs" />
+    <Compile Include="boardgames\camera\CameraLocationManager.cs" />
+    <Compile Include="boardgames\camera\CinemachineControlProvider.cs" />
+    <Compile Include="boardgames\camera\EntityCameraLocation.cs" />
+    <Compile Include="boardgames\camera\ICameraTranslator.cs" />
+    <Compile Include="boardgames\camera\IStrategicViewCamera.cs" />
+    <Compile Include="boardgames\camera\IVirtualCameraController.cs" />
+    <Compile Include="boardgames\challenges\ChallengeBranchRenderer.cs" />
+    <Compile Include="boardgames\chat\DBGChatMessagePreview.cs" />
+    <Compile Include="boardgames\chat\DBGChatMessageView.cs" />
+    <Compile Include="boardgames\chat\DBGEventsForChatMessageOwnership.cs" />
+    <Compile Include="boardgames\chat\DBGGameChatProvider.cs" />
+    <Compile Include="boardgames\chat\ReportReason.cs" />
+    <Compile Include="boardgames\commands\DBGCheckForReconnectableAsyncGame.cs" />
+    <Compile Include="boardgames\commands\DBGCheckForReconnectableLiveGameCommand.cs" />
+    <Compile Include="boardgames\commands\DBGTutorialEventCommand.cs" />
+    <Compile Include="boardgames\commands\RunLeaderboardFlow.cs" />
+    <Compile Include="boardgames\commands\WaitForReconnectableLiveGame.cs" />
+    <Compile Include="boardgames\ConfigurePlayerEvent.cs" />
+    <Compile Include="boardgames\datarenderers\AccountRepTooltipSource.cs" />
+    <Compile Include="boardgames\datarenderers\ActiveGameLastTurnTimeRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\ActiveGamePlayersDataProvider.cs" />
+    <Compile Include="boardgames\datarenderers\ActiveGameStatusButtonRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\ActiveGameYourTurnRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\ApplyColorRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\AvatarImageAtlasRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\AvatarTextFormatRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\ChallengeProgressionStatusRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\DailyChallengeBadgeRankTextRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\DailyChallengeSeasonTextRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeAttemptScoreRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeAttemptsRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeBetweenSeasonsRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeButtonInfoRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeDataRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeNewTagRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeRulesRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeSavedGameRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeSeasonGameRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\dailychallenge\DailyChallengeTimeLabelRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\DataCompositionEventsForToggle.cs" />
+    <Compile Include="boardgames\dataRenderers\DescriptionRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\EnableForGameHasPassword.cs" />
+    <Compile Include="boardgames\datarenderers\EventsForCanEditPlayerRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\EventsForDailyChallengeBadgeRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\EventsForEntitySelectableSubscriber.cs" />
+    <Compile Include="boardgames\datarenderers\EventsForIsFederatedRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\EventsForPlayerTypeSubscriber.cs" />
+    <Compile Include="boardgames\dataRenderers\FederationOpenUserDetails.cs" />
+    <Compile Include="boardgames\datarenderers\FriendGameLearnResponder.cs" />
+    <Compile Include="boardgames\dataRenderers\FriendInviteResponder.cs" />
+    <Compile Include="boardgames\datarenderers\FriendRemoveResponder.cs" />
+    <Compile Include="boardgames\dataRenderers\FriendRequestResponder.cs" />
+    <Compile Include="boardgames\dataRenderers\FriendsListInviteRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\FriendsListItemRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\FriendStatusRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\ImageLookupMaterialRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\LobbyGameInGameRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\LobbyGameOptionsRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\LobbyGamePlayerRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\NamedComposition.cs" />
+    <Compile Include="boardgames\dataRenderers\PendingGamePlayerNameRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\ProgressionStatusRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\SafeSubscriberDescriptionRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\SelectedChallengeObject.cs" />
+    <Compile Include="boardgames\dataRenderers\SetSelectedFriendEntry.cs" />
+    <Compile Include="boardgames\dataRenderers\SubscriberAtlasImageRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\SubscriberBasicCropImageRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\SubscriberDescriptionRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\SubscriberFlavorTextRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\SubscriberImageRenderer.cs" />
+    <Compile Include="boardgames\dataRenderers\SubscriberImageTextureRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\SubscriberNameRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\SubscriberTooltipRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\ValidAvatarsRenderer.cs" />
+    <Compile Include="boardgames\datarenderers\ValidColorsRenderer.cs" />
+    <Compile Include="boardgames\data\AvatarDataComponent.cs" />
+    <Compile Include="boardgames\data\BasicCropImage.cs" />
+    <Compile Include="boardgames\data\BasicImage.cs" />
+    <Compile Include="boardgames\data\BasicTooltip.cs" />
+    <Compile Include="boardgames\data\ChallengeDifficultyData.cs" />
+    <Compile Include="boardgames\data\ChallengeEntryMatchInitData.cs" />
+    <Compile Include="boardgames\data\ChallengePlayerData.cs" />
+    <Compile Include="boardgames\data\ColorDataComponent.cs" />
+    <Compile Include="boardgames\data\CurrentTurnPlayerData.cs" />
+    <Compile Include="boardgames\data\DailyChallengeBadgeData.cs" />
+    <Compile Include="boardgames\data\DBGMatchConfigData.cs" />
+    <Compile Include="boardgames\data\ImageFromAttribute.cs" />
+    <Compile Include="boardgames\data\OfflineMatchSlotNameData.cs" />
+    <Compile Include="boardgames\data\PendingGameData.2.cs" />
+    <Compile Include="boardgames\data\PendingGameData.cs" />
+    <Compile Include="boardgames\data\PendingGamePlayerAccountData.cs" />
+    <Compile Include="boardgames\data\PlayerJoinSlotNameData.cs" />
+    <Compile Include="boardgames\data\PlayerMetadataData.cs" />
+    <Compile Include="boardgames\data\PlayerSlotLockData.cs" />
+    <Compile Include="boardgames\data\PlayerTypeData.cs" />
+    <Compile Include="boardgames\data\PlaymatData.cs" />
+    <Compile Include="boardgames\data\ProgressionData.cs" />
+    <Compile Include="boardgames\data\ReconnectableGameData.cs" />
+    <Compile Include="boardgames\data\ReconnectableGamesData.cs" />
+    <Compile Include="boardgames\data\SelectionStageData.cs" />
+    <Compile Include="boardgames\data\SerializedMatchComponent.cs" />
+    <Compile Include="boardgames\data\StringColorPalette.cs" />
+    <Compile Include="boardgames\data\TempEntityChildData.cs" />
+    <Compile Include="boardgames\data\TempEntityParentData.cs" />
+    <Compile Include="boardgames\data\ValidAvatarsDataComponent.cs" />
+    <Compile Include="boardgames\data\ValidColorsDataComponent.cs" />
+    <Compile Include="boardgames\data\ValidStringsScriptableObject.cs" />
+    <Compile Include="boardgames\DBGAttemptReconnect.cs" />
+    <Compile Include="boardgames\GameResultsDataParser.cs" />
+    <Compile Include="boardgames\hints\DBGHinter.cs" />
+    <Compile Include="boardgames\hints\DBGHintManager.cs" />
+    <Compile Include="boardgames\hints\IHinter.cs" />
+    <Compile Include="boardgames\ImageAtlasLookupRenderer.cs" />
+    <Compile Include="boardgames\ImageLookupRenderer.cs" />
+    <Compile Include="boardgames\ImageLookupTextureRenderer.cs" />
+    <Compile Include="boardgames\input\AlwaysSelectableDragTarget.cs" />
+    <Compile Include="boardgames\input\AttributeDragTarget.cs" />
+    <Compile Include="boardgames\input\CameraPanHotkeyDisabler.cs" />
+    <Compile Include="boardgames\input\CameraScrollDisabler.cs" />
+    <Compile Include="boardgames\input\ClickEventForwarder.cs" />
+    <Compile Include="boardgames\input\ClickFXAnimator.cs" />
+    <Compile Include="boardgames\input\DetectDoubleClick.cs" />
+    <Compile Include="boardgames\input\Disabler.cs" />
+    <Compile Include="boardgames\input\DraggableCard.cs" />
+    <Compile Include="boardgames\input\DragTargetManager.cs" />
+    <Compile Include="boardgames\input\GamepadSupportEnabler.cs" />
+    <Compile Include="boardgames\input\IClickToStartDraggable.cs" />
+    <Compile Include="boardgames\input\IDraggable.cs" />
+    <Compile Include="boardgames\input\IDragTarget.cs" />
+    <Compile Include="boardgames\input\IParentSelectionReceiver.cs" />
+    <Compile Include="boardgames\input\PlaymatDragHandler.cs" />
+    <Compile Include="boardgames\input\PlaymatHotKeyMovementHandler.cs" />
+    <Compile Include="boardgames\input\PlaymatPhysicsInput.cs" />
+    <Compile Include="boardgames\input\PointerDragTarget.cs" />
+    <Compile Include="boardgames\input\SelectDraggedEntityDragTarget.cs" />
+    <Compile Include="boardgames\keyedlookup\KeyedAssetLookup.cs" />
+    <Compile Include="boardgames\keyedLookup\KeyedMatchInitDataLookup.cs" />
+    <Compile Include="boardgames\keyedlookup\KeyedSerializedLookup.cs" />
+    <Compile Include="boardgames\match\behaviours\DBGEntitiesProvider.cs" />
+    <Compile Include="boardgames\match\behaviours\DeprecatedTransformableUnitView.cs" />
+    <Compile Include="boardgames\match\behaviours\KickObserversButton.cs" />
+    <Compile Include="boardgames\match\behaviours\LocalizeByPickerKind.cs" />
+    <Compile Include="boardgames\match\behaviours\MinimizablePrompt.cs" />
+    <Compile Include="boardgames\match\behaviours\ObserversProvider.cs" />
+    <Compile Include="boardgames\match\behaviours\SelectionPromptRenderer.cs" />
+    <Compile Include="boardgames\match\behaviours\TutorialPromptBehaviour.cs" />
+    <Compile Include="boardgames\match\canis\DBGCanisOfflineMatch.cs" />
+    <Compile Include="boardgames\match\canis\DBGCanisOnlineMatch.cs" />
+    <Compile Include="boardgames\match\canis\DBGMatchMessageDispatcher.cs" />
+    <Compile Include="boardgames\match\canis\GenericDBGCanisOfflineMatch.cs" />
+    <Compile Include="boardgames\match\canis\IActionLogStringProvider.cs" />
+    <Compile Include="boardgames\match\commands\CheckActiveInGame.cs" />
+    <Compile Include="boardgames\match\commands\DBGExitMatch.cs" />
+    <Compile Include="boardgames\match\commands\DBGLeaveMatchDueToError.cs" />
+    <Compile Include="boardgames\match\commands\DBGPassToPlayerCommand.cs" />
+    <Compile Include="boardgames\match\commands\DBGPlayTurnCommand.cs" />
+    <Compile Include="boardgames\match\commands\DBGReloadMatch.cs" />
+    <Compile Include="boardgames\match\commands\FastForwardGameQueueCommand.cs" />
+    <Compile Include="boardgames\match\commands\MatchFailedCodes.cs" />
+    <Compile Include="boardgames\match\commands\ObserveMatch.cs" />
+    <Compile Include="boardgames\match\commands\PlayCanisOnlineMatch.cs" />
+    <Compile Include="boardgames\match\commands\PlayMatchCommand.cs" />
+    <Compile Include="boardgames\match\commands\PlayOfflineMatch.cs" />
+    <Compile Include="boardgames\match\commands\ReputationChangedNotificationFlow.cs" />
+    <Compile Include="boardgames\match\commands\RunCameraKabbage.cs" />
+    <Compile Include="boardgames\match\commands\RunDailyChallengeBadgeEarnedFlow.cs" />
+    <Compile Include="boardgames\match\commands\WaitForGameQueueEmptyCommand.cs" />
+    <Compile Include="boardgames\match\data\AbilityData.cs" />
+    <Compile Include="boardgames\match\data\ActionLogData.cs" />
+    <Compile Include="boardgames\match\data\ActivePlayerData.cs" />
+    <Compile Include="boardgames\match\data\EntityIndexData.cs" />
+    <Compile Include="boardgames\match\data\ObserversListData.cs" />
+    <Compile Include="boardgames\match\data\OpponentActivityData.cs" />
+    <Compile Include="boardgames\match\data\ReferencedEntityID.cs" />
+    <Compile Include="boardgames\match\data\SelectionFiltersData.cs" />
+    <Compile Include="boardgames\match\data\TutorialDisabledActionsData.cs" />
+    <Compile Include="boardgames\match\DBGEntities.cs" />
+    <Compile Include="boardgames\match\render\KeyGrip.cs" />
+    <Compile Include="boardgames\match\render\NamedRigging.cs" />
+    <Compile Include="boardgames\match\selection\AdvanceOrCancelSelection.cs" />
+    <Compile Include="boardgames\match\selection\ArchetypeCustomChoiceInfoPrompt.cs" />
+    <Compile Include="boardgames\match\selection\CustomChoiceInfoCommand.cs" />
+    <Compile Include="boardgames\match\selection\CustomChoiceInfoPrompt.cs" />
+    <Compile Include="boardgames\match\selection\CustomChoiceInfoPromptBehaviour.cs" />
+    <Compile Include="boardgames\match\selection\CustomChoiceInfoPromptItem.cs" />
+    <Compile Include="boardgames\match\selection\DBGBaseArchetypeCustomChoiceSelectionPromptCommand.cs" />
+    <Compile Include="boardgames\match\selection\DBGBasicEntityListSelectionCommand.cs" />
+    <Compile Include="boardgames\match\selection\DBGEntityComponentChoicesSelectionPromptCommand.cs" />
+    <Compile Include="boardgames\match\selection\DBGEntityListSelectionPromptCommand.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectEntityPrompt.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectEntityPromptBehaviour.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectionCommand.2.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectionCommand.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectionPrompt.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectionPromptCommand.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectionResponder.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectionResponderButtons.cs" />
+    <Compile Include="boardgames\match\selection\DBGSelectionResponderInteractionEvents.cs" />
+    <Compile Include="boardgames\match\selection\EventsForDBGSelectionResponderState.cs" />
+    <Compile Include="boardgames\match\selection\SelectionRootHandler.cs" />
+    <Compile Include="boardgames\match\selection\SimultaneousSelectionResponder.cs" />
+    <Compile Include="boardgames\match\selection\SimultaneousSelectionResponderUtil.cs" />
+    <Compile Include="boardgames\match\tooltips\BasicDescriptionTooltipSource.cs" />
+    <Compile Include="boardgames\match\tooltips\ObserverCountTooltipSource.cs" />
+    <Compile Include="boardgames\match\tutorial\GenericEventCallToAction.cs" />
+    <Compile Include="boardgames\match\tutorial\ITutorialCallToAction.cs" />
+    <Compile Include="boardgames\match\tutorial\MozEntityCallToAction.cs" />
+    <Compile Include="boardgames\match\tutorial\MozEntityTooltipCallToAction.cs" />
+    <Compile Include="boardgames\match\tutorial\ObserverCallToAction.cs" />
+    <Compile Include="boardgames\match\tutorial\SelectEntityCallToAction.cs" />
+    <Compile Include="boardgames\match\tutorial\StopEntityMozCallToAction.cs" />
+    <Compile Include="boardgames\match\tutorial\TutorialEffects.cs" />
+    <Compile Include="boardgames\match\tutorial\TutorialUtil.cs" />
+    <Compile Include="boardgames\match\validators\AvailableSelectionValidator.cs" />
+    <Compile Include="boardgames\match\validators\CameraStationaryValidator.cs" />
+    <Compile Include="boardgames\match\validators\SelectableChildValidator.cs" />
+    <Compile Include="boardgames\match\validators\TutorialSelectionAvailableValidator.cs" />
+    <Compile Include="boardgames\match\views\AllPlayerViewsLoader.cs" />
+    <Compile Include="boardgames\match\voodoo\EntityOwnerLayout.cs" />
+    <Compile Include="boardgames\match\voodoo\FlavoredLayout.cs" />
+    <Compile Include="boardgames\match\voodoo\StackCountData.cs" />
+    <Compile Include="boardgames\match\voodoo\StackCountRenderer.cs" />
+    <Compile Include="boardgames\match\voodoo\StackedViewsLayout.cs" />
+    <Compile Include="boardgames\menus\behaviours\ConfigureGameOptionDropdown.cs" />
+    <Compile Include="boardgames\menus\behaviours\ConfigureGameOptionToggle.cs" />
+    <Compile Include="boardgames\menus\behaviours\ConfigureGameOptionValueDisplay.cs" />
+    <Compile Include="boardgames\menus\behaviours\ConfigureGameOptionValueTooltipSource.cs" />
+    <Compile Include="boardgames\menus\behaviours\EventsForBoolPref.cs" />
+    <Compile Include="boardgames\menus\behaviours\EventsForConfigureGameOptionChanged.cs" />
+    <Compile Include="boardgames\menus\behaviours\EventsForThreshold.cs" />
+    <Compile Include="boardgames\menus\behaviours\LocaleDropdown.cs" />
+    <Compile Include="boardgames\menus\behaviours\NewContentAlertBehaviour.cs" />
+    <Compile Include="boardgames\menus\behaviours\SelectChallengeDifficultyButton.cs" />
+    <Compile Include="boardgames\menus\behaviours\SelectedChallengeDifficultyRenderer.cs" />
+    <Compile Include="boardgames\menus\behaviours\SelectedChallengeOwnedRenderer.cs" />
+    <Compile Include="boardgames\menus\behaviours\SelectedChallengeRenderer.cs" />
+    <Compile Include="boardgames\menus\behaviours\TutorialFocusManager.cs" />
+    <Compile Include="boardgames\menus\ChallengeSaveIconRenderer.cs" />
+    <Compile Include="boardgames\menus\commands\AcceptFriendInvite.cs" />
+    <Compile Include="boardgames\menus\commands\CancelFriendRequest.cs" />
+    <Compile Include="boardgames\menus\commands\ContinueTutorialPracticeGameFlow.cs" />
+    <Compile Include="boardgames\menus\commands\DBGLogin.cs" />
+    <Compile Include="boardgames\menus\commands\DeclineFriendInvite.cs" />
+    <Compile Include="boardgames\menus\commands\JoinExistingGame.cs" />
+    <Compile Include="boardgames\menus\commands\LoadLeaderboards.cs" />
+    <Compile Include="boardgames\menus\commands\LoadMatchHistory.cs" />
+    <Compile Include="boardgames\menus\commands\LoadMatchStats.cs" />
+    <Compile Include="boardgames\menus\commands\LoginIfNeeded.cs" />
+    <Compile Include="boardgames\menus\commands\PostMatchHistoryCommand.cs" />
+    <Compile Include="boardgames\menus\commands\RequestAppReviewCommand.cs" />
+    <Compile Include="boardgames\menus\commands\ResignCasualGame.cs" />
+    <Compile Include="boardgames\menus\commands\RunAccountActionsFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunAddFriendFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunBanLogoutFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunBlockAccountFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunChallengesFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunChangeLocale.cs" />
+    <Compile Include="boardgames\menus\commands\RunChangePasswordFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunChangeUIScale.cs" />
+    <Compile Include="boardgames\menus\commands\RunCheckContinueOfflineMatchFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunConfigureGameFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunConfigureNewOfflineMatchFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunConfigureOfflineMatchFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunCreateAccountPromptFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunDailyChallengePostMatchFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunDeleteAccountFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunFeedbackFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunFriendsListFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunGameCompleteNotificationFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunInviteFriendFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunLandingFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunLocalPlayFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunLoginPromptFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunMatchFoundFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunOnlineMatchesFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunPlayerStatsFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunPromptForMatchFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunRedeemCodeFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunRemoveFriendFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunReportPlayerFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunSettingsFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunSplashFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunTurnReadyNotificationFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunTutorialChallengeGameFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunTutorialFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunTutorialPracticeGameFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunUIScaleFlow.cs" />
+    <Compile Include="boardgames\menus\commands\RunUpdateLobbyGamePlayerMetadata.cs" />
+    <Compile Include="boardgames\menus\commands\RunWaitingForPlayersFlow.cs" />
+    <Compile Include="boardgames\menus\commands\SendFeedback.cs" />
+    <Compile Include="boardgames\menus\commands\ShowGameResigned.cs" />
+    <Compile Include="boardgames\menus\commands\StartMatchFailed.cs" />
+    <Compile Include="boardgames\menus\commands\TutorialToShopData.cs" />
+    <Compile Include="boardgames\menus\DBGLobbyGameProvider.cs" />
+    <Compile Include="boardgames\menus\GameLobbySessionProvider.cs" />
+    <Compile Include="boardgames\menus\GameSaveIconRenderer.cs" />
+    <Compile Include="boardgames\menus\GenericOfflineMatchesManager.cs" />
+    <Compile Include="boardgames\menus\LobbySessionProvider.cs" />
+    <Compile Include="boardgames\menus\MenuCommandFlavors.cs" />
+    <Compile Include="boardgames\menus\OfflineMatches.cs" />
+    <Compile Include="boardgames\menus\OfflineMatchesHelper.cs" />
+    <Compile Include="boardgames\menus\OfflineMatchesManager.cs" />
+    <Compile Include="boardgames\menus\OnlineFriendsRotator.cs" />
+    <Compile Include="boardgames\menus\OnlinePlaySessionProvider.cs" />
+    <Compile Include="boardgames\menus\prompts\AccountActionsPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\AccountActionsPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\AccountActionsPromptResult.cs" />
+    <Compile Include="boardgames\menus\prompts\AddFriendPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\AddFriendPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\behaviours\ChatSocialPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\behaviours\ConfigureGameOption.cs" />
+    <Compile Include="boardgames\menus\prompts\behaviours\ConfigureGameRepOption.cs" />
+    <Compile Include="boardgames\menus\prompts\behaviours\GameResultsPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\behaviours\LeaderboardPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\behaviours\LeaderboardRankRenderer.cs" />
+    <Compile Include="boardgames\menus\prompts\behaviours\RedeemPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\behaviours\ReportPlayerPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\CategoryDefinition.cs" />
+    <Compile Include="boardgames\menus\prompts\ChallengesSelectPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ChallengesSelectPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\ChangePasswordPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ChangePasswordPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\ConfigureGameOptionsPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\ConfigureGamePrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ConfigureGamePromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\ConfigureOfflineGamePrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ConfigurePlayerPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ConfigurePlayerPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\ConfirmMatchReconnectPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ConfirmOrDenyPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\ContinueGamePrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ContinueGamePromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\ContinueGameResult.cs" />
+    <Compile Include="boardgames\menus\prompts\ContinueOfflineGamePrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ContinueOfflineGamePromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\CreateAccountPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\CreateAccountPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\DailyChallengeBadgeEarnedPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\DBGTopLevelMenuPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\EulaPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\EulaPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\FeedbackPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ForgotPasswordPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\ForgotPasswordPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\FriendsListPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\FriendsListPromptResult.cs" />
+    <Compile Include="boardgames\menus\prompts\GamePasswordPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\GamePasswordPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\GameResultsPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\IConfigureGameOptions.cs" />
+    <Compile Include="boardgames\menus\prompts\IPromptWithPlayerSlots.cs" />
+    <Compile Include="boardgames\menus\prompts\LandingPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\LocalPlayModePrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\LocalPlayModePromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\LoginPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\LoginPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\LoginPromptResult.cs" />
+    <Compile Include="boardgames\menus\prompts\MatchHistoryBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\MatchStatsBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\MatchStatsFilterType.cs" />
+    <Compile Include="boardgames\menus\prompts\OnlineMatchesPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\OnlineMatchesPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\PlayerStatsPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\RedeemPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\RedeemPromptResult.cs" />
+    <Compile Include="boardgames\menus\prompts\ReportPlayerPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\RulesPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\SerializedMatchDataProvider.cs" />
+    <Compile Include="boardgames\menus\prompts\TutorialRequiresDLCPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\TutorialRequiresDLCPromptResult.cs" />
+    <Compile Include="boardgames\menus\prompts\TutorialSelectPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\TutorialSelectPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\UIScalePromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\WaitingForPlayersMatchSettingsPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\WaitingForPlayersPrompt.cs" />
+    <Compile Include="boardgames\menus\prompts\WaitingForPlayersPromptBehaviour.cs" />
+    <Compile Include="boardgames\menus\prompts\WaitingForPlayersResult.cs" />
+    <Compile Include="boardgames\menus\SelectedMatchSaveIconRenderer.cs" />
+    <Compile Include="boardgames\menus\SettingsSubPromptButton.cs" />
+    <Compile Include="boardgames\menus\ui\DailyChallengeTimerDisplay.cs" />
+    <Compile Include="boardgames\menus\ui\LandingPromptAnims.cs" />
+    <Compile Include="boardgames\menus\ui\LoggedInUserLabel.cs" />
+    <Compile Include="boardgames\menus\ui\StopwatchDisplay.cs" />
+    <Compile Include="boardgames\menus\ui\TimerDisplay.cs" />
+    <Compile Include="boardgames\moz\BaseMoz.cs" />
+    <Compile Include="boardgames\moz\CardHangersLoader.cs" />
+    <Compile Include="boardgames\moz\CardMoz.cs" />
+    <Compile Include="boardgames\moz\ContainerViewMoz.cs" />
+    <Compile Include="boardgames\moz\DBGTooltip.cs" />
+    <Compile Include="boardgames\moz\DisableMoz.cs" />
+    <Compile Include="boardgames\moz\EnableMozOnButtonPress.cs" />
+    <Compile Include="boardgames\moz\FindMozObject.cs" />
+    <Compile Include="boardgames\moz\HinterMoz.cs" />
+    <Compile Include="boardgames\moz\ICompositionSource.cs" />
+    <Compile Include="boardgames\moz\IMozDisabler.cs" />
+    <Compile Include="boardgames\moz\ITapMozPaginationList.cs" />
+    <Compile Include="boardgames\moz\ITooltipSource.cs" />
+    <Compile Include="boardgames\moz\IUseTapMoz.cs" />
+    <Compile Include="boardgames\moz\MobileTapMoz.cs" />
+    <Compile Include="boardgames\moz\MozDisplayObject.cs" />
+    <Compile Include="boardgames\moz\MozDisplayUIElement.cs" />
+    <Compile Include="boardgames\moz\MozManager.cs" />
+    <Compile Include="boardgames\moz\OverlayUI.cs" />
+    <Compile Include="boardgames\moz\PointToMozObject.cs" />
+    <Compile Include="boardgames\moz\RemotelyEnableMozOnButtonPress.cs" />
+    <Compile Include="boardgames\moz\ShowChildMoz.cs" />
+    <Compile Include="boardgames\moz\SubscriberCardMoz.cs" />
+    <Compile Include="boardgames\moz\TapMoz.cs" />
+    <Compile Include="boardgames\moz\TapMozPaginationContainer.cs" />
+    <Compile Include="boardgames\notifications\DBGNotifications.cs" />
+    <Compile Include="boardgames\notifications\DBGPlaymatNotifications.cs" />
+    <Compile Include="boardgames\notifications\INotifications.cs" />
+    <Compile Include="boardgames\notifications\INotificationsMessagesHandler.cs" />
+    <Compile Include="boardgames\OnlineMatchesTabSwitcher.cs" />
+    <Compile Include="boardgames\prompts\behaviours\FeedbackPromptBehaviour.cs" />
+    <Compile Include="boardgames\prompts\behaviours\FriendsListPromptBehaviour.cs" />
+    <Compile Include="boardgames\prompts\behaviours\LandingPromptBehaviour.cs" />
+    <Compile Include="boardgames\prompts\SettingsPrompt.cs" />
+    <Compile Include="boardgames\prompts\SettingsPromptResult.cs" />
+    <Compile Include="boardgames\prompts\SettingsPromptTab.cs" />
+    <Compile Include="boardgames\prompts\TapMozPrompt.cs" />
+    <Compile Include="boardgames\prompts\TutorialPrompt.cs" />
+    <Compile Include="boardgames\prompts\UIScalePrompt.cs" />
+    <Compile Include="boardgames\prompt\behaviours\DirebytesDetailPromptBehaviour.cs" />
+    <Compile Include="boardgames\prompt\behaviours\DirebytesPromptBehaviour.cs" />
+    <Compile Include="boardgames\prompt\behaviours\SettingsPromptBehaviour.cs" />
+    <Compile Include="boardgames\prompt\behaviours\TapMozPromptBehaviour.cs" />
+    <Compile Include="boardgames\prompt\behaviours\TapMozPromptPaginator.cs" />
+    <Compile Include="boardgames\prompt\behaviours\VSyncSettingDisabler.cs" />
+    <Compile Include="boardgames\sequences\OneTimeTutorialActionSequence.cs" />
+    <Compile Include="boardgames\tutorial\ShowTutorialHint.cs" />
+    <Compile Include="boardgames\ui\SettingsButtonBehaviour.cs" />
+    <Compile Include="boardgames\utils\ConfigureGameOptionKeyAttribute.cs" />
+    <Compile Include="boardgames\utils\DBGTimerUtils.cs" />
+    <Compile Include="boardgames\utils\GameObjectUtils.cs" />
+    <Compile Include="boardgames\utils\HexMath.cs" />
+    <Compile Include="boardgames\utils\ProductUtils.2.cs" />
+    <Compile Include="boardgames\utils\ProductUtils.cs" />
+    <Compile Include="boardgames\utils\UnusualSelectionUtil.cs" />
+    <Compile Include="boardgames\validators\InviteFriendSelectableValidator.cs" />
+    <Compile Include="boardgames\validators\MatchTypeValidator.cs" />
+    <Compile Include="boardgames\validators\PlayerTypeValidator.cs" />
+    <Compile Include="boardgames\validators\RemoveFriendSelectableValidator.cs" />
+    <Compile Include="boardgames\voodoo\DBGVoodooSequenceCommands.cs" />
+    <Compile Include="boardgames\voodoo\InitializeWithTemporaryEntity.cs" />
+    <Compile Include="boardgames\voodoo\PlayerPileDataProvider.cs" />
+    <Compile Include="camera\CameraHotkeyDisablerRegister.cs" />
+    <Compile Include="camera\CameraLocationFlavors.cs" />
+    <Compile Include="camera\CameraScrollDisablerRegister.cs" />
+    <Compile Include="commands\InviteFriendToMatch.cs" />
+    <Compile Include="coreactionlog\actionlog\TimedOutSelectionEffectCommand.cs" />
+    <Compile Include="DailyChallengeScoreData.cs" />
+    <Compile Include="dataRenderers\PlayerTypeFriendRotatorRenderer.cs" />
+    <Compile Include="dbgclient\Alignment.cs" />
+    <Compile Include="dbgclient\aspectratio\AspectRatioConfiguration.cs" />
+    <Compile Include="dbgclient\aspectratio\AspectRatioConfigurationLoader.cs" />
+    <Compile Include="dbgclient\aspectratio\AspectRatioFitterLimiter.cs" />
+    <Compile Include="dbgclient\aspectratio\CameraFOVLimiter.cs" />
+    <Compile Include="dbgclient\aspectratio\CanvasScalerRatioAdjuster.cs" />
+    <Compile Include="dbgclient\aspectratio\WindowBoxAnchor.cs" />
+    <Compile Include="dbgclient\commands\DBGRequestFriendMatch.cs" />
+    <Compile Include="dbgclient\commands\DisplayConfigurePlayerPrompt.cs" />
+    <Compile Include="dbgclient\commands\RunConfigureFriendGameFlow.cs" />
+    <Compile Include="dbgclient\commands\RunShopFlow.cs" />
+    <Compile Include="dbgclient\commands\ViewOnlineGameResultsCommand.cs" />
+    <Compile Include="dbgclient\dataProviders\DailyChallengeProvider.2.cs" />
+    <Compile Include="dbgclient\dataProviders\DailyChallengeProvider.cs" />
+    <Compile Include="dbgclient\dataProviders\EntityComponentForArchetypeProvider.cs" />
+    <Compile Include="dbgclient\dataProviders\IDailyChallengeScoreProvider.cs" />
+    <Compile Include="dbgclient\dataRenderers\BasicCropImageRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\ChallengeHighScoreRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\DailyChallengeLeaderboardRankRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\DailyChallengeScoreRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\FriendGameConfigDataRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\FriendObserveGameResponder.cs" />
+    <Compile Include="dbgclient\dataRenderers\FriendOnlineStatusRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\MatchHistoryDataRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\MatchHistoryStatDataRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\ObserverNameRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\PlayerSlotLockedRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\PlayerStatsEntryRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\PlayerTypeImageRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\PlayerTypeTextRenderer.cs" />
+    <Compile Include="dbgclient\dataRenderers\SetSelectedFriendInviteEntry.cs" />
+    <Compile Include="dbgclient\data\ChallengeHighScoreData.cs" />
+    <Compile Include="dbgclient\data\DailyChallengeLeaderboard.cs" />
+    <Compile Include="dbgclient\data\DailyChallengeLeaderboardBadges.cs" />
+    <Compile Include="dbgclient\data\DailyChallengeLeaderboardData.cs" />
+    <Compile Include="dbgclient\data\DailyChallengeLeaderboardEntry.cs" />
+    <Compile Include="dbgclient\data\DireBytesData.cs" />
+    <Compile Include="dbgclient\data\FriendGameConfigData.cs" />
+    <Compile Include="dbgclient\data\FriendGameInviteData.cs" />
+    <Compile Include="dbgclient\data\FriendObserveGameData.cs" />
+    <Compile Include="dbgclient\data\FriendOnlineStatusData.cs" />
+    <Compile Include="dbgclient\data\MatchEntryList.cs" />
+    <Compile Include="dbgclient\data\MatchHistory.cs" />
+    <Compile Include="dbgclient\data\MatchHistoryData.cs" />
+    <Compile Include="dbgclient\data\MatchStats.cs" />
+    <Compile Include="dbgclient\data\MatchStatsData.cs" />
+    <Compile Include="dbgclient\data\MatchStatsEntry.cs" />
+    <Compile Include="dbgclient\data\StatsFilter.cs" />
+    <Compile Include="dbgclient\data\StringValuePair.cs" />
+    <Compile Include="dbgclient\DBGFanView.cs" />
+    <Compile Include="dbgclient\FanViewPerResolutionData.cs" />
+    <Compile Include="dbgclient\input\GlobalGamepadDisabler.cs" />
+    <Compile Include="dbgclient\input\HoldableButton.cs" />
+    <Compile Include="dbgclient\input\InputValidatorInitializer.cs" />
+    <Compile Include="dbgclient\input\KeyboardInputCharacterLimit.cs" />
+    <Compile Include="dbgclient\input\ReactivateInputFieldOnEnter.cs" />
+    <Compile Include="dbgclient\input\RegisterToggleWithGroup.cs" />
+    <Compile Include="dbgclient\input\StripEmojisValidator.cs" />
+    <Compile Include="dbgclient\match\render\ChildCountRenderer.cs" />
+    <Compile Include="dbgclient\match\render\DailyChallengeObserversChatEnabler.cs" />
+    <Compile Include="dbgclient\match\render\ObservedPlayersRenderer.cs" />
+    <Compile Include="dbgclient\match\render\ObserversListRenderer.cs" />
+    <Compile Include="dbgclient\match\render\ObserversRenderer.cs" />
+    <Compile Include="dbgclient\match\render\ScaledBillboard.cs" />
+    <Compile Include="dbgclient\match\render\StrategicViewCanvas.cs" />
+    <Compile Include="dbgclient\match\render\StrategicViewElement.cs" />
+    <Compile Include="dbgclient\menus\behaviours\NewDailyChallengeAlertBehaviour.cs" />
+    <Compile Include="dbgclient\menus\behaviours\PendingFriendRequestRenderer.cs" />
+    <Compile Include="dbgclient\menus\commands\FetchDailyChallengeLeaderboard.cs" />
+    <Compile Include="dbgclient\menus\commands\FetchMatchHistory.cs" />
+    <Compile Include="dbgclient\menus\commands\FetchMatchStats.cs" />
+    <Compile Include="dbgclient\menus\commands\LoadDailyChallengeLeaderboards.cs" />
+    <Compile Include="dbgclient\menus\commands\RequestDailyChallengeInfo.cs" />
+    <Compile Include="dbgclient\menus\commands\RunDailyChallengeFlow.cs" />
+    <Compile Include="dbgclient\menus\commands\RunDailyChallengeLeaderboardFlow.cs" />
+    <Compile Include="dbgclient\ObjectiveCompleteRenderer.cs" />
+    <Compile Include="dbgclient\ObjectiveData.cs" />
+    <Compile Include="dbgclient\ObjectivesListData.cs" />
+    <Compile Include="dbgclient\prompts\behaviours\ShopPage.cs" />
+    <Compile Include="dbgclient\prompts\behaviours\ShopPromptBehaviour.cs" />
+    <Compile Include="dbgclient\prompts\ConfigureFriendGamePrompt.cs" />
+    <Compile Include="dbgclient\prompts\ConfigureFriendGamePromptBehaviour.cs" />
+    <Compile Include="dbgclient\prompts\FriendGameInvitePrompt.cs" />
+    <Compile Include="dbgclient\prompts\FriendGameInvitePromptBehaviour.cs" />
+    <Compile Include="dbgclient\prompts\prompts\DailyChallengePrompt.cs" />
+    <Compile Include="dbgclient\prompts\prompts\DailyChallengeScorePrompt.cs" />
+    <Compile Include="dbgclient\prompts\SettingsPage.cs" />
+    <Compile Include="dbgclient\prompts\ShopPrompt.cs" />
+    <Compile Include="dbgclient\prompts\ShopPromptTab.cs" />
+    <Compile Include="dbgclient\sequences\DBGGameStartSequence.cs" />
+    <Compile Include="dbgclient\sequences\DBGPassToPlayerSequence.cs" />
+    <Compile Include="dbgclient\TutorialGoalsPromptBehaviour.cs" />
+    <Compile Include="dbgclient\UpdateObjectivesSequence.cs" />
+    <Compile Include="dbgclient\voodoo\DBGCameraUnitView.cs" />
+    <Compile Include="dbgclient\voodoo\layout\FixedSlottedLayout.cs" />
+    <Compile Include="dbgclient\voodoo\layout\HiddenViewsLayout.cs" />
+    <Compile Include="dbgclient\voodoo\layout\PaginatedLayout.cs" />
+    <Compile Include="dbgclient\voodoo\layout\TransformLayout.cs" />
+    <Compile Include="dbgclient\voodoo\layout\TransformLayoutElement.cs" />
+    <Compile Include="dbgclient\voodoo\layout\TransformLayoutHorizontal.cs" />
+    <Compile Include="dbgclient\voodoo\UpdateCameraZoomRootModule.cs" />
+    <Compile Include="DBGMatchMessageConsumer.cs" />
+    <Compile Include="display\UIScalarAdjuster.cs" />
+    <Compile Include="display\UIScalarOverrideSlider.cs" />
+    <Compile Include="dwd\canis\AddFriendToExistingGame.cs" />
+    <Compile Include="dwd\canis\archetypes\DefaultArchetypes.cs" />
+    <Compile Include="dwd\canis\behaviours\EventsForScenarioNameMatch.cs" />
+    <Compile Include="dwd\canis\behaviours\SettingsAllowObserversButton.cs" />
+    <Compile Include="dwd\canis\dbg_client\behaviours\EventsForMouseWithinCollider.cs" />
+    <Compile Include="dwd\canis\dbg_client\behaviours\MultipleBoolEvent.cs" />
+    <Compile Include="dwd\canis\dbg_client\commands\RequestEULAIFNeeded.cs" />
+    <Compile Include="dwd\canis\dbg_client\commands\RunDailyChallengeRulesFlow.cs" />
+    <Compile Include="dwd\canis\dbg_client\commands\RunLogin.cs" />
+    <Compile Include="dwd\canis\dbg_client\dataRenderers\FederationNameRenderer.cs" />
+    <Compile Include="dwd\canis\dbg_client\dataRenderers\FriendsListChatReopener.cs" />
+    <Compile Include="dwd\canis\dbg_client\data\FriendsWinnerStatsFilter.cs" />
+    <Compile Include="dwd\canis\dbg_client\data\OwnerWinnerStatsFilter.cs" />
+    <Compile Include="dwd\canis\dbg_client\input\IDragPassthrough.cs" />
+    <Compile Include="dwd\canis\dbg_client\input\ScrollRectDragPassthrough.cs" />
+    <Compile Include="dwd\canis\dbg_client\prompts\behaviours\FriendsWinnerMatchStatsFilterToggle.cs" />
+    <Compile Include="dwd\canis\dbg_client\prompts\behaviours\OwnerWinnerMatchStatsFilterToggle.cs" />
+    <Compile Include="dwd\canis\dbg_client\prompts\ItemConfig.cs" />
+    <Compile Include="dwd\canis\dbg_client\prompts\PageConfig.cs" />
+    <Compile Include="dwd\canis\dbg_client\prompts\PlatformConfig.cs" />
+    <Compile Include="dwd\canis\dbg_client\prompts\PlatformPromptVisualConfigHandler.cs" />
+    <Compile Include="dwd\canis\dbg_client\switchboard\BoolEventsForSwitchboardState.cs" />
+    <Compile Include="dwd\canis\dbg_client\switchboard\EventsForSwitchboardState.cs" />
+    <Compile Include="dwd\canis\dbg_client\switchboard\GetSwitchboardFeatureCommand.cs" />
+    <Compile Include="dwd\canis\dbg_client\switchboard\SwitchboardButtonEnabler.cs" />
+    <Compile Include="dwd\canis\FetchPlayerReputation.cs" />
+    <Compile Include="dwd\canis\GameOptionDropdownTooltipSource.cs" />
+    <Compile Include="dwd\canis\InputType.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\behaviours\ChallengeAndEvents.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\behaviours\EventsForSpecificChallenge.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\behaviours\EventsOnMouseover.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\behaviours\SelectableActiveDataSetter.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\camera\ICameraBoundsProvider.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\commands\CameraMovedCommand.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\dataProviders\ChallengeTextDataProvider.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\dataRenderers\ChallengeTextRenderer.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\dataRenderers\EventsForIsLoggedIn.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\dataRenderers\FirstTimeReminderRenderer.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\dataRenderers\SelectableActiveSubscriber.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\dataRenderers\SetAnimFromPlayerSlotData.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\data\BasicColor.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\data\ChallengeTextData.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\data\SelectableActiveData.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\input\PaginatedToggleGroup.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\layouts\CenteredGridLayoutGroup.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\match\tutorial\GenericClientStringEventTrigger.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\match\tutorial\MozEntityCallToActionRapid.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\moz\AnimatorMoz.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\moz\DropdownItemTooltipSource.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\prompts\behaviours\TutorialTextPromptBehaviour.cs" />
+    <Compile Include="dwd\canis\lib\canis\dbg_client\voodoo\layout\DefaultViewsLayout.cs" />
+    <Compile Include="dwd\canis\MatchStatsFilterToggle.cs" />
+    <Compile Include="dwd\canis\RunDeclineFriendGameInviteFlow.cs" />
+    <Compile Include="dwd\canis\RunLandingFlowEvent.cs" />
+    <Compile Include="dwd\canis\TutorialRequiresDLCPromptBehaviour.cs" />
+    <Compile Include="dwd\canis\XboxKeyboardInputReader.cs" />
+    <Compile Include="dwd\core\data\composition\BasicFlavorText.cs" />
+    <Compile Include="dwd\DefaultGameInit.cs" />
+    <Compile Include="FriendChatResponder.cs" />
+    <Compile Include="FriendGameCreateResponder.cs" />
+    <Compile Include="FriendGameInviteHandler.cs" />
+    <Compile Include="GameResultsCommand.cs" />
+    <Compile Include="GameResultsPlayerData.cs" />
+    <Compile Include="GRMButtonBehaviour.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="LaunchFriendGame.cs" />
+    <Compile Include="leaf\InitialSelectionChildAtIndexPriority.cs" />
+    <Compile Include="leaf\InstantiatePrefabOnClick.cs" />
+    <Compile Include="lib\canis\dataProviders\IAdditionalEntityProvider.cs" />
+    <Compile Include="lib\canis\dataRenderers\GameResultsPlayerDataRenderer.cs" />
+    <Compile Include="lib\canis\dataRenderers\HasSavedGameRenderer.cs" />
+    <Compile Include="lib\canis\dataRenderers\PlayerTypeLockedRenderer.cs" />
+    <Compile Include="lib\canis\dataRenderers\SafeSubscriberNameRenderer.cs" />
+    <Compile Include="lib\canis\dataRenderers\SpriteAtlasLookupRenderer.cs" />
+    <Compile Include="lib\canis\dbg_client\commands\PlayDailyChallengeMatch.cs" />
+    <Compile Include="lib\canis\dbg_client\dataRenderers\AnimatedWaitingForPlayersSlotRenderer.cs" />
+    <Compile Include="lib\canis\dbg_client\dataRenderers\SafeObserverNameRenderer.cs" />
+    <Compile Include="lib\canis\dbg_client\match\selection\CompositeTargetInfoListsSelectionCommand.cs" />
+    <Compile Include="lib\canis\dbg_client\prompts\behaviours\DailyChallengeLeaderboardPromptBehaviour.cs" />
+    <Compile Include="lib\canis\dbg_client\voodoo\layout\ChildDependentLayoutElement.cs" />
+    <Compile Include="lib\canis\dbg_client\voodoo\layout\PassthroughLayoutElement.cs" />
+    <Compile Include="lib\canis\dbg_client\voodoo\PassAndPlayResetView.cs" />
+    <Compile Include="lib\canis\input\InitialSelectionChildIndexPriority.cs" />
+    <Compile Include="lib\canis\input\InitialSelectionFilteredPriority.cs" />
+    <Compile Include="lib\canis\input\InitialSelectionForcePriority.cs" />
+    <Compile Include="lib\canis\input\InitialSelectionHighlightedPriority.cs" />
+    <Compile Include="lib\canis\input\InitialSelectionLastSelectedPriority.cs" />
+    <Compile Include="lib\canis\input\PlaymatPhysicsInputSubmitHandler.cs" />
+    <Compile Include="lib\canis\input\SteamdeckKeyboardInputReader.cs" />
+    <Compile Include="lib\canis\input\UILevelDropTargetBlocker.cs" />
+    <Compile Include="lib\canis\match\selection\DBGArchetypeCustomChoiceSelectionPromptCommand.cs" />
+    <Compile Include="lib\canis\match\selection\DBGArchetypeCustomChoiceTargetInfoSelectionPromptCommand.cs" />
+    <Compile Include="lib\canis\match\selection\DBGIntegerSelectionPromptBehaviour.cs" />
+    <Compile Include="lib\canis\match\selection\DBGIntegerSelectionPromptCommand.cs" />
+    <Compile Include="lib\canis\match\selection\DBGSelectIntegerPrompt.cs" />
+    <Compile Include="lib\canis\match\tutorial\SelectEntityWithLayerCallToAction.cs" />
+    <Compile Include="lib\Canis\menus\ui\OfflineMatchesSaveIconRenderer.cs" />
+    <Compile Include="lib\src\camera\CameraScrollDisableOnMouseOver.cs" />
+    <Compile Include="lib\src\match\dataRenderers\DisableSelectableFromDisabledAttribute.cs" />
+    <Compile Include="LockedGameValidator.cs" />
+    <Compile Include="lotus\GameInit.cs" />
+    <Compile Include="lotus\RoundedCornerAdjuster.cs" />
+    <Compile Include="OnChangedCallAttribute.cs" />
+    <Compile Include="PrompterUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunFriendGameInviteFlow.cs" />
+    <Compile Include="RunPostMatchFlow.cs" />
+    <Compile Include="SkipReplayButtonBehaviour.cs" />
+    <Compile Include="SlantedButtons.cs" />
+    <Compile Include="tuber\client\match\ui\TMPTuberReactivateInputFieldOnEnter.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="zen\src\menus\commands\InviteToGame.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+    <Compile Include="__f__AnonymousType0.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

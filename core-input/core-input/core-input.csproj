@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3ABB82E0-03EE-4861-9026-DDB36D0CFDDE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>core-input</RootNamespace>
+    <AssemblyName>core-input</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="core-canis">
+      <HintPath>..\..\..\BepInEx\interop\core-canis.dll</HintPath>
+    </Reference>
+    <Reference Include="core-commands">
+      <HintPath>..\..\..\BepInEx\interop\core-commands.dll</HintPath>
+    </Reference>
+    <Reference Include="DwdJson">
+      <HintPath>..\..\..\BepInEx\interop\DwdJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="InControl">
+      <HintPath>..\..\..\BepInEx\interop\InControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Utils">
+      <HintPath>..\..\..\BepInEx\interop\Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="context\IRegisterInputActions.cs" />
+    <Compile Include="core\input\util\BoolEvents.cs" />
+    <Compile Include="core\input\util\GameObjectInputUtil.cs" />
+    <Compile Include="CustomLayerMouseManagerOverride.cs" />
+    <Compile Include="DirectionalNavigationData.cs" />
+    <Compile Include="dwd\core\commands\DecoratorExtensions.cs" />
+    <Compile Include="dwd\core\commands\WithBlockingInputContext.cs" />
+    <Compile Include="dwd\core\conditions\Condition.cs" />
+    <Compile Include="dwd\core\conditions\UnityEventConditions.cs" />
+    <Compile Include="dwd\core\IInputActionExecutor.cs" />
+    <Compile Include="dwd\core\InputAction.cs" />
+    <Compile Include="dwd\core\InputIdAttribute.cs" />
+    <Compile Include="dwd\core\InputIdListAttribute.cs" />
+    <Compile Include="dwd\core\input\click\ClickDispatcher.cs" />
+    <Compile Include="dwd\core\input\click\ClickedEvent.cs" />
+    <Compile Include="dwd\core\input\click\ClickUtil.cs" />
+    <Compile Include="dwd\core\input\click\DownEvent.cs" />
+    <Compile Include="dwd\core\input\click\IClickConfig.cs" />
+    <Compile Include="dwd\core\input\click\LongPressEndedEvent.cs" />
+    <Compile Include="dwd\core\input\click\LongPressEvent.cs" />
+    <Compile Include="dwd\core\input\click\LongPressStartedEvent.cs" />
+    <Compile Include="dwd\core\input\click\MouseClickProcessor.cs" />
+    <Compile Include="dwd\core\input\click\SingleTouchClickProcessor.cs" />
+    <Compile Include="dwd\core\input\click\UpEvent.cs" />
+    <Compile Include="dwd\core\input\compositeModule\ActivateOnInputModuleType.cs" />
+    <Compile Include="dwd\core\input\compositeModule\activation\ActivateModuleOnGamepadInput.cs" />
+    <Compile Include="dwd\core\input\compositeModule\activation\ActivateModuleOnMouseOrTouchInput.cs" />
+    <Compile Include="dwd\core\input\compositeModule\activation\IModuleActivationStrategy.cs" />
+    <Compile Include="dwd\core\input\compositeModule\activation\ModuleActivator.cs" />
+    <Compile Include="dwd\core\input\compositeModule\BoolEventsForSelectionState.cs" />
+    <Compile Include="dwd\core\input\compositeModule\CompositeInputModule.cs" />
+    <Compile Include="dwd\core\input\compositeModule\CurrentInputModuleType.cs" />
+    <Compile Include="dwd\core\input\compositeModule\eventDispatch\IEventDispatchStrategy.cs" />
+    <Compile Include="dwd\core\input\compositeModule\eventDispatch\InputButtonCompare.cs" />
+    <Compile Include="dwd\core\input\compositeModule\eventDispatch\PointerEventDispatcher.cs" />
+    <Compile Include="dwd\core\input\compositeModule\eventDispatch\SelectedObjectEventDispatcher.cs" />
+    <Compile Include="dwd\core\input\compositeModule\eventDispatch\UIEventDispatcher.cs" />
+    <Compile Include="dwd\core\input\compositeModule\EventsForButtonPressInput.cs" />
+    <Compile Include="dwd\core\input\compositeModule\EventsForInputModuleActivation.cs" />
+    <Compile Include="dwd\core\input\compositeModule\EventsForInputModuleActivationPersistent.cs" />
+    <Compile Include="dwd\core\input\compositeModule\EventsForSelectionState.cs" />
+    <Compile Include="dwd\core\input\compositeModule\EventsForToggleState.cs" />
+    <Compile Include="dwd\core\input\compositeModule\EventSystemExtensions.cs" />
+    <Compile Include="dwd\core\input\compositeModule\ImageEnabledOnInputModuleType.cs" />
+    <Compile Include="dwd\core\input\compositeModule\inputDetection\InputDetector.cs" />
+    <Compile Include="dwd\core\input\compositeModule\inputDetection\UnityInputDetector.cs" />
+    <Compile Include="dwd\core\input\compositeModule\inputLocks\ILockInputProcessing.cs" />
+    <Compile Include="dwd\core\input\compositeModule\InputModuleExtensions.cs" />
+    <Compile Include="dwd\core\input\compositeModule\ISearchableStrategy.cs" />
+    <Compile Include="dwd\core\input\compositeModule\navigation\AxialSelectionNavigator.cs" />
+    <Compile Include="dwd\core\input\compositeModule\navigation\ISelectionNavigationStrategy.cs" />
+    <Compile Include="dwd\core\input\compositeModule\navigation\NoNavigationNavigator.cs" />
+    <Compile Include="dwd\core\input\compositeModule\navigation\SelectionNavigator.cs" />
+    <Compile Include="dwd\core\input\compositeModule\selectOnActivation\ContextualOnActivationSelector.cs" />
+    <Compile Include="dwd\core\input\compositeModule\selectOnActivation\ISelectOnActivationStrategy.cs" />
+    <Compile Include="dwd\core\input\compositeModule\selectOnActivation\OnActivationSelector.cs" />
+    <Compile Include="dwd\core\input\compositeModule\SetInteractableOnInputModuleType.cs" />
+    <Compile Include="dwd\core\input\compositeModule\StrategySearchStringAttribute.cs" />
+    <Compile Include="dwd\core\input\context\CreateExplicitInputContext.cs" />
+    <Compile Include="dwd\core\input\context\CreateHeirarchicalInputContext.cs" />
+    <Compile Include="dwd\core\input\context\CreateInputContext.cs" />
+    <Compile Include="dwd\core\input\context\CreateMultiHeirarchyInputContext.cs" />
+    <Compile Include="dwd\core\input\context\GlobalInputDispatcher.cs" />
+    <Compile Include="dwd\core\input\context\InputContext.cs" />
+    <Compile Include="dwd\core\input\context\InputContextManager.cs" />
+    <Compile Include="dwd\core\input\context\RegisterContextInputActions.cs" />
+    <Compile Include="dwd\core\input\context\RegisterCreateInputContextActions.cs" />
+    <Compile Include="dwd\core\input\context\RegisterGlobalInputActions.cs" />
+    <Compile Include="dwd\core\input\context\TerminateHeirarchicalContextTree.cs" />
+    <Compile Include="dwd\core\input\context\UntilGlobalInputAction.cs" />
+    <Compile Include="dwd\core\input\debug\TrackSelectedGameObject.cs" />
+    <Compile Include="dwd\core\input\DelayRepeatedInputDirection.cs" />
+    <Compile Include="dwd\core\input\drag\DragDispatcher.cs" />
+    <Compile Include="dwd\core\input\drag\DragEndedEvent.cs" />
+    <Compile Include="dwd\core\input\drag\DragEvent.cs" />
+    <Compile Include="dwd\core\input\drag\DragStartedEvent.cs" />
+    <Compile Include="dwd\core\input\drag\IDragConfig.cs" />
+    <Compile Include="dwd\core\input\drag\SingleDragProcessor.cs" />
+    <Compile Include="dwd\core\input\DWDButton.cs" />
+    <Compile Include="dwd\core\input\EventsForTouchScreenKeyboard.cs" />
+    <Compile Include="dwd\core\input\FilteredPressEventActions.cs" />
+    <Compile Include="dwd\core\input\FilterPressByTouch.cs" />
+    <Compile Include="dwd\core\input\FilterPressWithinHierarchy.cs" />
+    <Compile Include="dwd\core\input\ForceSwitchKeyboard.cs" />
+    <Compile Include="dwd\core\input\IHasPointerSounds.cs" />
+    <Compile Include="dwd\core\input\IMousePressProvider.cs" />
+    <Compile Include="dwd\core\input\InputCooldownPassThrough.cs" />
+    <Compile Include="dwd\core\input\InputHit.cs" />
+    <Compile Include="dwd\core\input\InputManager.cs" />
+    <Compile Include="dwd\core\input\InputSample.cs" />
+    <Compile Include="dwd\core\input\InputUtil.cs" />
+    <Compile Include="dwd\core\input\MinimizeAndDisableInputOnButtonPress.cs" />
+    <Compile Include="dwd\core\input\MobileKeyboardInputField.cs" />
+    <Compile Include="dwd\core\input\MouseButtonFilter.cs" />
+    <Compile Include="dwd\core\input\MousePress.cs" />
+    <Compile Include="dwd\core\input\MousePressInterpreter.cs" />
+    <Compile Include="dwd\core\input\multitouch\Gesture.cs" />
+    <Compile Include="dwd\core\input\multitouch\GestureEndedEvent.cs" />
+    <Compile Include="dwd\core\input\multitouch\GestureEvent.cs" />
+    <Compile Include="dwd\core\input\multitouch\GestureProcessor.cs" />
+    <Compile Include="dwd\core\input\multitouch\GestureStartedEvent.cs" />
+    <Compile Include="dwd\core\input\multitouch\GestureUtil.cs" />
+    <Compile Include="dwd\core\input\multitouch\MultitouchInputManager.cs" />
+    <Compile Include="dwd\core\input\multitouch\MutableGesture.cs" />
+    <Compile Include="dwd\core\input\multitouch\PinchGesture.cs" />
+    <Compile Include="dwd\core\input\multitouch\RotateGesture.cs" />
+    <Compile Include="dwd\core\input\MutableMousePress.cs" />
+    <Compile Include="dwd\core\input\MutablePress.cs" />
+    <Compile Include="dwd\core\input\MutableTouchPress.cs" />
+    <Compile Include="dwd\core\input\Press.cs" />
+    <Compile Include="dwd\core\input\PressAction.cs" />
+    <Compile Include="dwd\core\input\PressEndedEvent.cs" />
+    <Compile Include="dwd\core\input\PressEvent.cs" />
+    <Compile Include="dwd\core\input\PressFilter.cs" />
+    <Compile Include="dwd\core\input\PressStartedEvent.cs" />
+    <Compile Include="dwd\core\input\PressUnityEvent.cs" />
+    <Compile Include="dwd\core\input\ScrollOnAxisInput.cs" />
+    <Compile Include="dwd\core\input\ScrollOnAxisInputContext.cs" />
+    <Compile Include="dwd\core\input\ScrollOnAxisInputGlobal.cs" />
+    <Compile Include="dwd\core\input\TouchPress.cs" />
+    <Compile Include="dwd\core\input\TouchPressInterpreter.cs" />
+    <Compile Include="dwd\core\input\transforms\IPressProcessor.cs" />
+    <Compile Include="dwd\core\input\transforms\PressProcessors.cs" />
+    <Compile Include="dwd\core\input\transforms\TransformPressEvent.cs" />
+    <Compile Include="dwd\core\input\ui\ImageInputCue.cs" />
+    <Compile Include="dwd\core\input\ui\ImageInputCueEnableOnUsable.cs" />
+    <Compile Include="dwd\core\input\ui\selectable\advancedNavigation\AdvancedSelectableNavigation.cs" />
+    <Compile Include="dwd\core\input\ui\selectable\SelectInHierarchy.cs" />
+    <Compile Include="dwd\core\input\ui\StringBindings.cs" />
+    <Compile Include="dwd\core\RegisterContextInputFunction.cs" />
+    <Compile Include="dwd\core\RegisterGlobalInputFunction.cs" />
+    <Compile Include="dwd\core\TryClickButtonOnInput.cs" />
+    <Compile Include="dwd\core\TryFlipToggleOnInput.cs" />
+    <Compile Include="dwd\core\UnityEventArchID.cs" />
+    <Compile Include="dwd\core\UnityEventBool.cs" />
+    <Compile Include="dwd\core\UnityEventEntityListSelection.cs" />
+    <Compile Include="dwd\core\UnityEventFloat.cs" />
+    <Compile Include="dwd\core\UnityEventForDataComp.cs" />
+    <Compile Include="dwd\core\UnityEventForEntityComp.cs" />
+    <Compile Include="dwd\core\UnityEventInt.cs" />
+    <Compile Include="dwd\core\UnityEventString.cs" />
+    <Compile Include="dwd\core\UnityEventTwoParam.cs" />
+    <Compile Include="dwd\core\UnityToggleEventForDataComp.cs" />
+    <Compile Include="dwd\core\util\EventsForVersionedModelChange.cs" />
+    <Compile Include="dwd\core\util\EventsForVersionedParentTransformChange.cs" />
+    <Compile Include="dwd\core\util\InvertBool.cs" />
+    <Compile Include="dwd\core\util\VersionedParentTransform.cs" />
+    <Compile Include="dwd\input\DoubleClickEvent.cs" />
+    <Compile Include="dwd\input\IMouseEvent.cs" />
+    <Compile Include="dwd\input\MouseButtonEvent.cs" />
+    <Compile Include="dwd\input\MouseChildChanged.cs" />
+    <Compile Include="dwd\input\MouseClickEvent.cs" />
+    <Compile Include="dwd\input\MouseDownEvent.cs" />
+    <Compile Include="dwd\input\MouseEnteredEvent.cs" />
+    <Compile Include="dwd\input\MouseExitedEvent.cs" />
+    <Compile Include="dwd\input\MouseUpEvent.cs" />
+    <Compile Include="dwd\input\MouseWithinChanged.cs" />
+    <Compile Include="IAdvancedSelectableNavigation.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="InControl\InControlInputDetector.cs" />
+    <Compile Include="lib\canis\src\input\context\MultiHeirarchicalInputContextRegistrar.cs" />
+    <Compile Include="lib\canis\src\input\context\RegisterTransformWithInputContext.cs" />
+    <Compile Include="lib\canis\src\util\InitialSelectionPriority.cs" />
+    <Compile Include="lib\src\input\context\ButtonBehavior.cs" />
+    <Compile Include="lib\src\input\context\ButtonClickPassthrough.cs" />
+    <Compile Include="lib\src\input\context\InputModuleButton.cs" />
+    <Compile Include="lib\src\input\context\ToggleClickPassthrough.cs" />
+    <Compile Include="lib\src\util\TriggerIfTrueOrFalse.cs" />
+    <Compile Include="MouseManager.cs" />
+    <Compile Include="phoenix\util\CircuitBehaviours\EventAtEndOfFrameCircuit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="zen\yawp\ui\CreateBlockingInputContextForCanvasGroup.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

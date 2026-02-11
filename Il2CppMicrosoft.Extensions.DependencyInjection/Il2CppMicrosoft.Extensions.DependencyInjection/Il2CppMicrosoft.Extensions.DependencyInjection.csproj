@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{297A966E-4B88-46C1-92FD-8E909D8B0113}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Il2CppMicrosoft.Extensions.DependencyInjection</RootNamespace>
+    <AssemblyName>Il2CppMicrosoft.Extensions.DependencyInjection</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FxResources\Microsoft\Extensions\DependencyInjection\SR.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\CallSiteJsonFormatter.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\DependencyInjectionEventSource.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceCollectionContainerBuilderExtensions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\CallSiteChain.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\CallSiteFactory.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\CallSiteKind.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\CallSiteResultCacheLocation.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\CallSiteRuntimeResolver.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\CallSiteValidator.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\CallSiteVisitor.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\CompiledServiceProviderEngine.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ConstantCallSite.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ConstructorCallSite.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\DynamicServiceProviderEngine.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\FactoryCallSite.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\IEnumerableCallSite.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ILEmitResolverBuilder.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ILEmitResolverBuilderContext.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ResultCache.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\RuntimeResolverContext.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\RuntimeResolverLock.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\RuntimeServiceProviderEngine.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ServiceCacheKey.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ServiceCallSite.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ServiceDescriptorExtensions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ServiceIdentifier.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ServiceLookupHelpers.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ServiceProviderCallSite.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ServiceProviderEngine.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ServiceProviderEngineScope.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\StackGuard.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceLookup\ThrowHelper.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceProvider.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\DependencyInjection\ServiceProviderOptions.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Internal\ParameterDefaultValue.cs" />
+    <Compile Include="Il2CppMicrosoft\Extensions\Internal\TypeNameHelper.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\DynamicallyAccessedMembersAttribute.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\DynamicallyAccessedMemberTypes.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\RequiresDynamicCodeAttribute.cs" />
+    <Compile Include="Il2CppSystem\Diagnostics\CodeAnalysis\UnconditionalSuppressMessageAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullablePublicOnlyAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\RefSafetyRulesAttribute.cs" />
+    <Compile Include="Il2CppSystem\SR.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

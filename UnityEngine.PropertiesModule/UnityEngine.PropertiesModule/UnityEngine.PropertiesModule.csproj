@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4899CBF8-7DED-4C38-AB12-6BDB283C80D5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Unity.Properties</RootNamespace>
+    <AssemblyName>UnityEngine.PropertiesModule</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArrayPropertyBag.cs" />
+    <Compile Include="ConcreteTypeVisitor.cs" />
+    <Compile Include="ContainerPropertyBag.cs" />
+    <Compile Include="ConverterKeyComparer.cs" />
+    <Compile Include="CreatePropertyAttribute.cs" />
+    <Compile Include="DelegateProperty.cs" />
+    <Compile Include="DictionaryPropertyBag.cs" />
+    <Compile Include="DontCreatePropertyAttribute.cs" />
+    <Compile Include="EnumeratorType.cs" />
+    <Compile Include="FieldMember.cs" />
+    <Compile Include="GeneratePropertyBagAttribute.cs" />
+    <Compile Include="GeneratePropertyBagsForAssemblyAttribute.cs" />
+    <Compile Include="GeneratePropertyBagsForTypeAttribute.cs" />
+    <Compile Include="GeneratePropertyBagsForTypesQualifiedWithAttribute.cs" />
+    <Compile Include="HashSetPropertyBag.cs" />
+    <Compile Include="ICollectionElementProperty.cs" />
+    <Compile Include="ICollectionPropertyBagVisitor.cs" />
+    <Compile Include="ICollectionPropertyVisitor.cs" />
+    <Compile Include="IConstructor.2.cs" />
+    <Compile Include="IConstructor.cs" />
+    <Compile Include="IConstructorWithCount.cs" />
+    <Compile Include="IDictionaryElementProperty.cs" />
+    <Compile Include="IDictionaryPropertyBagVisitor.cs" />
+    <Compile Include="IDictionaryPropertyVisitor.cs" />
+    <Compile Include="IExcludePropertyAdapter.cs" />
+    <Compile Include="IListElementProperty.cs" />
+    <Compile Include="IListPropertyBagVisitor.cs" />
+    <Compile Include="IListPropertyVisitor.cs" />
+    <Compile Include="IMemberInfo.cs" />
+    <Compile Include="IndexedCollectionPropertyBag.cs" />
+    <Compile Include="InstantiationKind.cs" />
+    <Compile Include="Internal\BoundsIntPropertyBag.cs" />
+    <Compile Include="Internal\BoundsPropertyBag.cs" />
+    <Compile Include="Internal\ColorPropertyBag.cs" />
+    <Compile Include="Internal\DefaultPropertyBagInitializer.cs" />
+    <Compile Include="Internal\IAttributes.cs" />
+    <Compile Include="Internal\IPropertyBagRegister.cs" />
+    <Compile Include="Internal\PropertyBagStore.cs" />
+    <Compile Include="Internal\RectIntPropertyBag.cs" />
+    <Compile Include="Internal\RectPropertyBag.cs" />
+    <Compile Include="Internal\ReflectedPropertyBag.cs" />
+    <Compile Include="Internal\ReflectedPropertyBagAttribute.cs" />
+    <Compile Include="Internal\ReflectedPropertyBagProvider.cs" />
+    <Compile Include="Internal\ReflectionUtilities.cs" />
+    <Compile Include="Internal\SystemVersionPropertyBag.cs" />
+    <Compile Include="Internal\Vector2IntPropertyBag.cs" />
+    <Compile Include="Internal\Vector2PropertyBag.cs" />
+    <Compile Include="Internal\Vector3IntPropertyBag.cs" />
+    <Compile Include="Internal\Vector3PropertyBag.cs" />
+    <Compile Include="Internal\Vector4PropertyBag.cs" />
+    <Compile Include="InvalidContainerTypeException.cs" />
+    <Compile Include="InvalidPathException.cs" />
+    <Compile Include="IProperty.2.cs" />
+    <Compile Include="IProperty.cs" />
+    <Compile Include="IPropertyBag.2.cs" />
+    <Compile Include="IPropertyBag.cs" />
+    <Compile Include="IPropertyBagVisitor.cs" />
+    <Compile Include="IPropertyVisitor.cs" />
+    <Compile Include="IPropertyVisitorAdapter.cs" />
+    <Compile Include="ISetElementProperty.cs" />
+    <Compile Include="ISetPropertyBagVisitor.cs" />
+    <Compile Include="ISetPropertyVisitor.cs" />
+    <Compile Include="ITypeVisitor.cs" />
+    <Compile Include="IVisitPrimitivesPropertyAdapter.cs" />
+    <Compile Include="IVisitPropertyAdapter.cs" />
+    <Compile Include="KeyValueCollectionPropertyBag.cs" />
+    <Compile Include="KeyValuePairPropertyBag.cs" />
+    <Compile Include="ListPropertyBag.cs" />
+    <Compile Include="MissingPropertyBagException.cs" />
+    <Compile Include="PathVisitor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property.cs" />
+    <Compile Include="PropertyBag.2.cs" />
+    <Compile Include="PropertyBag.cs" />
+    <Compile Include="PropertyContainer.cs" />
+    <Compile Include="PropertyGetter.cs" />
+    <Compile Include="PropertyMember.cs" />
+    <Compile Include="PropertyPathPartKind.cs" />
+    <Compile Include="PropertySetter.cs" />
+    <Compile Include="PropertyVisitor.cs" />
+    <Compile Include="ReflectedMemberProperty.cs" />
+    <Compile Include="SetPropertyBagBase.cs" />
+    <Compile Include="TypeConversion.cs" />
+    <Compile Include="TypeGenerationOptions.cs" />
+    <Compile Include="TypeTraits.2.cs" />
+    <Compile Include="TypeTraits.cs" />
+    <Compile Include="TypeUtility.cs" />
+    <Compile Include="VisitExceptionKind.cs" />
+    <Compile Include="VisitParameters.cs" />
+    <Compile Include="VisitReturnCode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="UnityEngine.PropertiesModule.csproj">
+      <Project>{4899CBF8-7DED-4C38-AB12-6BDB283C80D5}</Project>
+      <Name>UnityEngine.PropertiesModule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

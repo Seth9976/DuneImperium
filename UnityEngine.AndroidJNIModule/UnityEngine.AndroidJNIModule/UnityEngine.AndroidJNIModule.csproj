@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1312E47B-36C8-4B8B-B282-95FEAD7EE854}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnityEngine</RootNamespace>
+    <AssemblyName>UnityEngine.AndroidJNIModule</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AndroidJavaClass.cs" />
+    <Compile Include="AndroidJavaException.cs" />
+    <Compile Include="AndroidJavaObject.cs" />
+    <Compile Include="AndroidJavaProxy.cs" />
+    <Compile Include="AndroidJavaRunnable.cs" />
+    <Compile Include="AndroidJavaRunnableProxy.cs" />
+    <Compile Include="AndroidJNI.cs" />
+    <Compile Include="AndroidJNIHelper.cs" />
+    <Compile Include="AndroidJNISafe.cs" />
+    <Compile Include="AndroidReflection.cs" />
+    <Compile Include="Android\AndroidApp.cs" />
+    <Compile Include="Android\AndroidAssetPackError.cs" />
+    <Compile Include="Android\AndroidAssetPackInfo.cs" />
+    <Compile Include="Android\AndroidAssetPacks.cs" />
+    <Compile Include="Android\AndroidAssetPackState.cs" />
+    <Compile Include="Android\AndroidAssetPackStatus.cs" />
+    <Compile Include="Android\AndroidAssetPackUseMobileDataRequestResult.cs" />
+    <Compile Include="Android\AndroidDevice.cs" />
+    <Compile Include="Android\AndroidHardwareType.cs" />
+    <Compile Include="Android\DiagnosticsReporting.cs" />
+    <Compile Include="Android\DownloadAssetPackAsyncOperation.cs" />
+    <Compile Include="Android\GetAssetPackStateAsyncOperation.cs" />
+    <Compile Include="Android\Permission.cs" />
+    <Compile Include="Android\PermissionCallbacks.cs" />
+    <Compile Include="Android\RequestToUseMobileDataAsyncOperation.cs" />
+    <Compile Include="GlobalJavaObjectRef.cs" />
+    <Compile Include="jvalue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_AndroidJNIHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="UnityEngine.AndroidJNIModule.csproj">
+      <Project>{1312E47B-36C8-4B8B-B282-95FEAD7EE854}</Project>
+      <Name>UnityEngine.AndroidJNIModule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61AA0217-0900-454E-B228-741551650795}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Networking</RootNamespace>
+    <AssemblyName>Networking</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Attributes">
+      <HintPath>..\..\..\BepInEx\interop\Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="DwdJson">
+      <HintPath>..\..\..\BepInEx\interop\DwdJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\BepInEx\interop\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonFx">
+      <HintPath>..\..\..\BepInEx\interop\JsonFx.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Utils">
+      <HintPath>..\..\..\BepInEx\interop\Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArchetypeCustomChoiceRequired.cs" />
+    <Compile Include="AttributesReset.cs" />
+    <Compile Include="Canis\actions\PassToPlayer.cs" />
+    <Compile Include="Canis\game\messages\chat\AddGameChat.cs" />
+    <Compile Include="Canis\game\messages\chat\GameChatAdded.cs" />
+    <Compile Include="Canis\game\messages\chat\GameChatMessage.cs" />
+    <Compile Include="Canis\game\messages\chat\GameChatMessages.cs" />
+    <Compile Include="Canis\game\messages\chat\GetGameChat.cs" />
+    <Compile Include="Canis\game\messages\connection\PlayerDisconnected.cs" />
+    <Compile Include="Canis\messages\AccountIDUsername.cs" />
+    <Compile Include="Canis\messages\AccountIDUsernameMetadata.cs" />
+    <Compile Include="Canis\messages\ActivePlayerSet.cs" />
+    <Compile Include="Canis\messages\AttributeModified.cs" />
+    <Compile Include="Canis\messages\AttributeRemoved.cs" />
+    <Compile Include="Canis\messages\BanLogout.cs" />
+    <Compile Include="Canis\messages\CameraMoved.cs" />
+    <Compile Include="Canis\messages\DematerializeEntity.cs" />
+    <Compile Include="Canis\messages\effect\AbilityUseEffectMessage.cs" />
+    <Compile Include="Canis\messages\effect\AIDelayEffect.cs" />
+    <Compile Include="Canis\messages\effect\CameraTransitionEffect.cs" />
+    <Compile Include="Canis\messages\effect\EffectMessage.cs" />
+    <Compile Include="Canis\messages\effect\EffectPlayed.cs" />
+    <Compile Include="Canis\messages\effect\PlayFX.cs" />
+    <Compile Include="Canis\messages\effect\PlayFXUnit.cs" />
+    <Compile Include="Canis\messages\effect\TimedOutSelectionEffectMessage.cs" />
+    <Compile Include="Canis\messages\EntityAdded.cs" />
+    <Compile Include="Canis\messages\EntityDestroyed.cs" />
+    <Compile Include="Canis\messages\EntityIntroduced.cs" />
+    <Compile Include="Canis\messages\EntityMoved.cs" />
+    <Compile Include="Canis\messages\EntityMovedWithoutID.cs" />
+    <Compile Include="Canis\messages\EntityOwnerChanged.cs" />
+    <Compile Include="Canis\messages\GameMessage.cs" />
+    <Compile Include="Canis\messages\GameNameScorePair.cs" />
+    <Compile Include="Canis\messages\IdleResignFromGame.cs" />
+    <Compile Include="Canis\messages\IGameMessage.cs" />
+    <Compile Include="Canis\messages\IPBMGameEnded.cs" />
+    <Compile Include="Canis\messages\MaterializeEntity.cs" />
+    <Compile Include="Canis\messages\PBMGameEnded.cs" />
+    <Compile Include="Canis\messages\PBMMatchFound.cs" />
+    <Compile Include="Canis\messages\PBMTurnReady.cs" />
+    <Compile Include="Canis\messages\sequence\ResumeSequence.cs" />
+    <Compile Include="Canis\messages\sequence\SequenceMessage.cs" />
+    <Compile Include="Canis\messages\sequence\StartSequence.cs" />
+    <Compile Include="Canis\messages\sequence\StopSequence.cs" />
+    <Compile Include="Canis\messages\sequence\SuspendSequence.cs" />
+    <Compile Include="Canis\messages\SerializedEntity.cs" />
+    <Compile Include="Canis\messages\SerializedGameState.cs" />
+    <Compile Include="Canis\messages\Shuffled.cs" />
+    <Compile Include="Canis\messages\timer\AddTimeToSimultaneousTimer.cs" />
+    <Compile Include="Canis\messages\timer\AddTimeToTimer.cs" />
+    <Compile Include="Canis\messages\timer\ClearSimultaneousTimer.cs" />
+    <Compile Include="Canis\messages\timer\ClearTimer.cs" />
+    <Compile Include="Canis\messages\timer\DisplayTimer.cs" />
+    <Compile Include="Canis\messages\timer\GetServerTime.cs" />
+    <Compile Include="Canis\messages\timer\HideTimer.cs" />
+    <Compile Include="Canis\messages\timer\ServerTimeSync.cs" />
+    <Compile Include="Canis\messages\timer\SetSimultaneousTimer.cs" />
+    <Compile Include="Canis\messages\timer\SetTimer.cs" />
+    <Compile Include="canis\Networking\game\messages\MatchHistoryEntry.cs" />
+    <Compile Include="canis\Networking\game\messages\MatchHistoryResultDetail.cs" />
+    <Compile Include="clientevents\ClientEvent.cs" />
+    <Compile Include="dailyChallenge\PlayDailyChallengeGame.cs" />
+    <Compile Include="dwd\core\match\messages\outgoing\GameCustomChoice.cs" />
+    <Compile Include="eventtriggers\clientactions\ClientAction.cs" />
+    <Compile Include="eventtriggers\clientactions\InstallEventResponse.cs" />
+    <Compile Include="eventtriggers\clientactions\ShowPopup.cs" />
+    <Compile Include="eventtriggers\clientactions\UninstallEventResponse.cs" />
+    <Compile Include="eventtriggers\ClientEventResponse.cs" />
+    <Compile Include="game\DWDGameProperty.cs" />
+    <Compile Include="game\DWDGameSession.cs" />
+    <Compile Include="game\DWDPendingGameMetadata.cs" />
+    <Compile Include="game\DWDPlayerSession.cs" />
+    <Compile Include="game\messages\effect\DespawnFXUnit.cs" />
+    <Compile Include="game\messages\effect\FXUnitMessage.cs" />
+    <Compile Include="game\messages\observer\GetObserverList.cs" />
+    <Compile Include="game\messages\observer\ObserverJoined.cs" />
+    <Compile Include="game\messages\observer\ObserverKicked.cs" />
+    <Compile Include="game\messages\observer\ObserverLeft.cs" />
+    <Compile Include="game\messages\observer\ObserverList.cs" />
+    <Compile Include="game\messages\observer\SetAllowObservers.cs" />
+    <Compile Include="game\messages\pbm\PBMGameResigned.cs" />
+    <Compile Include="game\URLPayload.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="lib\canis\Networking\game\messages\effect\PassiveEffectState.cs" />
+    <Compile Include="lobby\CreateLobbyGame.cs" />
+    <Compile Include="lobby\GetLobbyGames.cs" />
+    <Compile Include="lobby\GetLobbyQueue.cs" />
+    <Compile Include="lobby\JoinFriendLobby.cs" />
+    <Compile Include="lobby\JoinLobbyGame.cs" />
+    <Compile Include="lobby\JoinQueue.cs" />
+    <Compile Include="lobby\LeaveLobbyGame.cs" />
+    <Compile Include="lobby\RegisterGameLobbyUser.cs" />
+    <Compile Include="lobby\RegisterLobbyUser.cs" />
+    <Compile Include="lobby\responses\GameLobbyAuthenticated.cs" />
+    <Compile Include="lobby\responses\LobbyGameAdded.cs" />
+    <Compile Include="lobby\responses\LobbyGameList.cs" />
+    <Compile Include="lobby\responses\LobbyGamePlayerMetadataUpdated.cs" />
+    <Compile Include="lobby\responses\LobbyGameRemoved.cs" />
+    <Compile Include="lobby\responses\LobbyGameStarted.cs" />
+    <Compile Include="lobby\responses\LobbyGameUpdated.cs" />
+    <Compile Include="lobby\responses\LobbyJoined.cs" />
+    <Compile Include="lobby\responses\LobbyJoinFailed.cs" />
+    <Compile Include="lobby\responses\LobbyLeft.cs" />
+    <Compile Include="lobby\responses\LobbyQueuePlayer.cs" />
+    <Compile Include="lobby\responses\LobbyQueuePlayers.cs" />
+    <Compile Include="lobby\responses\LobbyUserRegistered.cs" />
+    <Compile Include="lobby\StartLobbyGameEarly.cs" />
+    <Compile Include="lobby\UpdateLobbyGamePlayerMetadata.cs" />
+    <Compile Include="moose\canis\networking\PotentialTileCoords.cs" />
+    <Compile Include="MultipleSelectionWithTargetsRequired.cs" />
+    <Compile Include="MultipleTargetInformation.cs" />
+    <Compile Include="MultiTargetEntity.cs" />
+    <Compile Include="notification\PushNotificationDeviceData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="selection\json\analyzers\HexCoordsAnalyzer.cs" />
+    <Compile Include="selection\json\analyzers\PotentialTileCoordsAnalyzer.cs" />
+    <Compile Include="selection\json\analyzers\SquareCoordsAnalyzer.cs" />
+    <Compile Include="selection\json\tokenizers\HexCoordsTokenizer.cs" />
+    <Compile Include="selection\json\tokenizers\PotentialTileCoordsTokenizer.cs" />
+    <Compile Include="selection\json\tokenizers\SquareCoordsTokenizer.cs" />
+    <Compile Include="selection\messages\CustomChoiceRequired.cs" />
+    <Compile Include="selection\messages\EntityPermutationRequired.cs" />
+    <Compile Include="selection\messages\IntChoiceRequired.cs" />
+    <Compile Include="selection\messages\ISelectionParams.cs" />
+    <Compile Include="selection\messages\outgoing\EntityIDEntityTargetsResponse.cs" />
+    <Compile Include="selection\messages\outgoing\EntityIDTargetResponses.cs" />
+    <Compile Include="selection\messages\outgoing\IIncludeSentToPlayer.cs" />
+    <Compile Include="selection\messages\outgoing\ISelectionCounter.cs" />
+    <Compile Include="selection\messages\outgoing\MultipleSelectionWithTargets.cs" />
+    <Compile Include="selection\messages\outgoing\Outgoing.cs" />
+    <Compile Include="selection\messages\outgoing\SelectionFinished.cs" />
+    <Compile Include="selection\messages\outgoing\SelectionWithTargets.cs" />
+    <Compile Include="selection\messages\SelectionMessage.cs" />
+    <Compile Include="selection\messages\SelectionWithTargetsRequired.cs" />
+    <Compile Include="selection\targetinformation\ArchetypeCustomChoiceTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\CompositeTargetInformationListTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\CustomChoiceResultTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\CustomChoiceTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\EntityGroupingTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\EntityListTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\EntityOrientationTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\FlippableEntityOrientationTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\FlippableOrientation.cs" />
+    <Compile Include="selection\targetinformation\FlippableTarget.cs" />
+    <Compile Include="selection\targetinformation\HexCoords.cs" />
+    <Compile Include="selection\targetinformation\HexCoordsWithOrientation.cs" />
+    <Compile Include="selection\targetinformation\HexGridWithOrientationTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\IHasSquareCoords.cs" />
+    <Compile Include="selection\targetinformation\IHasTargetValidity.cs" />
+    <Compile Include="selection\targetinformation\KnapsackEntityListTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\KnapsackSelectionMode.cs" />
+    <Compile Include="selection\targetinformation\RevealDetailedEntityListTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\RevealEntityListTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\SquareCoords.cs" />
+    <Compile Include="selection\targetinformation\SquareCoordsWithOrientation.cs" />
+    <Compile Include="selection\targetinformation\SquareGridWithOrientationTargetInformation.cs" />
+    <Compile Include="selection\targetinformation\TargetInformation.cs" />
+    <Compile Include="selection\targetinformation\TargetPreference.cs" />
+    <Compile Include="selection\targetinformation\XTargetInformation.cs" />
+    <Compile Include="selection\targetresponse\EntityListTargetResponse.cs" />
+    <Compile Include="selection\targetresponse\EntityOrientationTargetResponse.cs" />
+    <Compile Include="selection\targetresponse\HexCoordsWithOrientationTargetResponse.cs" />
+    <Compile Include="selection\targetresponse\IntListTargetResponse.cs" />
+    <Compile Include="selection\targetresponse\IntTargetResponse.cs" />
+    <Compile Include="selection\targetresponse\SquareCoordsWithOrientationTargetResponse.cs" />
+    <Compile Include="selection\targetresponse\TargetResponse.cs" />
+    <Compile Include="selection\TargetStrength.cs" />
+    <Compile Include="service\AckMsg.cs" />
+    <Compile Include="service\FlushPendingMessages.cs" />
+    <Compile Include="service\GameError.cs" />
+    <Compile Include="service\GameSessionJoined.cs" />
+    <Compile Include="service\GameSessionLeft.cs" />
+    <Compile Include="service\JoinGameError.cs" />
+    <Compile Include="service\JoinGameSession.cs" />
+    <Compile Include="service\JoinGameSessionAsObserver.cs" />
+    <Compile Include="service\LeaveWithoutResigningSession.cs" />
+    <Compile Include="service\MessageBundleMsg.cs" />
+    <Compile Include="service\PingMsg.cs" />
+    <Compile Include="service\PongMsg.cs" />
+    <Compile Include="service\ReJoinGameSession.cs" />
+    <Compile Include="service\ServerResign.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="user\FederatedNameData.cs" />
+    <Compile Include="user\NameMetadata.cs" />
+    <Compile Include="user\Names.cs" />
+    <Compile Include="user\XBoxLinkBody.cs" />
+    <Compile Include="user\XBoxTokenAuthBody.cs" />
+    <Compile Include="user\XBoxUnlinkBody.cs" />
+    <Compile Include="zen\src\matchMaking\messages\ResignPBMGame.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

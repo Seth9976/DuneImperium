@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1F546AF-E8B2-4639-B863-1BA448F4A614}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DwdJson</RootNamespace>
+    <AssemblyName>DwdJson</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Il2CppInterop.Common" />
+    <Reference Include="Il2CppInterop.Runtime" />
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonFx">
+      <HintPath>..\..\..\BepInEx\interop\JsonFx.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Private.CoreLib" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="Utils">
+      <HintPath>..\..\..\BepInEx\interop\Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Canis\json\DictionaryAnalyzer.cs" />
+    <Compile Include="Canis\json\DwdJsonEffectAttribute.cs" />
+    <Compile Include="Canis\json\DwdJsonMessageAttribute.cs" />
+    <Compile Include="Canis\json\DwdJsonReader.cs" />
+    <Compile Include="Canis\json\DwdJsonResolverStrategy.cs" />
+    <Compile Include="Canis\json\DwdJsonWriter.cs" />
+    <Compile Include="Canis\json\DwdModelAnalyzer.cs" />
+    <Compile Include="Canis\json\DwdModelWalker.cs" />
+    <Compile Include="Canis\json\DwdTypeAnalyzer.cs" />
+    <Compile Include="Canis\json\DwdTypeAnalyzerAttribute.cs" />
+    <Compile Include="Canis\json\events\DWDEvent.cs" />
+    <Compile Include="Canis\json\events\NetworkMessageEvent.cs" />
+    <Compile Include="Canis\json\events\ServerError.cs" />
+    <Compile Include="Canis\json\exceptions\DwdModelAnalysisException.cs" />
+    <Compile Include="Canis\json\JSON.cs" />
+    <Compile Include="Canis\json\LocalizableTextAnalyzer.cs" />
+    <Compile Include="Canis\json\LocalizableTextVariablesAnalyzer.cs" />
+    <Compile Include="Canis\json\MorePeekableStream.cs" />
+    <Compile Include="Canis\json\SerializedLikeAttribute.cs" />
+    <Compile Include="Canis\json\tokenizers\DateTimeTokenizer.cs" />
+    <Compile Include="Canis\json\tokenizers\DwdTypeTokenizer.cs" />
+    <Compile Include="Canis\json\tokenizers\Tuple2Tokenizer.cs" />
+    <Compile Include="Canis\json\Tuple2Analyzer.cs" />
+    <Compile Include="Canis\json\TypedIDAnalyzer.cs" />
+    <Compile Include="Canis\json\TypeHelper.cs" />
+    <Compile Include="Canis\json\TypeHintingAttribute.cs" />
+    <Compile Include="Il2CppMicrosoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="Il2CppSystem\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="_PrivateImplementationDetails_.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
